@@ -1,15 +1,11 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Perihal Blog
+permalink: /perihal/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+Blog ini tercetus sebagai wadah atau media tulisan tentang belajar pemrograman C++. Meskipun sudah banyak beredar blog atau situs sejenis, semoga ada sedikit manfaat yang bisa diambil dari blog ini.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[slamet.badwi@gmail.com](mailto:slamet.badwi@gmail.com)
