@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta name="generator" content="Hugo 0.24.1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="Badwi" name="author">
+<meta property="og:title" content="Ba-dwi Code">
+<meta property="og:url" content="http://code.badwi.my.id/">
+<meta property="og:description" content="Blog untuk kode">
+<meta property="og:type" content="website" />
+<title>Ba-dwi Code</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel="stylesheet" href="http://code.badwi.my.id//css/style.css">
+<link rel="shortcut icon" href="http://code.badwi.my.id//wave.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+
+</head>
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://code.badwi.my.id/"><h1 class="title is-4">Ba-dwi Code</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://instagram.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    
+    <article>
+      <h1 class="title"><a href="http://code.badwi.my.id/2016/10/permission-folder-laravel/">Permission Folder Laravel</a></h1>
+      <h2 class="subtitle is-5">October 17, 2016</h2>
+      
+      <div class="content">
+        Posting ini hanya catatan kecil jenis permission direktori project Laravel.
+ storage dan seluruh isinya harus read-write bootstrap tidak boleh read-write, tetapi cache di dalamnya iya  
+        
+      </div>
+    </article>
+    
+    <article>
+      <h1 class="title"><a href="http://code.badwi.my.id/2015/10/angular.js-routing/">Angular.JS: Routing</a></h1>
+      <h2 class="subtitle is-5">October 10, 2015</h2>
+      
+      <div class="content">
+        Kembali membahas AngularJs, kali ini maju satu langkah, mari mempelajari routing. Pada dasarnya Angular menangani event perubahan hash pada URL dan mengarahkannya pada ng-view. ngView ini membutuhkan template berupa file html terpisah yang akan dimuat oleh Angular.
+Berikut adalah potongan kode Javascript.
+angular.module('RoutingApp', ['ngRoute']) .config( ['$routeProvider', function($routeProvider) { $routeProvider .when('/first', { templateUrl: 'first.html' }) .when('/second', { templateUrl: 'second.html' }) .otherwise({ redirectTo: '/' }); }]);  Demo bisa dilihat di link berikut: http://baddwin.
+        
+        ...<a class="button is-link" href="http://code.badwi.my.id/2015/10/angular.js-routing/" style="height:28px">
+          Read more
+          <span class="icon is-small">
+            <i class="fa fa-angle-double-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </article>
+    
+    <article>
+      <h1 class="title"><a href="http://code.badwi.my.id/2015/07/chart.js-menggambar-diagram-dengan-javasript/">Chart.js: menggambar diagram dengan JavaSript</a></h1>
+      <h2 class="subtitle is-5">July 24, 2015</h2>
+      
+      <div class="content">
+        Kali ini saya share hasil eksplorasi atas Chart.js, skrip JavaScript untuk memvisualisasikan data dalam berbagai macam bentuk diagram. Di sini saya menggunakan diagram garis.
+&lt;canvas id=&quot;diagram&quot; width=&quot;800&quot; height=&quot;400&quot;&gt;&lt;/canvas&gt; &lt;div id=&quot;chart-legend&quot;&gt;&lt;/div&gt; &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; // Chart data &amp; properties var data = { labels: [&quot;2015-07-13&quot;,&quot;2015-07-14&quot;,&quot;2015-07-15&quot;,&quot;2015-07-16&quot;,&quot;2015-07-17&quot;,&quot;2015-07-18&quot;,&quot;2015-07-19&quot;,&quot;2015-07-20&quot;,&quot;2015-07-21&quot;,&quot;2015-07-22&quot;], datasets: [ { label: &quot;Data Statistik&quot;, fillColor: &quot;rgba(0,0,0,0)&quot;, strokeColor: &quot;rgba(66, 139, 202,1)&quot;, pointColor: &quot;rgba(86, 66, 230, 1)&quot;, pointStrokeColor: &quot;#fff&quot;, pointHighlightFill: &quot;#fff&quot;, pointHighlightStroke: &quot;rgba(66, 139, 202, 0.
+        
+        ...<a class="button is-link" href="http://code.badwi.my.id/2015/07/chart.js-menggambar-diagram-dengan-javasript/" style="height:28px">
+          Read more
+          <span class="icon is-small">
+            <i class="fa fa-angle-double-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </article>
+    
+    <article>
+      <h1 class="title"><a href="http://code.badwi.my.id/2015/07/coding-pertama-angular.js-penyortir-tabel/">Coding pertama: Angular.Js penyortir tabel</a></h1>
+      <h2 class="subtitle is-5">July 23, 2015</h2>
+      
+      <div class="content">
+        Saya mau share hasil koding pertama belajar AngularJs.
+&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;title&gt;Hafal Quran Android App&lt;/title&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;script/angular.min.js&quot;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body ng-app=&quot;statistikApp&quot;&gt; &lt;section ng-controller=&quot;urutkanTabel&quot;&gt; &lt;h2 class=&quot;table&quot;&gt;Statistik Hafal Quran&lt;/h2&gt; &lt;h3 class=&quot;table&quot;&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=id.web.amzone.hafalquran&quot; target=&quot;_blank&quot;&gt;Android App&lt;/a&gt;&lt;/h3&gt; &lt;p style=&quot;text-align:center;&quot;&gt;&lt;?php echo $Tanggal;?&gt;&lt;/p&gt; &lt;table&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;No.&lt;/th&gt; &lt;th&gt;&lt;a href=&quot;&quot; ng-click=&quot;reverse=!reverse;order('a', reverse)&quot;&gt;Kode&lt;/a&gt;&lt;/th&gt; &lt;th&gt;&lt;a href=&quot;&quot; ng-click=&quot;reverse=false;order('b', false)&quot;&gt;First&lt;/a&gt; (&lt;a href=&quot;&quot; ng-click=&quot;order('-b',false)&quot;&gt;^&lt;/a&gt;)&lt;/th&gt; &lt;th&gt;&lt;a href=&quot;&quot; ng-click=&quot;reverse=false;order('c', false)&quot;&gt;Last&lt;/a&gt; (&lt;a href=&quot;&quot; ng-click=&quot;order('-c',false)&quot;&gt;^&lt;/a&gt;)&lt;/th&gt; &lt;th&gt;&lt;a href=&quot;&quot; ng-click=&quot;reverse=!reverse;order('d', reverse)&quot;&gt;Level&lt;/a&gt;&lt;/th&gt; &lt;th&gt;&lt;a href=&quot;&quot; ng-click=&quot;reverse=!
+        
+        ...<a class="button is-link" href="http://code.badwi.my.id/2015/07/coding-pertama-angular.js-penyortir-tabel/" style="height:28px">
+          Read more
+          <span class="icon is-small">
+            <i class="fa fa-angle-double-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </article>
+    
+    <article>
+      <h1 class="title"><a href="http://code.badwi.my.id/2015/07/assalamualaikum-dunia/">Assalamu&#39;alaikum Dunia</a></h1>
+      <h2 class="subtitle is-5">July 4, 2015</h2>
+      
+      <div class="content">
+        Satu lagi telah terbit blog baru. Kali ini Github Pages + Jekyll Now lah yang memberdayakan blog ini. Semoga ke depannya bisa bermanfaat untuk kita semua.
+        
+      </div>
+    </article>
+    
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <div class="level-item">
+          
+        </div>
+      </div>
+      <div class="level-right is-marginless">
+        <div class="level-item">
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | <a href="https://github.com/mgjohansen/hucore.git" target="_blank">Hucore theme</a> & <a href="http://gohugo.io" target="_blank">Hugo</a> ♥</p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/dockerfile.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-36990012-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+
