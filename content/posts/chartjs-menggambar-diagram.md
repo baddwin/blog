@@ -1,10 +1,12 @@
 ---
-layout: post
-title: 'Chart.js: menggambar diagram dengan JavaSript'
+title: "Chart.js: menggambar diagram dengan JavaSript"
 date: 2015-07-24T13:54:32+07:00
+description: "Chart.Js untuk menggambar diagram"
+tags: ["chartjs", "javascript"]
 ---
 
 Kali ini saya share hasil eksplorasi atas [Chart.js](http://www.chartjs.org/ ""), skrip JavaScript untuk memvisualisasikan data dalam berbagai macam bentuk diagram. Di sini saya menggunakan diagram garis.
+<!--more-->
 
 ```html
 <canvas id="diagram" width="800" height="400"></canvas>

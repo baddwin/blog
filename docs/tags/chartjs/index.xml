@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chartjs on Ba-dwi Code</title>
+    <link>http://code.badwi.my.id/tags/chartjs/</link>
+    <description>Recent content in Chartjs on Ba-dwi Code</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>id</language>
+    <copyright>&amp;copy; 2017 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <lastBuildDate>Fri, 24 Jul 2015 13:54:32 +0700</lastBuildDate>
+    
+	<atom:link href="http://code.badwi.my.id/tags/chartjs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chart.js: menggambar diagram dengan JavaSript</title>
+      <link>http://code.badwi.my.id/2015/07/chart.js-menggambar-diagram-dengan-javasript/</link>
+      <pubDate>Fri, 24 Jul 2015 13:54:32 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/2015/07/chart.js-menggambar-diagram-dengan-javasript/</guid>
+      <description>&lt;p&gt;Kali ini saya share hasil eksplorasi atas &lt;a href=&#34;http://www.chartjs.org/&#34;&gt;Chart.js&lt;/a&gt;, skrip JavaScript untuk memvisualisasikan data dalam berbagai macam bentuk diagram. Di sini saya menggunakan diagram garis.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="Badwi" name="author">
+<meta property="og:title" content="Coding pertama: Angular.Js penyortir tabel - Ba-dwi Code">
+<meta property="og:url" content="http://code.badwi.my.id/2015/07/coding-pertama-angular.js-penyortir-tabel/">
+<meta property="og:description" content="Blog untuk kode">
+<meta property="og:type" content="website" />
+<title>Coding pertama: Angular.Js penyortir tabel | Ba-dwi Code</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel="stylesheet" href="http://code.badwi.my.id//css/style.css">
+<link rel="shortcut icon" href="http://code.badwi.my.id//wave.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://code.badwi.my.id/"><h1 class="title is-4">Ba-dwi Code</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://instagram.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Coding pertama: Angular.Js penyortir tabel</h1>
+    <h2 class="subtitle is-5">July 23, 2015 by Badwi</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/angularjs">angularjs</a>
+    
+</div>
+
+    
+    <div class="content">
+      <p>Saya mau share hasil koding pertama belajar AngularJs. Berikut <em>snippet</em> kodenya.
+</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;Hafal Quran Android App&lt;/title&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;script/angular.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body ng-app=&quot;statistikApp&quot;&gt;
+&lt;section ng-controller=&quot;urutkanTabel&quot;&gt;
+    &lt;h2 class=&quot;table&quot;&gt;Statistik Hafal Quran&lt;/h2&gt;
+    &lt;h3 class=&quot;table&quot;&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=id.web.amzone.hafalquran&quot; target=&quot;_blank&quot;&gt;Android App&lt;/a&gt;&lt;/h3&gt;
+    &lt;p style=&quot;text-align:center;&quot;&gt;&lt;?php echo $Tanggal;?&gt;&lt;/p&gt;
+    &lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;No.&lt;/th&gt;
+            &lt;th&gt;&lt;a href=&quot;&quot; ng-click=&quot;reverse=!reverse;order('a', reverse)&quot;&gt;Kode&lt;/a&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;a href=&quot;&quot; ng-click=&quot;reverse=false;order('b', false)&quot;&gt;First&lt;/a&gt; (&lt;a href=&quot;&quot; ng-click=&quot;order('-b',false)&quot;&gt;^&lt;/a&gt;)&lt;/th&gt;
+            &lt;th&gt;&lt;a href=&quot;&quot; ng-click=&quot;reverse=false;order('c', false)&quot;&gt;Last&lt;/a&gt; (&lt;a href=&quot;&quot; ng-click=&quot;order('-c',false)&quot;&gt;^&lt;/a&gt;)&lt;/th&gt;
+            &lt;th&gt;&lt;a href=&quot;&quot; ng-click=&quot;reverse=!reverse;order('d', reverse)&quot;&gt;Level&lt;/a&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;a href=&quot;&quot; ng-click=&quot;reverse=!reverse;order('e', reverse)&quot;&gt;Play&lt;/a&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;a href=&quot;&quot; ng-click=&quot;reverse=!reverse;order('f', reverse)&quot;&gt;Device&lt;/a&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+
+        &lt;tr ng-repeat=&quot;stat in stats | orderBy:last:reverse&quot;&gt;
+            &lt;td&gt;{{$index+1}}&lt;/td&gt;
+            &lt;td&gt;{{stat.a}}&lt;/td&gt;
+            &lt;td&gt;{{stat.b}}&lt;/td&gt;
+            &lt;td&gt;{{stat.c}}&lt;/td&gt;
+            &lt;td&gt;{{stat.d}}&lt;/td&gt;
+            &lt;td&gt;{{stat.e}}&lt;/td&gt;
+            &lt;td&gt;{{stat.f}}&lt;/td&gt;
+        &lt;/tr&gt;
+
+    &lt;/tbody&gt;
+    &lt;/table&gt;
+
+&lt;/section&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+var app = angular.module('statistikApp', []);
+app.controller('urutkanTabel', ['$scope', '$filter', function($scope, $filter) {
+  var orderBy = $filter('orderBy');
+  $scope.stats = &lt;?php print json_encode($stats);?&gt;;
+  $scope.order = function(predicate, reverse) {
+    $scope.stats = orderBy($scope.stats, predicate, reverse);
+  };
+  $scope.order('-c',false);
+}]);
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Demo bisa dilihat di link berikut: <a href="http://baddwin.github.io/demo-koding/angularjs-sortir-tabel.html">http://baddwin.github.io/demo-koding/angularjs-sortir-tabel.html</a></p>
+
+<p>Ide dari beberapa sumber berikut:</p>
+
+<ol>
+<li><a href="http://www.mograblog.com/2013/06/angularjs-smart-table.html">http://www.mograblog.com/2013/06/angularjs-smart-table.html</a></li>
+<li><a href="http://jsfiddle.net/patxy/D2FsZ/light/">http://jsfiddle.net/patxy/D2FsZ/light/</a></li>
+<li><a href="https://gist.github.com/simonbingham/3858121">https://gist.github.com/simonbingham/3858121</a></li>
+<li><a href="http://stackoverflow.com/questions/18789973/sortable-table-columns-with-angularjs">http://stackoverflow.com/questions/18789973/sortable-table-columns-with-angularjs</a></li>
+<li><a href="http://www.w3schools.com/angular/angular_tables.asp">http://www.w3schools.com/angular/angular_tables.asp</a></li>
+<li><a href="https://docs.angularjs.org/api/ng/filter/orderBy">https://docs.angularjs.org/api/ng/filter/orderBy</a></li>
+</ol>
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fcode.badwi.my.id%2f2015%2f07%2fcoding-pertama-angular.js-penyortir-tabel%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=http%3a%2f%2fcode.badwi.my.id%2f2015%2f07%2fcoding-pertama-angular.js-penyortir-tabel%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fcode.badwi.my.id%2f2015%2f07%2fcoding-pertama-angular.js-penyortir-tabel%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Coding%20pertama%3a%20Angular.Js%20penyortir%20tabel - http%3a%2f%2fcode.badwi.my.id%2f2015%2f07%2fcoding-pertama-angular.js-penyortir-tabel%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=http%3a%2f%2fcode.badwi.my.id%2f2015%2f07%2fcoding-pertama-angular.js-penyortir-tabel%2f&title=Coding%20pertama%3a%20Angular.Js%20penyortir%20tabel" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'codebadwi';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | <a href="https://github.com/mgjohansen/hucore.git" target="_blank">Hucore theme</a> & <a href="http://gohugo.io" target="_blank">Hugo</a> ♥</p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/dockerfile.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-36990012-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>

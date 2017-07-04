@@ -1,10 +1,12 @@
 ---
-layout: post
-title: 'Coding pertama: Angular.Js penyortir tabel'
+title: "Coding pertama: Angular.Js penyortir tabel"
 date: 2015-07-23T19:51:13+07:00
+description: "Angular.Js penyortir tabel"
+tags: ["angularjs"]
 ---
 
-Saya mau share hasil koding pertama belajar AngularJs.
+Saya mau share hasil koding pertama belajar AngularJs. Berikut *snippet* kodenya.
+<!--more-->
 
 ```html
 <!DOCTYPE html>

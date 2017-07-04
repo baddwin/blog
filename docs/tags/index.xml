@@ -7,9 +7,73 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <lastBuildDate>Sat, 10 Oct 2015 14:38:00 +0700</lastBuildDate>
     
 	<atom:link href="http://code.badwi.my.id/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Angularjs</title>
+      <link>http://code.badwi.my.id/tags/angularjs/</link>
+      <pubDate>Sat, 10 Oct 2015 14:38:00 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/angularjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chartjs</title>
+      <link>http://code.badwi.my.id/tags/chartjs/</link>
+      <pubDate>Fri, 24 Jul 2015 13:54:32 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/chartjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dunia</title>
+      <link>http://code.badwi.my.id/tags/dunia/</link>
+      <pubDate>Sat, 04 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/dunia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>http://code.badwi.my.id/tags/javascript/</link>
+      <pubDate>Fri, 24 Jul 2015 13:54:32 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Laravel</title>
+      <link>http://code.badwi.my.id/tags/laravel/</link>
+      <pubDate>Mon, 17 Oct 2016 12:39:06 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/laravel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Php</title>
+      <link>http://code.badwi.my.id/tags/php/</link>
+      <pubDate>Mon, 17 Oct 2016 12:39:06 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Routing</title>
+      <link>http://code.badwi.my.id/tags/routing/</link>
+      <pubDate>Sat, 10 Oct 2015 14:38:00 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/routing/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
