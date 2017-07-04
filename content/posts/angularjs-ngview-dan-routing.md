@@ -2,7 +2,7 @@
 title: "Angular.JS: Routing"
 date: 2015-10-10T14:38:00+07:00
 description: "AngularJs ngView dan routing"
-tags: ["angularjs", "routing"]
+tags: ["angularjs", "javascript"]
 ---
 
 Kembali membahas AngularJs, kali ini maju satu langkah, mari mempelajari routing. Pada dasarnya Angular menangani event perubahan hash pada URL dan mengarahkannya pada `ng-view`. ngView ini membutuhkan template berupa file html terpisah yang akan dimuat oleh Angular.
