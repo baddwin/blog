@@ -3,8 +3,61 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://code.badwi.my.id/</loc>
+    <lastmod>2019-07-01T23:42:22+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://code.badwi.my.id/2019/07/magento-mengalihkan-duniaku/</loc>
+    <lastmod>2019-07-01T23:42:22+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://code.badwi.my.id/posts/</loc>
+    <lastmod>2019-07-01T23:42:22+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://code.badwi.my.id/tags/</loc>
+    <lastmod>2019-07-01T23:42:22+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://code.badwi.my.id/tags/dunia/</loc>
+    <lastmod>2019-07-01T23:42:22+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://code.badwi.my.id/tags/magento/</loc>
+    <lastmod>2019-07-01T23:42:22+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://code.badwi.my.id/tags/php/</loc>
+    <lastmod>2019-07-01T23:42:22+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://code.badwi.my.id/tags/web/</loc>
+    <lastmod>2019-07-01T23:42:22+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://code.badwi.my.id/2016/10/permission-folder-laravel/</loc>
     <lastmod>2016-10-17T12:39:06+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://code.badwi.my.id/tags/laravel/</loc>
+    <lastmod>2016-10-17T12:39:06+07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -13,8 +66,26 @@
   </url>
   
   <url>
+    <loc>http://code.badwi.my.id/tags/angularjs/</loc>
+    <lastmod>2015-10-10T14:38:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://code.badwi.my.id/tags/javascript/</loc>
+    <lastmod>2015-10-10T14:38:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://code.badwi.my.id/2015/07/chart.js-menggambar-diagram-dengan-javasript/</loc>
     <lastmod>2015-07-24T13:54:32+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://code.badwi.my.id/tags/chartjs/</loc>
+    <lastmod>2015-07-24T13:54:32+07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -28,61 +99,7 @@
   </url>
   
   <url>
-    <loc>http://code.badwi.my.id/tags/angularjs/</loc>
-    <lastmod>2015-10-10T14:38:00+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://code.badwi.my.id/</loc>
-    <lastmod>2016-10-17T12:39:06+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://code.badwi.my.id/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://code.badwi.my.id/tags/chartjs/</loc>
-    <lastmod>2015-07-24T13:54:32+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://code.badwi.my.id/tags/dunia/</loc>
-    <lastmod>2015-07-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://code.badwi.my.id/tags/javascript/</loc>
-    <lastmod>2015-10-10T14:38:00+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://code.badwi.my.id/tags/laravel/</loc>
-    <lastmod>2016-10-17T12:39:06+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://code.badwi.my.id/tags/php/</loc>
-    <lastmod>2016-10-17T12:39:06+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://code.badwi.my.id/posts/</loc>
-    <lastmod>2016-10-17T12:39:06+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://code.badwi.my.id/tags/</loc>
-    <lastmod>2015-10-10T14:38:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   

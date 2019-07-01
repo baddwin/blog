@@ -20,7 +20,7 @@
   });
 </script>
 <link rel="stylesheet" href="http://code.badwi.my.id//css/style.css">
-<link rel="shortcut icon" href="http://code.badwi.my.id//wave.ico">
+<link rel="shortcut icon" href="http://code.badwi.my.id//favicon.ico">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
@@ -82,8 +82,7 @@
 
     
     <div class="content">
-      <p>Kali ini saya share hasil eksplorasi atas <a href="http://www.chartjs.org/">Chart.js</a>, skrip JavaScript untuk memvisualisasikan data dalam berbagai macam bentuk diagram. Di sini saya menggunakan diagram garis.
-</p>
+      <p>Kali ini saya share hasil eksplorasi atas <a href="http://www.chartjs.org/">Chart.js</a>, skrip JavaScript untuk memvisualisasikan data dalam berbagai macam bentuk diagram. Di sini saya menggunakan diagram garis.</p>
 
 <pre><code class="language-html">&lt;canvas id=&quot;diagram&quot; width=&quot;800&quot; height=&quot;400&quot;&gt;&lt;/canvas&gt;
 
@@ -184,12 +183,16 @@ document.getElementById('chart-legend').innerHTML = diagramBaru.generateLegend()
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-36990012-6', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36990012-6', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

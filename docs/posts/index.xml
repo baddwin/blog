@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Mon, 17 Oct 2016 12:39:06 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jul 2019 23:42:22 +0700</lastBuildDate>
     
 	<atom:link href="http://code.badwi.my.id/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Magento Mengalihkan Duniaku</title>
+      <link>http://code.badwi.my.id/2019/07/magento-mengalihkan-duniaku/</link>
+      <pubDate>Mon, 01 Jul 2019 23:42:22 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/2019/07/magento-mengalihkan-duniaku/</guid>
+      <description>Magento, kali pertama mendengarnya, saya kira dia adalah CMS semacam Wordpress, Drupal, dkk. Makanya saat ditanya berapa lama bisa menyelesaikan project ecommerce di tempat kerja saya sebelumnya, dengan PD-nya saya jawab&amp;hellip; hmm, pokoknya saya pikir bisa cepat.
+Tapi ternyata harapan tak seindah kenyataan. plakk! Tapi tululnya, saya masih mengulanginya lagi saat kali pertama masuk ke tempat kerja berikutnya, yang pake Magento juga.
+Kesalahan utama saya adalah belum kenal betul dengan si doi, tapi sotoy.</description>
+    </item>
     
     <item>
       <title>Permission Folder Laravel</title>
@@ -18,8 +29,7 @@
       <pubDate>Mon, 17 Oct 2016 12:39:06 +0700</pubDate>
       
       <guid>http://code.badwi.my.id/2016/10/permission-folder-laravel/</guid>
-      <description>&lt;p&gt;Posting ini hanya catatan kecil jenis permission direktori project Laravel.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Posting ini hanya catatan kecil jenis permission direktori project Laravel.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -30,9 +40,7 @@
       <guid>http://code.badwi.my.id/2015/10/angular.js-routing/</guid>
       <description>&lt;p&gt;Kembali membahas AngularJs, kali ini maju satu langkah, mari mempelajari routing. Pada dasarnya Angular menangani event perubahan hash pada URL dan mengarahkannya pada &lt;code&gt;ng-view&lt;/code&gt;. ngView ini membutuhkan template berupa file html terpisah yang akan dimuat oleh Angular.&lt;/p&gt;
 
-&lt;p&gt;Berikut adalah potongan kode Javascript.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Berikut adalah potongan kode Javascript.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -41,8 +49,7 @@
       <pubDate>Fri, 24 Jul 2015 13:54:32 +0700</pubDate>
       
       <guid>http://code.badwi.my.id/2015/07/chart.js-menggambar-diagram-dengan-javasript/</guid>
-      <description>&lt;p&gt;Kali ini saya share hasil eksplorasi atas &lt;a href=&#34;http://www.chartjs.org/&#34;&gt;Chart.js&lt;/a&gt;, skrip JavaScript untuk memvisualisasikan data dalam berbagai macam bentuk diagram. Di sini saya menggunakan diagram garis.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Kali ini saya share hasil eksplorasi atas &lt;a href=&#34;http://www.chartjs.org/&#34;&gt;Chart.js&lt;/a&gt;, skrip JavaScript untuk memvisualisasikan data dalam berbagai macam bentuk diagram. Di sini saya menggunakan diagram garis.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -51,8 +58,7 @@
       <pubDate>Thu, 23 Jul 2015 19:51:13 +0700</pubDate>
       
       <guid>http://code.badwi.my.id/2015/07/coding-pertama-angular.js-penyortir-tabel/</guid>
-      <description>&lt;p&gt;Saya mau share hasil koding pertama belajar AngularJs. Berikut &lt;em&gt;snippet&lt;/em&gt; kodenya.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Saya mau share hasil koding pertama belajar AngularJs. Berikut &lt;em&gt;snippet&lt;/em&gt; kodenya.&lt;/p&gt;</description>
     </item>
     
     <item>
