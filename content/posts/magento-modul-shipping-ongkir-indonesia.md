@@ -12,7 +12,7 @@ dari [RajaOngkir](http://rajaongkir.com) yang menyediakan API cek ongkir dan tra
 jasa kurir dan ekspedisi yang ada di Indonesia.
 
 Modul ini adalah project yang saya kerjakan di tempat kerja saya --dulu.
-Kodenya tidak mungkin saya _share_ secara ~~gratis~~ publik.
+Kodenya tidak saya _share_ secara ~~gratis~~ publik.
 Tapi sudah saya _share_ cuplikannya di Github[^2].
 
 Kode modul tersebut merupakan hasil _generate_ dari
