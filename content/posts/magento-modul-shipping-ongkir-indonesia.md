@@ -61,6 +61,11 @@ Cuplikan:<!--more-->
 
 Kode modul tersebut merupakan hasil _generate_ dari
 [sini](https://cedcommerce.com/magento-2-module-creator/shipping-module).
+
+Contoh _live_ di website:
+
+![screenshot ongkir](/img/2019/07/ongkir.png)
+
 Kalau ada yang memerlukan kode yang lebih lengkap,
 menyesuaikan project _e-commerce_ yang Anda bikin,
 silakan boleh hubungi saya. Hehe
