@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="Badwi" name="author">
+<meta property="og:title" content="Modul Shipping Ongkir Indonesia untuk Magento 2 - Ba-dwi Code">
+<meta property="og:url" content="http://code.badwi.my.id/2019/07/modul-shipping-ongkir-indonesia-untuk-magento-2/">
+<meta property="og:description" content="Blog untuk kode">
+<meta property="og:type" content="website" />
+<title>Modul Shipping Ongkir Indonesia untuk Magento 2 | Ba-dwi Code</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel="stylesheet" href="http://code.badwi.my.id//css/style.css">
+<link rel="shortcut icon" href="http://code.badwi.my.id//favicon.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://code.badwi.my.id/"><h1 class="title is-4">Ba-dwi Code</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://instagram.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Modul Shipping Ongkir Indonesia untuk Magento 2</h1>
+    <h2 class="subtitle is-5">July 10, 2019 by Badwi</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/magento">magento</a>
+    
+        <a class="button is-link" href="/tags/e-commerce">e-commerce</a>
+    
+        <a class="button is-link" href="/tags/ongkir">ongkir</a>
+    
+        <a class="button is-link" href="/tags/web">web</a>
+    
+</div>
+
+    
+    <div class="content">
+      <p>Selama mempelajari Magento<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>, saya sudah membuat modul/<em>extension</em>
+ongkir (ongkos kirim) Indonesia untuk Magento 2. Modul ini mengambil data
+dari <a href="http://rajaongkir.com">RajaOngkir</a> yang menyediakan API cek ongkir dan <em>tracking</em>
+jasa kurir dan ekspedisi yang ada di Indonesia,
+termasuk JNE, J&amp;T, Tiki, Pos, SiCepat, dll.
+Dengan modul ongkir ini, website Magento kita dapat menghitung
+ongkir barang berdasarkan kurir yang dipilih.</p>
+
+<p>Modul ini adalah project yang saya kerjakan di tempat kerja saya &ndash;dulu.
+Kodenya tidak saya <em>share</em> secara <del>gratis</del> publik.
+Tapi sudah saya <em>share</em> cuplikannya di Github<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>.</p>
+
+<p>Cuplikan:</p>
+
+<pre><code class="language-php">/**
+     * @param RateRequest $request
+     * @return \Magento\Shipping\Model\Rate\Result|bool
+     */
+    public function collectRates(RateRequest $request)
+    {
+        if (!$this-&gt;getConfigFlag('active')) {
+            return false;
+        }
+        /** @var \Magento\Shipping\Model\Rate\Result $result */
+        $result = $this-&gt;_rateResultFactory-&gt;create();
+        $method = $this-&gt;generateMethods('REG', 10000, 'JNE');
+        $result-&gt;append($method);
+        return $result;
+    }
+    /**
+     * @return array
+     */
+    public function getAllowedMethods()
+    {
+        return [$this-&gt;_code =&gt; $this-&gt;getConfigData('name')];
+    }
+    /**
+     * @return \Magento\Quote\Model\Quote\Address\RateResult\Method
+     */
+    public function generateMethods($service, $price, $courier)
+    {
+        $method = $this-&gt;_rateMethodFactory-&gt;create();
+        $method-&gt;setCarrier($this-&gt;_code);
+        $method-&gt;setCarrierTitle($courier);
+        $method-&gt;setMethod($this-&gt;_code);
+        $method-&gt;setMethodTitle($service);
+        $method-&gt;setPrice($price);
+        $method-&gt;setCost($price);
+        return $method;
+    }
+}
+</code></pre>
+
+<p>Kode modul tersebut merupakan hasil <em>generate</em> dari
+<a href="https://cedcommerce.com/magento-2-module-creator/shipping-module">sini</a>.
+Kalau ada yang memerlukan kode yang lebih lengkap,
+menyesuaikan project <em>e-commerce</em> yang Anda bikin,
+silakan boleh hubungi saya. Hehe</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">selama bekerja
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2"><a href="https://github.com/baddwin/magento2-ongkir">https://github.com/baddwin/magento2-ongkir</a>
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+</ol>
+</div>
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fcode.badwi.my.id%2f2019%2f07%2fmodul-shipping-ongkir-indonesia-untuk-magento-2%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=http%3a%2f%2fcode.badwi.my.id%2f2019%2f07%2fmodul-shipping-ongkir-indonesia-untuk-magento-2%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fcode.badwi.my.id%2f2019%2f07%2fmodul-shipping-ongkir-indonesia-untuk-magento-2%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Modul%20Shipping%20Ongkir%20Indonesia%20untuk%20Magento%202 - http%3a%2f%2fcode.badwi.my.id%2f2019%2f07%2fmodul-shipping-ongkir-indonesia-untuk-magento-2%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=http%3a%2f%2fcode.badwi.my.id%2f2019%2f07%2fmodul-shipping-ongkir-indonesia-untuk-magento-2%2f&title=Modul%20Shipping%20Ongkir%20Indonesia%20untuk%20Magento%202" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'codebadwi';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | <a href="https://github.com/mgjohansen/hucore.git" target="_blank">Hucore theme</a> & <a href="http://gohugo.io" target="_blank">Hugo</a> ♥</p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/dockerfile.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36990012-6', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>

@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Mon, 01 Jul 2019 23:42:22 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jul 2019 00:44:41 +0700</lastBuildDate>
     
 	<atom:link href="http://code.badwi.my.id/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>e-commerce</title>
+      <link>http://code.badwi.my.id/tags/e-commerce/</link>
+      <pubDate>Wed, 10 Jul 2019 00:44:41 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/e-commerce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>magento</title>
+      <link>http://code.badwi.my.id/tags/magento/</link>
+      <pubDate>Wed, 10 Jul 2019 00:44:41 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/magento/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ongkir</title>
+      <link>http://code.badwi.my.id/tags/ongkir/</link>
+      <pubDate>Wed, 10 Jul 2019 00:44:41 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/ongkir/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>http://code.badwi.my.id/tags/web/</link>
+      <pubDate>Wed, 10 Jul 2019 00:44:41 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/web/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>dunia</title>
@@ -22,29 +58,11 @@
     </item>
     
     <item>
-      <title>magento</title>
-      <link>http://code.badwi.my.id/tags/magento/</link>
-      <pubDate>Mon, 01 Jul 2019 23:42:22 +0700</pubDate>
-      
-      <guid>http://code.badwi.my.id/tags/magento/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>php</title>
       <link>http://code.badwi.my.id/tags/php/</link>
       <pubDate>Mon, 01 Jul 2019 23:42:22 +0700</pubDate>
       
       <guid>http://code.badwi.my.id/tags/php/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web</title>
-      <link>http://code.badwi.my.id/tags/web/</link>
-      <pubDate>Mon, 01 Jul 2019 23:42:22 +0700</pubDate>
-      
-      <guid>http://code.badwi.my.id/tags/web/</guid>
       <description></description>
     </item>
     

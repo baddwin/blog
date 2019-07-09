@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>web on Ba-dwi Code</title>
-    <link>http://code.badwi.my.id/tags/web/</link>
-    <description>Recent content in web on Ba-dwi Code</description>
+    <title>e-commerce on Ba-dwi Code</title>
+    <link>http://code.badwi.my.id/tags/e-commerce/</link>
+    <description>Recent content in e-commerce on Ba-dwi Code</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
     <lastBuildDate>Wed, 10 Jul 2019 00:44:41 +0700</lastBuildDate>
     
-	<atom:link href="http://code.badwi.my.id/tags/web/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://code.badwi.my.id/tags/e-commerce/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -31,17 +31,6 @@ Kodenya tidak saya &lt;em&gt;share&lt;/em&gt; secara &lt;del&gt;gratis&lt;/del&g
 Tapi sudah saya &lt;em&gt;share&lt;/em&gt; cuplikannya di Github&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;Cuplikan:&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Magento Mengalihkan Duniaku</title>
-      <link>http://code.badwi.my.id/2019/07/magento-mengalihkan-duniaku/</link>
-      <pubDate>Mon, 01 Jul 2019 23:42:22 +0700</pubDate>
-      
-      <guid>http://code.badwi.my.id/2019/07/magento-mengalihkan-duniaku/</guid>
-      <description>Magento, kali pertama mendengarnya, saya kira dia adalah CMS semacam Wordpress, Drupal, dkk. Makanya saat ditanya berapa lama bisa menyelesaikan project ecommerce di tempat kerja saya sebelumnya, dengan PD-nya saya jawab&amp;hellip; hmm, pokoknya saya pikir bisa cepat.
-Tapi ternyata harapan tak seindah kenyataan. plakk! Tapi tululnya, saya masih mengulanginya lagi saat kali pertama masuk ke tempat kerja berikutnya, yang pake Magento juga.
-Kesalahan utama saya adalah belum kenal betul dengan si doi, tapi sotoy.</description>
     </item>
     
   </channel>
