@@ -15,6 +15,46 @@ Modul ini adalah project yang saya kerjakan di tempat kerja saya --dulu.
 Kodenya tidak saya _share_ secara ~~gratis~~ publik.
 Tapi sudah saya _share_ cuplikannya di Github[^2].
 
+```php
+/**
+     * @param RateRequest $request
+     * @return \Magento\Shipping\Model\Rate\Result|bool
+     */
+    public function collectRates(RateRequest $request)
+    {
+        if (!$this->getConfigFlag('active')) {
+            return false;
+        }
+        /** @var \Magento\Shipping\Model\Rate\Result $result */
+        $result = $this->_rateResultFactory->create();
+        $method = $this->generateMethods('REG', 10000, 'JNE');
+        $result->append($method);
+        return $result;
+    }
+    /**
+     * @return array
+     */
+    public function getAllowedMethods()
+    {
+        return [$this->_code => $this->getConfigData('name')];
+    }
+    /**
+     * @return \Magento\Quote\Model\Quote\Address\RateResult\Method
+     */
+    public function generateMethods($service, $price, $courier)
+    {
+        $method = $this->_rateMethodFactory->create();
+        $method->setCarrier($this->_code);
+        $method->setCarrierTitle($courier);
+        $method->setMethod($this->_code);
+        $method->setMethodTitle($service);
+        $method->setPrice($price);
+        $method->setCost($price);
+        return $method;
+    }
+}
+```
+
 Kode modul tersebut merupakan hasil _generate_ dari
 [sini](https://cedcommerce.com/magento-2-module-creator/shipping-module).
 Kalau ada yang memerlukan kode yang lebih lengkap,
