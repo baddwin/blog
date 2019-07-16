@@ -11,6 +11,7 @@ tags: ["magento", "php", "development", "nginx", "fedora"]
 Tulisan ini memperlihatkan langkah-langkah dalam men-setup
 Magento 2.3.2 dengan nginx di Fedora 30 ke atas.
 Maka prasyarat yang harus dipenuhi antara lain:
+
 1. OS Fedora 30 atau lebih baru
 2. nginx
 3. PHP 7.2
