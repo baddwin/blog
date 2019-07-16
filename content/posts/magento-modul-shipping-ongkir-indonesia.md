@@ -6,7 +6,7 @@ description: "Modul ini mengambil data dari RajaOngkir yang menyediakan API cek 
 tags: ["magento", "e-commerce", "ongkir", "web"]
 ---
 
-Selama mempelajari Magento[^1], saya sudah membuat modul/_extension_
+Selama mempelajari[^1] Magento, saya sudah membuat modul/_extension_
 ongkir (ongkos kirim) Indonesia untuk Magento 2. Modul ini mengambil data
 dari [RajaOngkir](http://rajaongkir.com) yang menyediakan API cek ongkir dan _tracking_
 jasa kurir dan ekspedisi yang ada di Indonesia,
@@ -14,9 +14,9 @@ termasuk JNE, J&T, Tiki, Pos, SiCepat, dll.
 Dengan modul ongkir ini, website Magento kita dapat menghitung
 ongkir barang berdasarkan kurir yang dipilih.
 
-Modul ini adalah project yang saya kerjakan di tempat kerja saya --dulu.
-Kodenya tidak saya _share_ secara ~~gratis~~ publik.
-Tapi sudah saya _share_ cuplikannya di Github[^2].
+Modul ini mirip dengan kode awal project yang saya kerjakan di tempat kerja saya --dulu.
+Kodenya tidak bisa saya _share_ secara ~~gratis~~ publik.
+Tapi cuplikan kodenya sudah saya _share_ di Github[^2].
 
 Cuplikan:<!--more-->
 ```php
@@ -66,9 +66,9 @@ Contoh _live_ di website:
 
 ![screenshot ongkir](/img/2019/07/ongkir.png)
 
-Kalau ada yang memerlukan kode yang lebih lengkap,
-menyesuaikan project _e-commerce_ yang Anda bikin,
-silakan boleh hubungi saya. Hehe
+Untuk mendapatkan kode yang lebih fungsional dan
+disesuaikan dengan project _e-commerce_ yang Anda bikin,
+silakan hubungi saya. (link akun medsos ada di atas blog) :)
 
 [^1]: selama bekerja
 [^2]: https://github.com/baddwin/magento2-ongkir
