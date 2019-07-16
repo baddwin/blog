@@ -7,10 +7,38 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Wed, 10 Jul 2019 00:44:41 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jul 2019 21:15:52 +0700</lastBuildDate>
     
 	<atom:link href="http://code.badwi.my.id/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setup Magento Local Development with nginx</title>
+      <link>http://code.badwi.my.id/2019/07/setup-magento-local-development-with-nginx/</link>
+      <pubDate>Tue, 16 Jul 2019 21:15:52 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/2019/07/setup-magento-local-development-with-nginx/</guid>
+      <description>&lt;h2 id=&#34;prasyarat&#34;&gt;Prasyarat&lt;/h2&gt;
+
+&lt;p&gt;Tulisan ini memperlihatkan langkah-langkah dalam men-setup
+Magento 2.3.2 dengan nginx di Fedora 30 ke atas.
+Maka prasyarat yang harus dipenuhi antara lain:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;OS Fedora 30 atau lebih baru&lt;/li&gt;
+&lt;li&gt;nginx&lt;/li&gt;
+&lt;li&gt;PHP 7.2&lt;/li&gt;
+&lt;li&gt;MySQL (MariaDB)&lt;/li&gt;
+&lt;li&gt;tarball Magento 2.3.2&lt;/li&gt;
+&lt;li&gt;composer&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;install-software-di-fedora&#34;&gt;Install &lt;em&gt;software&lt;/em&gt; di Fedora&lt;/h3&gt;
+
+&lt;p&gt;PHP 7.2 tidak tersedia di repo utama Fedora mulai versi 28.
+Maka, untuk Fedora 30, perlu menambahkan repo dari Remi
+Ikuti panduan dari web Remi di&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Modul Shipping Ongkir Indonesia untuk Magento 2</title>
@@ -18,7 +46,7 @@
       <pubDate>Wed, 10 Jul 2019 00:44:41 +0700</pubDate>
       
       <guid>http://code.badwi.my.id/2019/07/modul-shipping-ongkir-indonesia-untuk-magento-2/</guid>
-      <description>&lt;p&gt;Selama mempelajari Magento&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, saya sudah membuat modul/&lt;em&gt;extension&lt;/em&gt;
+      <description>&lt;p&gt;Selama mempelajari&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Magento, saya sudah membuat modul/&lt;em&gt;extension&lt;/em&gt;
 ongkir (ongkos kirim) Indonesia untuk Magento 2. Modul ini mengambil data
 dari &lt;a href=&#34;http://rajaongkir.com&#34;&gt;RajaOngkir&lt;/a&gt; yang menyediakan API cek ongkir dan &lt;em&gt;tracking&lt;/em&gt;
 jasa kurir dan ekspedisi yang ada di Indonesia,
@@ -26,9 +54,9 @@ termasuk JNE, J&amp;amp;T, Tiki, Pos, SiCepat, dll.
 Dengan modul ongkir ini, website Magento kita dapat menghitung
 ongkir barang berdasarkan kurir yang dipilih.&lt;/p&gt;
 
-&lt;p&gt;Modul ini adalah project yang saya kerjakan di tempat kerja saya &amp;ndash;dulu.
-Kodenya tidak saya &lt;em&gt;share&lt;/em&gt; secara &lt;del&gt;gratis&lt;/del&gt; publik.
-Tapi sudah saya &lt;em&gt;share&lt;/em&gt; cuplikannya di Github&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Modul ini mirip dengan kode awal project yang saya kerjakan di tempat kerja saya &amp;ndash;dulu.
+Kodenya tidak bisa saya &lt;em&gt;share&lt;/em&gt; secara &lt;del&gt;gratis&lt;/del&gt; publik.
+Tapi cuplikan kodenya sudah saya &lt;em&gt;share&lt;/em&gt; di Github&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;Cuplikan:&lt;/p&gt;</description>
     </item>

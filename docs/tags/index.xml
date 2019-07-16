@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Wed, 10 Jul 2019 00:44:41 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jul 2019 21:15:52 +0700</lastBuildDate>
     
 	<atom:link href="http://code.badwi.my.id/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>development</title>
+      <link>http://code.badwi.my.id/tags/development/</link>
+      <pubDate>Tue, 16 Jul 2019 21:15:52 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fedora</title>
+      <link>http://code.badwi.my.id/tags/fedora/</link>
+      <pubDate>Tue, 16 Jul 2019 21:15:52 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/fedora/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>magento</title>
+      <link>http://code.badwi.my.id/tags/magento/</link>
+      <pubDate>Tue, 16 Jul 2019 21:15:52 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/magento/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>http://code.badwi.my.id/tags/nginx/</link>
+      <pubDate>Tue, 16 Jul 2019 21:15:52 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php</title>
+      <link>http://code.badwi.my.id/tags/php/</link>
+      <pubDate>Tue, 16 Jul 2019 21:15:52 +0700</pubDate>
+      
+      <guid>http://code.badwi.my.id/tags/php/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>e-commerce</title>
@@ -18,15 +63,6 @@
       <pubDate>Wed, 10 Jul 2019 00:44:41 +0700</pubDate>
       
       <guid>http://code.badwi.my.id/tags/e-commerce/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>magento</title>
-      <link>http://code.badwi.my.id/tags/magento/</link>
-      <pubDate>Wed, 10 Jul 2019 00:44:41 +0700</pubDate>
-      
-      <guid>http://code.badwi.my.id/tags/magento/</guid>
       <description></description>
     </item>
     
@@ -54,15 +90,6 @@
       <pubDate>Mon, 01 Jul 2019 23:42:22 +0700</pubDate>
       
       <guid>http://code.badwi.my.id/tags/dunia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>php</title>
-      <link>http://code.badwi.my.id/tags/php/</link>
-      <pubDate>Mon, 01 Jul 2019 23:42:22 +0700</pubDate>
-      
-      <guid>http://code.badwi.my.id/tags/php/</guid>
       <description></description>
     </item>
     

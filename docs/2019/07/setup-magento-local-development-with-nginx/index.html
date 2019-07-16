@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="Badwi" name="author">
+<meta property="og:title" content="Setup Magento Local Development with nginx - Ba-dwi Code">
+<meta property="og:url" content="http://code.badwi.my.id/2019/07/setup-magento-local-development-with-nginx/">
+<meta property="og:description" content="Blog untuk kode">
+<meta property="og:type" content="website" />
+<title>Setup Magento Local Development with nginx | Ba-dwi Code</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel="stylesheet" href="http://code.badwi.my.id//css/style.css">
+<link rel="shortcut icon" href="http://code.badwi.my.id//favicon.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://code.badwi.my.id/"><h1 class="title is-4">Ba-dwi Code</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://instagram.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Setup Magento Local Development with nginx</h1>
+    <h2 class="subtitle is-5">July 16, 2019 by Badwi</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/magento">magento</a>
+    
+        <a class="button is-link" href="/tags/php">php</a>
+    
+        <a class="button is-link" href="/tags/development">development</a>
+    
+        <a class="button is-link" href="/tags/nginx">nginx</a>
+    
+        <a class="button is-link" href="/tags/fedora">fedora</a>
+    
+</div>
+
+    
+    <div class="content">
+      <h2 id="prasyarat">Prasyarat</h2>
+
+<p>Tulisan ini memperlihatkan langkah-langkah dalam men-setup
+Magento 2.3.2 dengan nginx di Fedora 30 ke atas.
+Maka prasyarat yang harus dipenuhi antara lain:</p>
+
+<ol>
+<li>OS Fedora 30 atau lebih baru</li>
+<li>nginx</li>
+<li>PHP 7.2</li>
+<li>MySQL (MariaDB)</li>
+<li>tarball Magento 2.3.2</li>
+<li>composer</li>
+</ol>
+
+<h3 id="install-software-di-fedora">Install <em>software</em> di Fedora</h3>
+
+<p>PHP 7.2 tidak tersedia di repo utama Fedora mulai versi 28.
+Maka, untuk Fedora 30, perlu menambahkan repo dari Remi
+Ikuti panduan dari web Remi di</p>
+
+<p><a href="https://rpms.remirepo.net/wizard/">https://rpms.remirepo.net/wizard/</a>. Kemudian, install paket-paket yang dibutuhkan dengan DNF.</p>
+
+<pre><code>nginx mariadb-server \
+php72-php-fpm php72-php-pdo php72-php-mysqlnd php72-php-opcache php72-php-xml \
+php72-php-sodium php72-php-gd php72-php-devel php72-php-mysql php72-php-intl php72-php-mbstring \
+php72-php-bcmath php72-php-json php72-php-iconv php72-php-soap php72-php-zip php72-php-cli
+</code></pre>
+
+<p>Unduh juga composer dari websitenya <a href="https://getcomposer.org/download/">https://getcomposer.org/download/</a>.
+Tambahkan binary composer ke path Fedora, boleh path user wise, atau system.</p>
+
+<pre><code>export /path/to/composer/bin:$PATH
+</code></pre>
+
+<h3 id="setup-nginx">Setup nginx</h3>
+
+<p>Magento sudah menyertakan konfigurasi untuk nginx virtualhost, letaknya di file <code>nginx.conf.sample</code>.
+Jadi, file tersebut bisa di-include ke conf custom nginx, misalnya di <code>/etc/nginx/conf.d/magento.conf</code>. Isinya seperti ini:</p>
+
+<pre><code>upstream fastcgi_backend {
+server unix:/var/opt/remi/php72/run/php-fpm/www.sock;
+}
+ 
+server {
+listen 80;
+listen [::]:80;
+server_name magento.test; # menyesuaikan
+set $MAGE_ROOT /app/sites/magento; # menyesuaikan
+include /app/sites/magento/nginx.conf.sample;
+}
+</code></pre>
+
+<p>Tambahkan entri domain custom (<em>magento.test</em> dalam cuplikan kode di atas) ke file <code>/etc/hosts</code>.
+Tes dengan <code>sudo nginx -t</code>, jika ok, restart systemd nginx.</p>
+
+<h3 id="permission">Permission</h3>
+
+<p>Default user worker nginx adalah &lsquo;nginx&rsquo;, dan PHP-FPM adalah &lsquo;apache&rsquo;.
+Demi konsistensi, bikin saja user baru &lsquo;www-data&rsquo;.
+Di <code>/etc/nginx/nginx.conf</code> ubah user menjadi &lsquo;www-data&rsquo;.
+Juga di <code>/etc/opt/remi/php72/php-fpm.d/www.conf</code>, ubah <em>user, group, listen-user</em>
+dan <em>listen-group</em> ke &lsquo;www-data&rsquo;.
+Tambahkan user existing ke grup &lsquo;www-data&rsquo; juga.</p>
+
+<pre><code>useradd -Mr www-data &amp;&amp; usermod -aG &lt;user&gt; www-data
+</code></pre>
+
+<p>Selain permission folder harus bisa <em>read-write</em>, Fedora juga perlu mengeset
+permission SELinux.</p>
+
+<pre><code>semanage permissive -a httpd_t
+chcon -R -t httpd_sys_content_t /sites/app/magento
+chcon -R -t httpd_sys_rw_content_t /sites/app/magento
+</code></pre>
+
+<h3 id="unduh-tarball-magento-2-3-2">Unduh tarball Magento 2.3.2</h3>
+
+<p>Unduh tarball Magento terbaru dari laman resminya di <a href="https://magento.com/tech-resources/download">https://magento.com/tech-resources/download</a>.
+Sebelum versi ini, Magento tidak menyediakan tarball di laman unduhan resmi mereka.</p>
+
+<p>Ekstrak tarball dan rename foldernya menyesuaikan konfigurasi nginx tadi.
+Sebelum mengakses web installer, kita perlu
+menyesuaikan <em>permission</em> file dan folder tertentu di Magento.</p>
+
+<pre><code>find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+chown -R :www-data .
+</code></pre>
+
+<p>Juga perlu menghapus cache instalasi sebelum instalasi.</p>
+
+<pre><code>php72 bin/magento setup:uninstall
+</code></pre>
+
+<h2 id="instalasi-magento">Instalasi Magento</h2>
+
+<p>Setelah setup server lokal selesai, dilanjutkan dengan
+instalasi Magento. Akses base-url yang sudah ditentukan pada konfigurasi nginx.</p>
+
+<p><img src="/img/2019/07/magento-install-1.png" alt="magento check requirements to install" /></p>
+
+<p><img src="/img/2019/07/magento-install-2.png" alt="magento database config" /></p>
+
+<p><img src="/img/2019/07/magento-install-3.png" alt="magento web config" /></p>
+
+<p><img src="/img/2019/07/magento-install-4.png" alt="magento customization" /></p>
+
+<p><img src="/img/2019/07/magento-install-5.png" alt="magento admin account" /></p>
+
+<p><img src="/img/2019/07/magento-install-6.png" alt="magento installation progress" /></p>
+
+<p><img src="/img/2019/07/magento-install-7.png" alt="magento success install" /></p>
+
+<p><img src="/img/2019/07/magento-install-8.png" alt="magento login admin" /></p>
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fcode.badwi.my.id%2f2019%2f07%2fsetup-magento-local-development-with-nginx%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=http%3a%2f%2fcode.badwi.my.id%2f2019%2f07%2fsetup-magento-local-development-with-nginx%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fcode.badwi.my.id%2f2019%2f07%2fsetup-magento-local-development-with-nginx%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Setup%20Magento%20Local%20Development%20with%20nginx - http%3a%2f%2fcode.badwi.my.id%2f2019%2f07%2fsetup-magento-local-development-with-nginx%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=http%3a%2f%2fcode.badwi.my.id%2f2019%2f07%2fsetup-magento-local-development-with-nginx%2f&title=Setup%20Magento%20Local%20Development%20with%20nginx" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'codebadwi';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | <a href="https://github.com/mgjohansen/hucore.git" target="_blank">Hucore theme</a> & <a href="http://gohugo.io" target="_blank">Hugo</a> ♥</p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/dockerfile.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36990012-6', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
