@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>fedora on Ba-dwi Code</title>
-    <link>http://code.badwi.my.id/tags/fedora/</link>
+    <link>https://code.badwi.my.id/tags/fedora/</link>
     <description>Recent content in fedora on Ba-dwi Code</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
     <lastBuildDate>Tue, 16 Jul 2019 21:15:52 +0700</lastBuildDate>
     
-	<atom:link href="http://code.badwi.my.id/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://code.badwi.my.id/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Setup Magento Local Development with nginx</title>
-      <link>http://code.badwi.my.id/2019/07/setup-magento-local-development-with-nginx/</link>
+      <link>https://code.badwi.my.id/2019/07/setup-magento-local-development-with-nginx/</link>
       <pubDate>Tue, 16 Jul 2019 21:15:52 +0700</pubDate>
       
-      <guid>http://code.badwi.my.id/2019/07/setup-magento-local-development-with-nginx/</guid>
+      <guid>https://code.badwi.my.id/2019/07/setup-magento-local-development-with-nginx/</guid>
       <description>&lt;h2 id=&#34;prasyarat&#34;&gt;Prasyarat&lt;/h2&gt;
 
 &lt;p&gt;Tulisan ini memperlihatkan langkah-langkah dalam men-setup
