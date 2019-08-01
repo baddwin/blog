@@ -7,10 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Tue, 16 Jul 2019 21:15:52 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 02 Aug 2019 00:03:13 +0700</lastBuildDate>
     
 	<atom:link href="https://code.badwi.my.id/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Routing di Magento</title>
+      <link>https://code.badwi.my.id/2019/08/routing-di-magento/</link>
+      <pubDate>Fri, 02 Aug 2019 00:03:13 +0700</pubDate>
+      
+      <guid>https://code.badwi.my.id/2019/08/routing-di-magento/</guid>
+      <description>&lt;p&gt;Routing di Magento ditentukan per-modul. Ada beberapa jenis &lt;em&gt;routing&lt;/em&gt;,
+antara lain &lt;em&gt;urlrewrite, standard, cms, dan default&lt;/em&gt;.
+Routing juga dibatasi oleh area (soal area akan dibahas pada tulisan berikutnya).
+Area yang disediakan oleh Magento secara default adalah &lt;code&gt;adminhtml&lt;/code&gt; dan &lt;code&gt;frontend&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Tulisan ini akan membahas standard routing di area frontend.
+Routing jenis ini bisa dibuat dengan layout xml, atau dengan aturan&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Setup Magento Local Development with nginx</title>
