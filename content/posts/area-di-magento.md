@@ -1,7 +1,7 @@
 ---
 title: "Area di Magento"
 date: 2019-08-02T13:35:23+07:00
-draft: true
+draft: false
 description: "Memahami jenis-jenis area dan penggunaannya"
 tags: ["magento", "php"]
 ---
@@ -43,7 +43,13 @@ Di mana path `blog` ditentukan di tag route dengan key _frontName_.
 Perbedaannya dengan route frontend adalah, di area adminhtml selalu didahului dengan path `/admin`.
 
 Untuk controllernya, letak file controller di dalam folder `Adminhtml`.
-Selebihnya mengikuti format struktur yang telah ditentukan seperti pada standard route.
+Selebihnya mengikuti format struktur yang telah ditentukan seperti pada standard route. Maka struktur controller seperti ini:
+```
+├── Adminhtml                                                                   
+│   └── Blog                                                                                                                        
+│       └── Post                                                            
+│           └── New.php                                                        
+```
 
 Referensi resmi dari [halaman dokumentasi Magento][ref2].
 
