@@ -20,8 +20,8 @@ Nama-nama area yang disediakan Magento antara lain:
 2. _frontend_: halaman depan consumer facing
 3. _base_: fallback area jika tidak ada kode di adminhtml atau frontend
 4. _crontab_: khusus untuk cron job proses
-5. _webapi_rest_: menangani proses yang berhubungan dengan request REST API
-6. _webapi_soap_: menangani proses yang berhubungan dengan request SOAP API
+5. _webapi\_rest_: menangani proses yang berhubungan dengan request REST API
+6. _webapi\_soap_: menangani proses yang berhubungan dengan request SOAP API
 
 Contoh use case area ini adalah dalam routing.
 Untuk routing frontend, sudah dibahas pada [tulisan sebelumnya][ref1].
