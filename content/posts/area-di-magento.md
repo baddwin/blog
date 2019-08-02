@@ -15,6 +15,7 @@ _adminhtml_ merupakan<!--more--> area kode yang mengontrol proses yang terjadi p
 Sedangkan _frontend_ adalah area _store front_ untuk _consumer facing_, seperti view product, proses checkout, registrasi user, dll.
 
 Nama-nama area yang disediakan Magento antara lain:
+
 1. adminhtml: area untuk halaman admin
 2. frontend: halaman depan consumer facing
 3. base: fallback area jika tidak ada kode di adminhtml atau frontend
@@ -23,12 +24,11 @@ Nama-nama area yang disediakan Magento antara lain:
 6. webapi_soap: menangani proses yang berhubungan dengan request SOAP API
 
 Contoh use case area ini adalah dalam routing.
-Untuk routing frontend, sudah dibahas pada [tulisan sebelumnya][1].
+Untuk routing frontend, sudah dibahas pada [tulisan sebelumnya][ref1].
 
-Referensi resmi dari [halaman dokumentasi Magento][2].
+Referensi resmi dari [halaman dokumentasi Magento][ref2].
 
 [^1]: kata guru bahasa Indonesia dulu, akhiran _-mum_ lebih baku daripada _-mal_
 
-[1]: {{< ref "routing-di-magento" >}}
-
-[2]: https://devdocs.magento.com/guides/v2.3/architecture/archi_perspectives/components/modules/mod_and_areas.html
+[ref1]: {{< ref "routing-di-magento" >}}
+[ref2]: https://devdocs.magento.com/guides/v2.3/architecture/archi_perspectives/components/modules/mod_and_areas.html
