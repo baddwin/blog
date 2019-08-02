@@ -23,10 +23,12 @@ Nama-nama area yang disediakan Magento antara lain:
 6. webapi_soap: menangani proses yang berhubungan dengan request SOAP API
 
 Contoh use case area ini adalah dalam routing.
-Untuk routing frontend, sudah dibahas pada {{< ref "routing-di-magento" >}}.
+Untuk routing frontend, sudah dibahas pada [tulisan sebelumnya][1].
 
 Referensi resmi dari [halaman dokumentasi Magento][2].
 
 [^1]: kata guru bahasa Indonesia dulu, akhiran _-mum_ lebih baku daripada _-mal_
+
+[1]: {{< ref "routing-di-magento" >}}
 
 [2]: https://devdocs.magento.com/guides/v2.3/architecture/archi_perspectives/components/modules/mod_and_areas.html
