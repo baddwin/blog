@@ -16,15 +16,34 @@ Sedangkan _frontend_ adalah area _store front_ untuk _consumer facing_, seperti 
 
 Nama-nama area yang disediakan Magento antara lain:
 
-1. adminhtml: area untuk halaman admin
-2. frontend: halaman depan consumer facing
-3. base: fallback area jika tidak ada kode di adminhtml atau frontend
-4. crontab: khusus untuk cron job proses
-5. webapi_rest: menangani proses yang berhubungan dengan request REST API
-6. webapi_soap: menangani proses yang berhubungan dengan request SOAP API
+1. _adminhtml_: area untuk halaman admin
+2. _frontend_: halaman depan consumer facing
+3. _base_: fallback area jika tidak ada kode di adminhtml atau frontend
+4. _crontab_: khusus untuk cron job proses
+5. _webapi_rest_: menangani proses yang berhubungan dengan request REST API
+6. _webapi_soap_: menangani proses yang berhubungan dengan request SOAP API
 
 Contoh use case area ini adalah dalam routing.
 Untuk routing frontend, sudah dibahas pada [tulisan sebelumnya][ref1].
+Sedangkan untuk routing adminhtml, misalnya akan membuat page di admin
+dengan url `/admin/blog/post/new`.
+Maka routes.xml berisi:
+
+```
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="adminhtml">
+        <route id="blog" frontName="blog">
+            <module name="Vendor_NamaModul"/>
+        </route>
+    </router>
+</config>
+```
+Di mana path `blog` ditentukan di tag route dengan key _frontName_.
+Perbedaannya dengan route frontend adalah, di area adminhtml selalu didahului dengan path `/admin`.
+
+Untuk controllernya, letak file controller di dalam folder `Adminhtml`.
+Selebihnya mengikuti format struktur yang telah ditentukan seperti pada standard route.
 
 Referensi resmi dari [halaman dokumentasi Magento][ref2].
 
