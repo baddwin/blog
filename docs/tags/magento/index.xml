@@ -7,10 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Fri, 02 Aug 2019 00:03:13 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 02 Aug 2019 13:35:23 +0700</lastBuildDate>
     
 	<atom:link href="https://code.badwi.my.id/tags/magento/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Area di Magento</title>
+      <link>https://code.badwi.my.id/2019/08/area-di-magento/</link>
+      <pubDate>Fri, 02 Aug 2019 13:35:23 +0700</pubDate>
+      
+      <guid>https://code.badwi.my.id/2019/08/area-di-magento/</guid>
+      <description>&lt;p&gt;Area di Magento merupakan sebuah komponen logis yang mengelola kode,
+termasuk struktur sistem file, demi pemrosesan &lt;em&gt;request&lt;/em&gt; yang optimum&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.
+Pengelompokan area ini bermanfaat dalam menjaga kerapian struktur kode.&lt;/p&gt;
+
+&lt;p&gt;Area paling umum di Magento adalah &lt;code&gt;adminhtml&lt;/code&gt; dan &lt;code&gt;frontend&lt;/code&gt;.
+&lt;em&gt;adminhtml&lt;/em&gt; merupakan&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Routing di Magento</title>

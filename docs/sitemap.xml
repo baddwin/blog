@@ -3,38 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://code.badwi.my.id/2019/08/area-di-magento/</loc>
+    <lastmod>2019-08-02T13:35:23+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://code.badwi.my.id/</loc>
-    <lastmod>2019-08-02T00:03:13+07:00</lastmod>
+    <lastmod>2019-08-02T13:35:23+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://code.badwi.my.id/posts/</loc>
-    <lastmod>2019-08-02T00:03:13+07:00</lastmod>
+    <lastmod>2019-08-02T13:35:23+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://code.badwi.my.id/tags/</loc>
+    <lastmod>2019-08-02T13:35:23+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://code.badwi.my.id/tags/magento/</loc>
+    <lastmod>2019-08-02T13:35:23+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://code.badwi.my.id/tags/php/</loc>
+    <lastmod>2019-08-02T13:35:23+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://code.badwi.my.id/2019/08/routing-di-magento/</loc>
     <lastmod>2019-08-02T00:03:13+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://code.badwi.my.id/tags/</loc>
-    <lastmod>2019-08-02T00:03:13+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://code.badwi.my.id/tags/magento/</loc>
-    <lastmod>2019-08-02T00:03:13+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://code.badwi.my.id/tags/php/</loc>
-    <lastmod>2019-08-02T00:03:13+07:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
