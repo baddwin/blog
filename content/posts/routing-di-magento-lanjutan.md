@@ -46,7 +46,7 @@ Selanjutnya perlu membuat layout xml di `/Vendor/NamaModul/etc/frontend/layout/b
 
 Kemudian, buat _block_ dan template untuk menentukan template yang dipakai oleh halaman.
 Seperti ditetapkan di layout xml di atas, maka dibuat 2 file baru:
-```
+```php
 // Block/Blog/Index.php
 
 ```
@@ -56,13 +56,99 @@ Seperti ditetapkan di layout xml di atas, maka dibuat 2 file baru:
 
 ### JSON result
 
+```php
+public function __construct(
+    //...
+    Magento\Framework\Controller\Result\JsonFactory $jsonResultFactory,
+    //...        
+)
+{
+    $this->jsonResultFactory = $jsonResultFactory;
+}
+```
+
+```php
+public function execute()
+{
+    $result = $this->jsonResultFactory();
+
+    $o = new stdClass;              
+    $o->foo = 'bar';
+    $result->setData($o);
+    return $result;              
+}
+```
+
 ### RAW result
+
+```php
+public function __construct(
+    //...
+    Magento\Framework\Controller\Result $rawResultFactory ,
+    //...        
+)
+{
+    $this->rawResultFactory = $rawResultFactory;
+}
+```
+```php
+public function execute(
+)
+{
+    //...
+    $result = $this->rawResultFactory->create();
+    $result->setHeader('Content-Type', 'text/xml');
+    $result->setContents('<root><science></science></root>);
+    return $result;
+}
+```
 
 ### Layout result
 
 ### Redirect result
 
+```php
+public function __construct(
+    //...
+    Magento\Framework\Controller\Result\RedirectFactory $resultRedirectFactory
+    //...        
+)
+{
+    $this->resultRedirectFactory = $resultRedirectFactory;
+}
+```
+```php
+public function execute()
+{
+    $result = $this->resultRedirectFactory->create();
+    $result->setPath('*/*/index');
+    return $result;
+}
+```
+
 ### Forward result
 
+```php
+public function __construct(
+    //...
+    Magento\Framework\Controller\Result\ForwardFactory $resultForwardFactory
+    //...        
+)
+{
+    $this->resultForwardFactory = $resultForwardFactory;
+}
+```
+```php
+public function execute()
+{
+    $result = $this->resultForwardFactory->create();
+    $result->forward('noroute');    
+    return $result;
+}
+```
+
+Inspirasi dari [Alan Storm][ref2].
 
 [ref1]: {{< ref "routing-di-magento" >}}
+
+[ref2]: https://alanstorm.com/magento-2-controller-result-objects/
