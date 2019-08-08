@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="Badwi" name="author">
+<meta property="og:title" content="Routing di Magento (Lanjutan) - Ba-dwi Code">
+<meta property="og:url" content="https://code.badwi.my.id/2019/08/routing-di-magento-lanjutan/">
+<meta property="og:description" content="Blog untuk kode">
+<meta property="og:type" content="website" />
+<title>Routing di Magento (Lanjutan) | Ba-dwi Code</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel="stylesheet" href="https://code.badwi.my.id//css/style.css">
+<link rel="shortcut icon" href="https://code.badwi.my.id//favicon.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://code.badwi.my.id/"><h1 class="title is-4">Ba-dwi Code</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.linkedin.com/in/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.instagram.com/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.last.fm/user/baddwin" target="_blank">
+            <span class="icon">
+              <i class="fa fa-lastfm"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Routing di Magento (Lanjutan)</h1>
+    <h2 class="subtitle is-5">August 7, 2019 by Badwi</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/magento">magento</a>
+    
+        <a class="button is-link" href="/tags/php">php</a>
+    
+</div>
+
+    
+    <div class="content">
+      <p>Seperti janji saya di <a href="https://code.badwi.my.id/2019/08/routing-di-magento/">tulisan tentang routing</a> sebelumnya, kali ini adalah lanjutannya.
+Routing di Magento di-<em>handle</em> oleh satu <em>controller</em> untuk tiap <em>route</em>, di method <code>execute</code>.
+<em>Return</em> dari method itu antara lain: <em>page, json, raw, layout, redirect dan forward</em>.</p>
+
+<h3 id="page-result">Page result</h3>
+
+<p>Route ini me-<em>return</em> halaman HTML.
+Class yang digunakan adalah <code>\Magento\Framework\View\Result\Page</code>.</p>
+
+<p>Contoh kode:</p>
+
+<pre><code>&lt;?php
+namespace Modul\NamaVendor\Controller\Index;
+
+class Index extends \Magento\Framework\App\Action\Action
+{
+    protected $_pageFactory;
+    public function __construct(
+        \Magento\Framework\App\Action\Context $context,
+        \Magento\Framework\View\Result\PageFactory $pageFactory) {
+        $this-&gt;_pageFactory = $pageFactory;
+        return parent::__construct($context);
+    }
+
+    public function execute()
+    {
+        return $this-&gt;_pageFactory-&gt;create();
+    }
+}
+</code></pre>
+
+<p>Controller tersebut akan membuat halaman di <code>/blog/index/index</code>
+atau cukup disingkat dengan <code>/blog</code>.
+Tentunya frontName &lsquo;blog&rsquo; sudah ditentukan di <code>etc/frontend/routes.xml</code>,
+seperti sudah dijelaskan pada <a href="https://code.badwi.my.id/2019/08/routing-di-magento/">tulisan sebelumnya</a>.</p>
+
+<p>Selanjutnya perlu membuat layout xml di <code>/Vendor/NamaModul/etc/frontend/layout/blog_index_index.xml</code>.</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;layout xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:View/Layout/etc/layout_generic.xsd&quot;&gt;
+    &lt;container name=&quot;root&quot;&gt;
+        &lt;block class=&quot;Vendor\NamaModul\Block\Ajax\Brand&quot; name=&quot;order_brand&quot; template=&quot;Vendor_NamaModul::blog/index.phtml&quot; cacheable=&quot;false&quot;/&gt;
+    &lt;/container&gt;
+&lt;/layout&gt;
+</code></pre>
+
+<p>Kemudian, buat <em>block</em><sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> dan template untuk menentukan template yang dipakai oleh halaman.
+Seperti ditetapkan di layout xml di atas, maka dibuat 2 file baru:</p>
+
+<pre><code class="language-php">// Block/Blog/Index.php
+&lt;?php
+namespace Vendor\NamaModul\Block\Blog;
+
+class Index extends \Magento\Framework\View\Element\Template
+{
+    public function __construct(\Magento\Framework\View\Element\Template\Context $context)
+    {
+        parent::__construct($context);
+    }
+
+    public function _prepareLayout()
+    {
+        return parent::_prepareLayout();
+    }
+
+    /**
+     * Contoh data diambil dari model
+     * @return \Vendor\NamaModul\Model\Blog
+     */
+    public function getBlogList()
+    {
+        $blogData = $this-&gt;blogModel-&gt;getBlog();
+        return $blogData;
+    }
+}
+
+</code></pre>
+
+<p>Pada contoh di atas, data blog mengambil dari model.
+Tentang model akan dijelaskan di tulisan mendatang.</p>
+
+<pre><code>// view/frontend/web/templates/blog/index.phtml
+&lt;?php foreach($block-&gt;getBlogList() as $blog) : ?&gt;
+&lt;h1&gt;&lt;?= $blog-&gt;getTitle() ?&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;?= $blog-&gt;getExcerpt() ?&gt;&lt;/p&gt;
+&lt;?php endforeach; ?&gt;
+</code></pre>
+
+<h3 id="json-result">JSON result</h3>
+
+<p>Result ini digunakan untuk membuat response JSON yang lebih general selain REST.</p>
+
+<pre><code class="language-php">public function __construct(
+    //...
+    Magento\Framework\Controller\Result\JsonFactory $jsonResultFactory,
+    //...        
+)
+{
+    $this-&gt;jsonResultFactory = $jsonResultFactory;
+}
+
+public function execute()
+{
+    $result = $this-&gt;jsonResultFactory();
+
+    $o = new stdClass;              
+    $o-&gt;foo = 'bar';
+    $result-&gt;setData($o);
+    return $result;              
+}
+</code></pre>
+
+<h3 id="raw-result">RAW result</h3>
+
+<p>Result ini membuat return yang benar-benar <em>raw</em>,
+jadi sangat fleksibel untuk membuat response yang tidak biasa.</p>
+
+<pre><code class="language-php">public function __construct(
+    //...
+    Magento\Framework\Controller\Result $rawResultFactory ,
+    //...        
+)
+{
+    $this-&gt;rawResultFactory = $rawResultFactory;
+}
+
+public function execute(
+)
+{
+    //...
+    $result = $this-&gt;rawResultFactory-&gt;create();
+    $result-&gt;setHeader('Content-Type', 'text/xml');
+    $result-&gt;setContents('&lt;root&gt;&lt;science&gt;&lt;/science&gt;&lt;/root&gt;);
+    return $result;
+}
+</code></pre>
+
+<h3 id="layout-result">Layout result</h3>
+
+<p>Layout result sebenarnya raw result, yang berpadu dengan page result.
+Hanya saja layout result ini tidak membuat seluruh halaman.
+Jadi yang di-return adalah satu template phtml saja,
+tidak termasuk header dan footer atau static files (JS, CSS).
+Dan class yang digunakan adalah sama seperti raw result.</p>
+
+<pre><code>// controller
+...
+    public function __construct(
+        \Magento\Framework\App\Action\Context $context,
+        \Magento\Framework\Controller\ResultFactory $result,
+        ...
+    ) {
+        ...
+        $this-&gt;resultFactory = $result;
+        return parent::__construct($context);
+    }
+
+    public function execute()
+    {
+        ...
+        return $this-&gt;resultFactory-&gt;create(ResultFactory::TYPE_LAYOUT);
+    }
+}
+</code></pre>
+
+<p>Selayaknya page result, perlu dibuat layout xml dan template phtml juga selain controller tersebut.</p>
+
+<h3 id="redirect-result">Redirect result</h3>
+
+<p>Result ini akan mengalihkan ke URL yang ditentukan.</p>
+
+<pre><code class="language-php">public function __construct(
+    //...
+    Magento\Framework\Controller\Result\RedirectFactory $resultRedirectFactory
+    //...        
+)
+{
+    $this-&gt;resultRedirectFactory = $resultRedirectFactory;
+}
+
+public function execute()
+{
+    $result = $this-&gt;resultRedirectFactory-&gt;create();
+    $result-&gt;setPath('*/*/index');
+    return $result;
+}
+</code></pre>
+
+<h3 id="forward-result">Forward result</h3>
+
+<p>Result ini akan meneruskan ke URL yang telah ditentukan.</p>
+
+<pre><code class="language-php">public function __construct(
+    //...
+    Magento\Framework\Controller\Result\ForwardFactory $resultForwardFactory
+    //...        
+)
+{
+    $this-&gt;resultForwardFactory = $resultForwardFactory;
+}
+
+public function execute()
+{
+    $result = $this-&gt;resultForwardFactory-&gt;create();
+    $result-&gt;forward('noroute');    
+    return $result;
+}
+</code></pre>
+
+<p>Inspirasi dari <a href="https://alanstorm.com/magento-2-controller-result-objects/">Alan Storm</a>.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">block adalah class khusus yang menjadi jembatan atau penghubung antara layout xml dan template phtml, semua logic yang dipakai oleh template berada di sini yang bisa diakses dengan variable <code>$block</code>
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcode.badwi.my.id%2f2019%2f08%2frouting-di-magento-lanjutan%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fcode.badwi.my.id%2f2019%2f08%2frouting-di-magento-lanjutan%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fcode.badwi.my.id%2f2019%2f08%2frouting-di-magento-lanjutan%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Routing%20di%20Magento%20%28Lanjutan%29 - https%3a%2f%2fcode.badwi.my.id%2f2019%2f08%2frouting-di-magento-lanjutan%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fcode.badwi.my.id%2f2019%2f08%2frouting-di-magento-lanjutan%2f&title=Routing%20di%20Magento%20%28Lanjutan%29" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'codebadwi';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | <a href="https://github.com/mgjohansen/hucore.git" target="_blank">Hucore theme</a> & <a href="http://gohugo.io" target="_blank">Hugo</a> ♥</p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/dockerfile.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/php.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36990012-6', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
