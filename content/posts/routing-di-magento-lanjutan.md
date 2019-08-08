@@ -8,7 +8,7 @@ tags: ["magento", "php"]
 
 Seperti janji saya di [tulisan tentang routing][ref1] sebelumnya, kali ini adalah lanjutannya.
 Routing di Magento di-_handle_ oleh satu _controller_ untuk tiap _route_, di method `execute`.
-_Return_ dari method itu antara lain: _page, json, raw, layout, redirect dan forward_.
+_Return_ dari method itu antara lain: _page, json, raw, layout, redirect dan forward_.<!--more-->
 
 ### Page result
 Route ini me-_return_ halaman HTML.
