@@ -42,19 +42,58 @@ seperti sudah dijelaskan pada [tulisan sebelumnya][ref1].
 
 Selanjutnya perlu membuat layout xml di `/Vendor/NamaModul/etc/frontend/layout/blog_index_index.xml`.
 ```
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <container name="root">
+        <block class="Vendor\NamaModul\Block\Ajax\Brand" name="order_brand" template="Vendor_NamaModul::blog/index.phtml" cacheable="false"/>
+    </container>
+</layout>
 ```
 
-Kemudian, buat _block_ dan template untuk menentukan template yang dipakai oleh halaman.
+Kemudian, buat _block_[^1] dan template untuk menentukan template yang dipakai oleh halaman.
 Seperti ditetapkan di layout xml di atas, maka dibuat 2 file baru:
 ```php
 // Block/Blog/Index.php
+<?php
+namespace Vendor\NamaModul\Block\Blog;
+
+class Index extends \Magento\Framework\View\Element\Template
+{
+    public function __construct(\Magento\Framework\View\Element\Template\Context $context)
+    {
+        parent::__construct($context);
+    }
+
+    public function _prepareLayout()
+    {
+        return parent::_prepareLayout();
+    }
+
+    /**
+     * Contoh data diambil dari model
+     * @return \Vendor\NamaModul\Model\Blog
+     */
+    public function getBlogList()
+    {
+        $blogData = $this->blogModel->getBlog();
+        return $blogData;
+    }
+}
 
 ```
+Pada contoh di atas, data blog mengambil dari model.
+Tentang model akan dijelaskan di tulisan mendatang.
 ```
 // view/frontend/web/templates/blog/index.phtml
+<?php foreach($block->getBlogList() as $blog) : ?>
+<h1><?= $blog->getTitle() ?></h1>
+
+<p><?= $blog->getExcerpt() ?></p>
+<?php endforeach; ?>
 ```
 
 ### JSON result
+Result ini digunakan untuk membuat response JSON yang lebih general selain REST.
 
 ```php
 public function __construct(
@@ -65,9 +104,7 @@ public function __construct(
 {
     $this->jsonResultFactory = $jsonResultFactory;
 }
-```
 
-```php
 public function execute()
 {
     $result = $this->jsonResultFactory();
@@ -80,6 +117,8 @@ public function execute()
 ```
 
 ### RAW result
+Result ini membuat return yang benar-benar _raw_,
+jadi sangat fleksibel untuk membuat response yang tidak biasa.
 
 ```php
 public function __construct(
@@ -90,8 +129,7 @@ public function __construct(
 {
     $this->rawResultFactory = $rawResultFactory;
 }
-```
-```php
+
 public function execute(
 )
 {
@@ -104,8 +142,36 @@ public function execute(
 ```
 
 ### Layout result
+Layout result sebenarnya raw result, yang berpadu dengan page result.
+Hanya saja layout result ini tidak membuat seluruh halaman.
+Jadi yang di-return adalah satu template phtml saja,
+tidak termasuk header dan footer atau static files (JS, CSS).
+Dan class yang digunakan adalah sama seperti raw result.
+```
+// controller
+...
+    public function __construct(
+        \Magento\Framework\App\Action\Context $context,
+        \Magento\Framework\Controller\ResultFactory $result,
+        ...
+    ) {
+        ...
+        $this->resultFactory = $result;
+        return parent::__construct($context);
+    }
+
+    public function execute()
+    {
+        ...
+        return $this->resultFactory->create(ResultFactory::TYPE_LAYOUT);
+    }
+}
+```
+
+Selayaknya page result, perlu dibuat layout xml dan template phtml juga selain controller tersebut.
 
 ### Redirect result
+Result ini akan mengalihkan ke URL yang ditentukan.
 
 ```php
 public function __construct(
@@ -116,8 +182,7 @@ public function __construct(
 {
     $this->resultRedirectFactory = $resultRedirectFactory;
 }
-```
-```php
+
 public function execute()
 {
     $result = $this->resultRedirectFactory->create();
@@ -127,6 +192,7 @@ public function execute()
 ```
 
 ### Forward result
+Result ini akan meneruskan ke URL yang telah ditentukan.
 
 ```php
 public function __construct(
@@ -137,8 +203,7 @@ public function __construct(
 {
     $this->resultForwardFactory = $resultForwardFactory;
 }
-```
-```php
+
 public function execute()
 {
     $result = $this->resultForwardFactory->create();
@@ -148,6 +213,11 @@ public function execute()
 ```
 
 Inspirasi dari [Alan Storm][ref2].
+
+---
+
+[^1]: block adalah class khusus yang menjadi jembatan atau penghubung antara layout xml dan template phtml,
+semua logic yang dipakai oleh template berada di sini yang bisa diakses dengan variable `$block`
 
 [ref1]: {{< ref "routing-di-magento" >}}
 
