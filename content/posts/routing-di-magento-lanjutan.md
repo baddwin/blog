@@ -1,7 +1,7 @@
 ---
 title: "Routing di Magento (Lanjutan)"
 date: 2019-08-07T12:32:36+07:00
-draft: true
+draft: false
 description: "Macam-macam return type yang dibuat oleh routing Magento"
 tags: ["magento", "php"]
 ---
