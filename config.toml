@@ -40,9 +40,19 @@ url = "https://github.com/baddwin"
 fa_icon = "fa-github"
 
 [[params.social]]
+name = "stackoverflow"
+url = "https://stackoverflow.com/story/baddwin"
+fa_icon = "fa-stack-overflow"
+
+[[params.social]]
 name = "twitter"
 url = "https://twitter.com/baddwin"
 fa_icon = "fa-twitter"
+
+[[params.social]]
+name = "medium"
+url = "https://medium.com/@baddwin"
+fa_icon = "fa-medium"
 
 [[params.social]]
 name = "linkedin"
@@ -53,11 +63,6 @@ fa_icon = "fa-linkedin-square"
 name = "instagram"
 url = "https://www.instagram.com/baddwin"
 fa_icon = "fa-instagram"
-
-[[params.social]]
-name = "medium"
-url = "https://medium.com/@baddwin"
-fa_icon = "fa-medium"
 
 [[params.social]]
 name = "lastfm"
