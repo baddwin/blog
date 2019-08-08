@@ -45,7 +45,7 @@ Selanjutnya perlu membuat layout xml di `/Vendor/NamaModul/etc/frontend/layout/b
 <?xml version="1.0"?>
 <layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
     <container name="root">
-        <block class="Vendor\NamaModul\Block\Ajax\Brand" name="order_brand" template="Vendor_NamaModul::blog/index.phtml" cacheable="false"/>
+        <block class="Vendor\NamaModul\Block\Blog" name="blog_list" template="Vendor_NamaModul::blog/index.phtml" cacheable="false"/>
     </container>
 </layout>
 ```
