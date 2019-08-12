@@ -60,6 +60,11 @@ url = "https://www.linkedin.com/in/baddwin"
 fa_icon = "fa-linkedin-square"
 
 [[params.social]]
+name = "facebook"
+url = "https://facebook.badwi.my.id"
+fa_icon = "fa-facebook-square"
+
+[[params.social]]
 name = "instagram"
 url = "https://www.instagram.com/baddwin"
 fa_icon = "fa-instagram"
