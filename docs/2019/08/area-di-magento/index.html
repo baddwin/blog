@@ -49,24 +49,6 @@
             </span>
           </a>
           
-          <a class="level-item" href="https://www.linkedin.com/in/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-linkedin-square"></i>
-            </span>
-          </a>
-          
-          <a class="level-item" href="https://www.instagram.com/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-instagram"></i>
-            </span>
-          </a>
-          
-          <a class="level-item" href="https://www.goodreads.com/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-book"></i>
-            </span>
-          </a>
-          
           <a class="level-item" href="https://www.last.fm/user/baddwin" target="_blank">
             <span class="icon">
               <i class="fa fa-lastfm"></i>
@@ -95,17 +77,13 @@
     
     <div class="content">
       <p>Area di Magento merupakan sebuah komponen logis yang mengelola kode,
-termasuk struktur sistem file, demi pemrosesan <em>request</em> yang optimum<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>.
+termasuk struktur sistem file, demi pemrosesan <em>request</em> yang optimum<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.
 Pengelompokan area ini bermanfaat dalam menjaga kerapian struktur kode.</p>
-
 <p>Area paling umum di Magento adalah <code>adminhtml</code> dan <code>frontend</code>.
 <em>adminhtml</em> merupakan</p>
-
 <p>area kode yang mengontrol proses yang terjadi pada admin.
 Sedangkan <em>frontend</em> adalah area <em>store front</em> untuk <em>consumer facing</em>, seperti view product, proses checkout, registrasi user, dll.</p>
-
 <p>Nama-nama area yang disediakan Magento antara lain:</p>
-
 <ol>
 <li><em>adminhtml</em>: area untuk halaman admin</li>
 <li><em>frontend</em>: halaman depan consumer facing</li>
@@ -114,13 +92,11 @@ Sedangkan <em>frontend</em> adalah area <em>store front</em> untuk <em>consumer 
 <li><em>webapi_rest</em>: menangani proses yang berhubungan dengan request REST API</li>
 <li><em>webapi_soap</em>: menangani proses yang berhubungan dengan request SOAP API</li>
 </ol>
-
 <p>Contoh use case area ini adalah dalam routing.
 Untuk routing frontend, sudah dibahas pada <a href="https://code.badwi.my.id/2019/08/routing-di-magento/">tulisan sebelumnya</a>.
 Sedangkan untuk routing adminhtml, misalnya akan membuat page di admin
 dengan url <code>/admin/blog/post/new</code>.
 Maka routes.xml berisi:</p>
-
 <pre><code>&lt;?xml version=&quot;1.0&quot; ?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:App/etc/routes.xsd&quot;&gt;
     &lt;router id=&quot;adminhtml&quot;&gt;
@@ -129,30 +105,23 @@ Maka routes.xml berisi:</p>
         &lt;/route&gt;
     &lt;/router&gt;
 &lt;/config&gt;
-</code></pre>
-
-<p>Di mana path <code>blog</code> ditentukan di tag route dengan key <em>frontName</em>.
+</code></pre><p>Di mana path <code>blog</code> ditentukan di tag route dengan key <em>frontName</em>.
 Perbedaannya dengan route frontend adalah, di area adminhtml selalu didahului dengan path <code>/admin</code>.</p>
-
 <p>Untuk controllernya, letak file controller di dalam folder <code>Adminhtml</code>.
 Selebihnya mengikuti format struktur yang telah ditentukan seperti pada standard route. Maka struktur controller seperti ini:</p>
-
 <pre><code>├── Adminhtml                                                                   
 │   └── Blog                                                                                                                        
 │       └── Post                                                            
 │           └── New.php                                                        
-</code></pre>
-
-<p>Referensi resmi dari <a href="https://devdocs.magento.com/guides/v2.3/architecture/archi_perspectives/components/modules/mod_and_areas.html">halaman dokumentasi Magento</a>.</p>
-<div class="footnotes">
-
-<hr />
-
+</code></pre><p>Referensi resmi dari <a href="https://devdocs.magento.com/guides/v2.3/architecture/archi_perspectives/components/modules/mod_and_areas.html">halaman dokumentasi Magento</a>.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">kata guru bahasa Indonesia dulu, akhiran <em>-mum</em> lebih baku daripada <em>-mal</em>
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>kata guru bahasa Indonesia dulu, akhiran <em>-mum</em> lebih baku daripada <em>-mal</em> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
     </div>
     
         <div class="nav-left">

@@ -49,24 +49,6 @@
             </span>
           </a>
           
-          <a class="level-item" href="https://www.linkedin.com/in/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-linkedin-square"></i>
-            </span>
-          </a>
-          
-          <a class="level-item" href="https://www.instagram.com/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-instagram"></i>
-            </span>
-          </a>
-          
-          <a class="level-item" href="https://www.goodreads.com/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-book"></i>
-            </span>
-          </a>
-          
           <a class="level-item" href="https://www.last.fm/user/baddwin" target="_blank">
             <span class="icon">
               <i class="fa fa-lastfm"></i>
@@ -94,55 +76,50 @@
 
     
     <div class="content">
-      <p>Kali ini saya share hasil eksplorasi atas <a href="http://www.chartjs.org/">Chart.js</a>, skrip JavaScript untuk memvisualisasikan data dalam berbagai macam bentuk diagram. Di sini saya menggunakan diagram garis.</p>
+      <p>Kali ini saya share hasil eksplorasi atas <a href="http://www.chartjs.org/" title="">Chart.js</a>, skrip JavaScript untuk memvisualisasikan data dalam berbagai macam bentuk diagram. Di sini saya menggunakan diagram garis.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">canvas</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;diagram&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;800&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;400&#34;</span>&gt;&lt;/<span style="color:#f92672">canvas</span>&gt;
 
-<pre><code class="language-html">&lt;canvas id=&quot;diagram&quot; width=&quot;800&quot; height=&quot;400&quot;&gt;&lt;/canvas&gt;
-
-&lt;div id=&quot;chart-legend&quot;&gt;&lt;/div&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;chart-legend&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
         
-&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-// Chart data &amp; properties
-var data = {
-    labels: [&quot;2015-07-13&quot;,&quot;2015-07-14&quot;,&quot;2015-07-15&quot;,&quot;2015-07-16&quot;,&quot;2015-07-17&quot;,&quot;2015-07-18&quot;,&quot;2015-07-19&quot;,&quot;2015-07-20&quot;,&quot;2015-07-21&quot;,&quot;2015-07-22&quot;],
-    datasets: [
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+<span style="color:#75715e">// Chart data &amp; properties
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">labels</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;2015-07-13&#34;</span>,<span style="color:#e6db74">&#34;2015-07-14&#34;</span>,<span style="color:#e6db74">&#34;2015-07-15&#34;</span>,<span style="color:#e6db74">&#34;2015-07-16&#34;</span>,<span style="color:#e6db74">&#34;2015-07-17&#34;</span>,<span style="color:#e6db74">&#34;2015-07-18&#34;</span>,<span style="color:#e6db74">&#34;2015-07-19&#34;</span>,<span style="color:#e6db74">&#34;2015-07-20&#34;</span>,<span style="color:#e6db74">&#34;2015-07-21&#34;</span>,<span style="color:#e6db74">&#34;2015-07-22&#34;</span>],
+    <span style="color:#a6e22e">datasets</span><span style="color:#f92672">:</span> [
         {
-            label: &quot;Data Statistik&quot;,
-            fillColor: &quot;rgba(0,0,0,0)&quot;,
-            strokeColor: &quot;rgba(66, 139, 202,1)&quot;,
-            pointColor: &quot;rgba(86, 66, 230, 1)&quot;,
-            pointStrokeColor: &quot;#fff&quot;,
-            pointHighlightFill: &quot;#fff&quot;,
-            pointHighlightStroke: &quot;rgba(66, 139, 202, 0.5)&quot;,
-            data: [&quot;64&quot;,&quot;69&quot;,&quot;62&quot;,&quot;56&quot;,&quot;39&quot;,&quot;44&quot;,&quot;44&quot;,&quot;49&quot;,&quot;48&quot;,&quot;56&quot;]
+            <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Data Statistik&#34;</span>,
+            <span style="color:#a6e22e">fillColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;rgba(0,0,0,0)&#34;</span>,
+            <span style="color:#a6e22e">strokeColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;rgba(66, 139, 202,1)&#34;</span>,
+            <span style="color:#a6e22e">pointColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;rgba(86, 66, 230, 1)&#34;</span>,
+            <span style="color:#a6e22e">pointStrokeColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;#fff&#34;</span>,
+            <span style="color:#a6e22e">pointHighlightFill</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;#fff&#34;</span>,
+            <span style="color:#a6e22e">pointHighlightStroke</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;rgba(66, 139, 202, 0.5)&#34;</span>,
+            <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;64&#34;</span>,<span style="color:#e6db74">&#34;69&#34;</span>,<span style="color:#e6db74">&#34;62&#34;</span>,<span style="color:#e6db74">&#34;56&#34;</span>,<span style="color:#e6db74">&#34;39&#34;</span>,<span style="color:#e6db74">&#34;44&#34;</span>,<span style="color:#e6db74">&#34;44&#34;</span>,<span style="color:#e6db74">&#34;49&#34;</span>,<span style="color:#e6db74">&#34;48&#34;</span>,<span style="color:#e6db74">&#34;56&#34;</span>]
         },
         {
-            label: &quot;Rata-rata data&quot;,
-            fillColor: &quot;rgba(0,0,0,0)&quot;,
-            strokeColor: &quot;rgba(202, 77, 66, 1)&quot;,
-            pointColor: &quot;rgba(202, 0, 0, 1)&quot;,
-            pointStrokeColor: &quot;#fff&quot;,
-            pointHighlightFill: &quot;#fff&quot;,
-            pointHighlightStroke: &quot;#FAAA78&quot;,
-            data: [&quot;64&quot;,&quot;66.5&quot;,&quot;65&quot;,&quot;62.75&quot;,&quot;58&quot;,&quot;55.67&quot;,&quot;54&quot;,&quot;53.38&quot;,&quot;52.78&quot;,&quot;53.1&quot;]
+            <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Rata-rata data&#34;</span>,
+            <span style="color:#a6e22e">fillColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;rgba(0,0,0,0)&#34;</span>,
+            <span style="color:#a6e22e">strokeColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;rgba(202, 77, 66, 1)&#34;</span>,
+            <span style="color:#a6e22e">pointColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;rgba(202, 0, 0, 1)&#34;</span>,
+            <span style="color:#a6e22e">pointStrokeColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;#fff&#34;</span>,
+            <span style="color:#a6e22e">pointHighlightFill</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;#fff&#34;</span>,
+            <span style="color:#a6e22e">pointHighlightStroke</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;#FAAA78&#34;</span>,
+            <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;64&#34;</span>,<span style="color:#e6db74">&#34;66.5&#34;</span>,<span style="color:#e6db74">&#34;65&#34;</span>,<span style="color:#e6db74">&#34;62.75&#34;</span>,<span style="color:#e6db74">&#34;58&#34;</span>,<span style="color:#e6db74">&#34;55.67&#34;</span>,<span style="color:#e6db74">&#34;54&#34;</span>,<span style="color:#e6db74">&#34;53.38&#34;</span>,<span style="color:#e6db74">&#34;52.78&#34;</span>,<span style="color:#e6db74">&#34;53.1&#34;</span>]
         }
     ]
 }
 
-var ctx = document.getElementById(&quot;diagram&quot;).getContext(&quot;2d&quot;);
-var diagramBaru = new Chart(ctx).Line(data, {
-        bezierCurve: false,
-        scaleShowVerticalLines: false,
-        responsive: true
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ctx</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;diagram&#34;</span>).<span style="color:#a6e22e">getContext</span>(<span style="color:#e6db74">&#34;2d&#34;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">diagramBaru</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Chart</span>(<span style="color:#a6e22e">ctx</span>).<span style="color:#a6e22e">Line</span>(<span style="color:#a6e22e">data</span>, {
+        <span style="color:#a6e22e">bezierCurve</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+        <span style="color:#a6e22e">scaleShowVerticalLines</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+        <span style="color:#a6e22e">responsive</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
 });
-document.getElementById('chart-legend').innerHTML = diagramBaru.generateLegend();
-&lt;/script&gt;
-</code></pre>
-
-<p>Demo bisa dilihat di link berikut: <a href="http://baddwin.github.io/demo-koding/angularjs-chartjs.html">http://baddwin.github.io/demo-koding/angularjs-chartjs.html</a></p>
-
+document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;chart-legend&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">diagramBaru</span>.<span style="color:#a6e22e">generateLegend</span>();
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>Demo bisa dilihat di link berikut: <a href="http://baddwin.github.io/demo-koding/angularjs-chartjs.html">http://baddwin.github.io/demo-koding/angularjs-chartjs.html</a></p>
 <p>Sumber ide:</p>
-
 <ol>
 <li><a href="http://www.chartjs.org/docs/">http://www.chartjs.org/docs/</a></li>
 <li><a href="http://jsfiddle.net/vrwjfg9z/">http://jsfiddle.net/vrwjfg9z/</a></li>

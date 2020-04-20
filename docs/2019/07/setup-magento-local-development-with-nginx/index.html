@@ -49,24 +49,6 @@
             </span>
           </a>
           
-          <a class="level-item" href="https://www.linkedin.com/in/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-linkedin-square"></i>
-            </span>
-          </a>
-          
-          <a class="level-item" href="https://www.instagram.com/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-instagram"></i>
-            </span>
-          </a>
-          
-          <a class="level-item" href="https://www.goodreads.com/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-book"></i>
-            </span>
-          </a>
-          
           <a class="level-item" href="https://www.last.fm/user/baddwin" target="_blank">
             <span class="icon">
               <i class="fa fa-lastfm"></i>
@@ -100,12 +82,10 @@
 
     
     <div class="content">
-      <h2 id="prasyarat">Prasyarat</h2>
-
+      <h2 id="prasyarat-">Prasyarat</h2>
 <p>Tulisan ini memperlihatkan langkah-langkah dalam men-setup
 Magento 2.3.2 dengan nginx di Fedora 30 ke atas.
 Maka prasyarat yang harus dipenuhi antara lain:</p>
-
 <ol>
 <li>OS Fedora 30 atau lebih baru</li>
 <li>nginx</li>
@@ -114,32 +94,21 @@ Maka prasyarat yang harus dipenuhi antara lain:</p>
 <li>tarball Magento 2.3.2</li>
 <li>composer</li>
 </ol>
-
-<h3 id="install-software-di-fedora">Install <em>software</em> di Fedora</h3>
-
+<h3 id="install-_software_-di-fedora-">Install <em>software</em> di Fedora</h3>
 <p>PHP 7.2 tidak tersedia di repo utama Fedora mulai versi 28.
 Maka, untuk Fedora 30, perlu menambahkan repo dari Remi
 Ikuti panduan dari web Remi di</p>
-
 <p><a href="https://rpms.remirepo.net/wizard/">https://rpms.remirepo.net/wizard/</a>. Kemudian, install paket-paket yang dibutuhkan dengan DNF.</p>
-
 <pre><code>nginx mariadb-server \
 php72-php-fpm php72-php-pdo php72-php-mysqlnd php72-php-opcache php72-php-xml \
 php72-php-sodium php72-php-gd php72-php-devel php72-php-mysql php72-php-intl php72-php-mbstring \
 php72-php-bcmath php72-php-json php72-php-iconv php72-php-soap php72-php-zip php72-php-cli
-</code></pre>
-
-<p>Unduh juga composer dari websitenya <a href="https://getcomposer.org/download/">https://getcomposer.org/download/</a>.
+</code></pre><p>Unduh juga composer dari websitenya <a href="https://getcomposer.org/download/">https://getcomposer.org/download/</a>.
 Tambahkan binary composer ke path Fedora, boleh path user wise, atau system.</p>
-
 <pre><code>export /path/to/composer/bin:$PATH
-</code></pre>
-
-<h3 id="setup-nginx">Setup nginx</h3>
-
+</code></pre><h3 id="setup-nginx-">Setup nginx</h3>
 <p>Magento sudah menyertakan konfigurasi untuk nginx virtualhost, letaknya di file <code>nginx.conf.sample</code>.
 Jadi, file tersebut bisa di-include ke conf custom nginx, misalnya di <code>/etc/nginx/conf.d/magento.conf</code>. Isinya seperti ini:</p>
-
 <pre><code>upstream fastcgi_backend {
 server unix:/var/opt/remi/php72/run/php-fpm/www.sock;
 }
@@ -151,70 +120,43 @@ server_name magento.test; # menyesuaikan
 set $MAGE_ROOT /app/sites/magento; # menyesuaikan
 include /app/sites/magento/nginx.conf.sample;
 }
-</code></pre>
-
-<p>Tambahkan entri domain custom (<em>magento.test</em> dalam cuplikan kode di atas) ke file <code>/etc/hosts</code>.
+</code></pre><p>Tambahkan entri domain custom (<em>magento.test</em> dalam cuplikan kode di atas) ke file <code>/etc/hosts</code>.
 Tes dengan <code>sudo nginx -t</code>, jika ok, restart systemd nginx.</p>
-
-<h3 id="permission">Permission</h3>
-
+<h3 id="permission-">Permission</h3>
 <p>Default user worker nginx adalah &lsquo;nginx&rsquo;, dan PHP-FPM adalah &lsquo;apache&rsquo;.
 Demi konsistensi, bikin saja user baru &lsquo;www-data&rsquo;.
 Di <code>/etc/nginx/nginx.conf</code> ubah user menjadi &lsquo;www-data&rsquo;.
 Juga di <code>/etc/opt/remi/php72/php-fpm.d/www.conf</code>, ubah <em>user, group, listen-user</em>
 dan <em>listen-group</em> ke &lsquo;www-data&rsquo;.
 Tambahkan user existing ke grup &lsquo;www-data&rsquo; juga.</p>
-
 <pre><code>useradd -Mr www-data &amp;&amp; usermod -aG &lt;user&gt; www-data
-</code></pre>
-
-<p>Selain permission folder harus bisa <em>read-write</em>, Fedora juga perlu mengeset
+</code></pre><p>Selain permission folder harus bisa <em>read-write</em>, Fedora juga perlu mengeset
 permission SELinux.</p>
-
 <pre><code>semanage permissive -a httpd_t
 chcon -R -t httpd_sys_content_t /sites/app/magento
 chcon -R -t httpd_sys_rw_content_t /sites/app/magento
-</code></pre>
-
-<h3 id="unduh-tarball-magento-2-3-2">Unduh tarball Magento 2.3.2</h3>
-
+</code></pre><h3 id="unduh-tarball-magento-232-">Unduh tarball Magento 2.3.2</h3>
 <p>Unduh tarball Magento terbaru dari laman resminya di <a href="https://magento.com/tech-resources/download">https://magento.com/tech-resources/download</a>.
 Sebelum versi ini, Magento tidak menyediakan tarball di laman unduhan resmi mereka.</p>
-
 <p>Ekstrak tarball dan rename foldernya menyesuaikan konfigurasi nginx tadi.
 Sebelum mengakses web installer, kita perlu
 menyesuaikan <em>permission</em> file dan folder tertentu di Magento.</p>
-
 <pre><code>find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
 find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 chown -R :www-data .
-</code></pre>
-
-<p>Juga perlu menghapus cache instalasi sebelum instalasi.</p>
-
+</code></pre><p>Juga perlu menghapus cache instalasi sebelum instalasi.</p>
 <pre><code>php72 bin/magento setup:uninstall
-</code></pre>
-
-<h2 id="instalasi-magento">Instalasi Magento</h2>
-
+</code></pre><h2 id="instalasi-magento-">Instalasi Magento</h2>
 <p>Setelah setup server lokal selesai, dilanjutkan dengan
 instalasi Magento. Akses base-url yang sudah ditentukan pada konfigurasi nginx.</p>
-
-<p><img src="/img/2019/07/magento-install-1.png" alt="magento check requirements to install" /></p>
-
-<p><img src="/img/2019/07/magento-install-2.png" alt="magento database config" /></p>
-
-<p><img src="/img/2019/07/magento-install-3.png" alt="magento web config" /></p>
-
-<p><img src="/img/2019/07/magento-install-4.png" alt="magento customization" /></p>
-
-<p><img src="/img/2019/07/magento-install-5.png" alt="magento admin account" /></p>
-
-<p><img src="/img/2019/07/magento-install-6.png" alt="magento installation progress" /></p>
-
-<p><img src="/img/2019/07/magento-install-7.png" alt="magento success install" /></p>
-
-<p><img src="/img/2019/07/magento-install-8.png" alt="magento login admin" /></p>
+<p><img src="/img/2019/07/magento-install-1.png" alt="magento check requirements to install"></p>
+<p><img src="/img/2019/07/magento-install-2.png" alt="magento database config"></p>
+<p><img src="/img/2019/07/magento-install-3.png" alt="magento web config"></p>
+<p><img src="/img/2019/07/magento-install-4.png" alt="magento customization"></p>
+<p><img src="/img/2019/07/magento-install-5.png" alt="magento admin account"></p>
+<p><img src="/img/2019/07/magento-install-6.png" alt="magento installation progress"></p>
+<p><img src="/img/2019/07/magento-install-7.png" alt="magento success install"></p>
+<p><img src="/img/2019/07/magento-install-8.png" alt="magento login admin"></p>
     </div>
     
         <div class="nav-left">

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>angularjs on Ba-dwi Code</title>
@@ -19,7 +19,6 @@
       
       <guid>https://code.badwi.my.id/2015/10/angular.js-routing/</guid>
       <description>&lt;p&gt;Kembali membahas AngularJs, kali ini maju satu langkah, mari mempelajari routing. Pada dasarnya Angular menangani event perubahan hash pada URL dan mengarahkannya pada &lt;code&gt;ng-view&lt;/code&gt;. ngView ini membutuhkan template berupa file html terpisah yang akan dimuat oleh Angular.&lt;/p&gt;
-
 &lt;p&gt;Berikut adalah potongan kode Javascript.&lt;/p&gt;</description>
     </item>
     

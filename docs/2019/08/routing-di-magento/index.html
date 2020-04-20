@@ -49,24 +49,6 @@
             </span>
           </a>
           
-          <a class="level-item" href="https://www.linkedin.com/in/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-linkedin-square"></i>
-            </span>
-          </a>
-          
-          <a class="level-item" href="https://www.instagram.com/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-instagram"></i>
-            </span>
-          </a>
-          
-          <a class="level-item" href="https://www.goodreads.com/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-book"></i>
-            </span>
-          </a>
-          
           <a class="level-item" href="https://www.last.fm/user/baddwin" target="_blank">
             <span class="icon">
               <i class="fa fa-lastfm"></i>
@@ -98,14 +80,10 @@
 antara lain <em>urlrewrite, standard, cms, dan default</em>.
 Routing juga dibatasi oleh area (soal area akan dibahas pada tulisan berikutnya).
 Area yang disediakan oleh Magento secara default adalah <code>adminhtml</code> dan <code>frontend</code>.</p>
-
 <p>Tulisan ini akan membahas standard routing di area frontend.
 Routing jenis ini bisa dibuat dengan layout xml, atau dengan aturan</p>
-
 <p><code>&lt;baseUrl&gt;/[&lt;storeCode&gt;]/&lt;frontName&gt;/&lt;controller&gt;/&lt;action&gt;</code>.</p>
-
 <p>Hal pertama yang harus dibuat adalah file <code>etc/frontend/routes.xml</code>:</p>
-
 <pre><code>&lt;?xml version=&quot;1.0&quot; ?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:App/etc/routes.xsd&quot;&gt;
     &lt;router id=&quot;%routerId%&quot;&gt;
@@ -114,22 +92,17 @@ Routing jenis ini bisa dibuat dengan layout xml, atau dengan aturan</p>
         &lt;/route&gt;
     &lt;/router&gt;
 &lt;/config&gt;
-</code></pre>
-
-<p><code>%routerId%</code> diganti <code>standard</code> karena ini adalah standard routing.
+</code></pre><p><code>%routerId%</code> diganti <code>standard</code> karena ini adalah standard routing.
 <code>%frontName%</code> disesuaikan dengan <code>&lt;frontName&gt;</code> pada aturan.
 Nilainya biasanya sama dengan <code>%routeId%</code>.
 <code>%moduleName%</code> disesuaikan dengan modul yang mendefinisikannya, dengan format <code>Vendor_NamaModul</code>.</p>
-
 <p>Kemudian buat controller sesuai aturan, yang ditaruh di folder Controller.
 Contohnya, url yang akan dibuat adalah <code>/blog/show/post</code>.
 Maka controller dibuat di <em>app/code/Vendor/NamaModul/Controller/Show/Post.php</em>.
 Perhatikan path <code>blog</code> tidak terdapat di URI file controller,
 karena ia adalah front name yang sudah disebut di routes.xml.</p>
-
 <p>File Post.php harus meng-<em>extend</em> class <em>\Magento\Framework\App\Action\Action</em>.
 Maka contoh controller sebagai berikut:</p>
-
 <pre><code>&lt;?php
 namespace Vendor\NamaModul\Controller\Show;
 
@@ -139,9 +112,7 @@ class Post extends \Magento\Framework\App\Action\Action
         return $result;
     }
 }
-</code></pre>
-
-<p>Function <code>execute()</code> adalah function utama dari controller tersebut.
+</code></pre><p>Function <code>execute()</code> adalah function utama dari controller tersebut.
 <code>$result</code> adalah hasil return yang diharapkan, bisa berupa page, redirect, layout, raw atau JSON.
 Akan dibahas pada tulisan mendatang. <em>Stay tuned!</em></p>
     </div>

@@ -45,21 +45,6 @@ url = "https://twitter.com/baddwin"
 fa_icon = "fa-twitter"
 
 [[params.social]]
-name = "linkedin"
-url = "https://www.linkedin.com/in/baddwin"
-fa_icon = "fa-linkedin-square"
-
-[[params.social]]
-name = "instagram"
-url = "https://www.instagram.com/baddwin"
-fa_icon = "fa-instagram"
-
-[[params.social]]
-name = "goodreads"
-url = "https://www.goodreads.com/baddwin"
-fa_icon = "fa-book"
-
-[[params.social]]
 name = "lastfm"
 url = "https://www.last.fm/user/baddwin"
 fa_icon = "fa-lastfm"

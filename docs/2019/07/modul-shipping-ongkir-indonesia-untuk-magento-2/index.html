@@ -49,24 +49,6 @@
             </span>
           </a>
           
-          <a class="level-item" href="https://www.linkedin.com/in/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-linkedin-square"></i>
-            </span>
-          </a>
-          
-          <a class="level-item" href="https://www.instagram.com/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-instagram"></i>
-            </span>
-          </a>
-          
-          <a class="level-item" href="https://www.goodreads.com/baddwin" target="_blank">
-            <span class="icon">
-              <i class="fa fa-book"></i>
-            </span>
-          </a>
-          
           <a class="level-item" href="https://www.last.fm/user/baddwin" target="_blank">
             <span class="icon">
               <i class="fa fa-lastfm"></i>
@@ -98,32 +80,29 @@
 
     
     <div class="content">
-      <p>Selama mempelajari<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> Magento, saya sudah membuat modul/<em>extension</em>
+      <p>Selama mempelajari<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Magento, saya sudah membuat modul/<em>extension</em>
 ongkir (ongkos kirim) Indonesia untuk Magento 2. Modul ini mengambil data
 dari <a href="http://rajaongkir.com">RajaOngkir</a> yang menyediakan API cek ongkir dan <em>tracking</em>
 jasa kurir dan ekspedisi yang ada di Indonesia,
 termasuk JNE, J&amp;T, Tiki, Pos, SiCepat, dll.
 Dengan modul ongkir ini, website Magento kita dapat menghitung
 ongkir barang berdasarkan kurir yang dipilih.</p>
-
 <p>Modul ini mirip dengan kode awal project yang saya kerjakan di tempat kerja saya &ndash;dulu.
 Kodenya tidak bisa saya <em>share</em> secara <del>gratis</del> publik.
-Tapi cuplikan kodenya sudah saya <em>share</em> di Github<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>.</p>
-
+Tapi cuplikan kodenya sudah saya <em>share</em> di Github<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
 <p>Cuplikan:</p>
-
-<pre><code class="language-php">/**
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">/**
      * @param RateRequest $request
      * @return \Magento\Shipping\Model\Rate\Result|bool
      */
     public function collectRates(RateRequest $request)
     {
-        if (!$this-&gt;getConfigFlag('active')) {
+        if (!$this-&gt;getConfigFlag(&#39;active&#39;)) {
             return false;
         }
         /** @var \Magento\Shipping\Model\Rate\Result $result */
         $result = $this-&gt;_rateResultFactory-&gt;create();
-        $method = $this-&gt;generateMethods('REG', 10000, 'JNE');
+        $method = $this-&gt;generateMethods(&#39;REG&#39;, 10000, &#39;JNE&#39;);
         $result-&gt;append($method);
         return $result;
     }
@@ -132,7 +111,7 @@ Tapi cuplikan kodenya sudah saya <em>share</em> di Github<sup class="footnote-re
      */
     public function getAllowedMethods()
     {
-        return [$this-&gt;_code =&gt; $this-&gt;getConfigData('name')];
+        return [$this-&gt;_code =&gt; $this-&gt;getConfigData(&#39;name&#39;)];
     }
     /**
      * @return \Magento\Quote\Model\Quote\Address\RateResult\Method
@@ -149,29 +128,24 @@ Tapi cuplikan kodenya sudah saya <em>share</em> di Github<sup class="footnote-re
         return $method;
     }
 }
-</code></pre>
-
-<p>Kode modul tersebut merupakan hasil <em>generate</em> dari
+</code></pre></div><p>Kode modul tersebut merupakan hasil <em>generate</em> dari
 <a href="https://cedcommerce.com/magento-2-module-creator/shipping-module">sini</a>.</p>
-
 <p>Contoh <em>live</em> di website:</p>
-
-<p><img src="/img/2019/07/ongkir.png" alt="screenshot ongkir" /></p>
-
+<p><img src="/img/2019/07/ongkir.png" alt="screenshot ongkir"></p>
 <p>Untuk mendapatkan kode yang lebih fungsional dan
 disesuaikan dengan project <em>e-commerce</em> yang Anda bikin,
 silakan hubungi saya. (link akun medsos ada di atas blog) :)</p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">selama bekerja
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2"><a href="https://github.com/baddwin/magento2-ongkir">https://github.com/baddwin/magento2-ongkir</a>
- <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>selama bekerja <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://github.com/baddwin/magento2-ongkir">https://github.com/baddwin/magento2-ongkir</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
     </div>
     
         <div class="nav-left">

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>chartjs on Ba-dwi Code</title>
@@ -18,7 +18,7 @@
       <pubDate>Fri, 24 Jul 2015 13:54:32 +0700</pubDate>
       
       <guid>https://code.badwi.my.id/2015/07/chart.js-menggambar-diagram-dengan-javasript/</guid>
-      <description>&lt;p&gt;Kali ini saya share hasil eksplorasi atas &lt;a href=&#34;http://www.chartjs.org/&#34;&gt;Chart.js&lt;/a&gt;, skrip JavaScript untuk memvisualisasikan data dalam berbagai macam bentuk diagram. Di sini saya menggunakan diagram garis.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Kali ini saya share hasil eksplorasi atas &lt;a href=&#34;http://www.chartjs.org/&#34; title=&#34;&#34;&gt;Chart.js&lt;/a&gt;, skrip JavaScript untuk memvisualisasikan data dalam berbagai macam bentuk diagram. Di sini saya menggunakan diagram garis.&lt;/p&gt;</description>
     </item>
     
   </channel>
