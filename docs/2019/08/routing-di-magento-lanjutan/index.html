@@ -114,8 +114,8 @@ seperti sudah dijelaskan pada <a href="https://code.badwi.my.id/2019/08/routing-
 &lt;/layout&gt;
 </code></pre><p>Kemudian, buat <em>block</em><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> dan template untuk menentukan template yang dipakai oleh halaman.
 Seperti ditetapkan di layout xml di atas, maka dibuat 2 file baru:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// Block/Blog/Index.php
-<span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// Block/Blog/Index.php
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Vendor\NamaModul\Block\Blog</span>;
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Index</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">\Magento\Framework\View\Element\Template</span>
@@ -151,44 +151,44 @@ Tentang model akan dijelaskan di tulisan mendatang.</p>
 &lt;?php endforeach; ?&gt;
 </code></pre><h3 id="json-result">JSON result</h3>
 <p>Result ini digunakan untuk membuat response JSON yang lebih general selain REST.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">public function __construct(
-    //...
-    Magento\Framework\Controller\Result\JsonFactory $jsonResultFactory,
-    //...        
-)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(
+    <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Magento\Framework\Controller\Result\JsonFactory</span> $jsonResultFactory,
+    <span style="color:#75715e">//...        
+</span><span style="color:#75715e"></span>)
 {
-    $this-&gt;jsonResultFactory = $jsonResultFactory;
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">jsonResultFactory</span> <span style="color:#f92672">=</span> $jsonResultFactory;
 }
 
-public function execute()
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">execute</span>()
 {
-    $result = $this-&gt;jsonResultFactory();
+    $result <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">jsonResultFactory</span>();
 
-    $o = new stdClass;              
-    $o-&gt;foo = &#39;bar&#39;;
-    $result-&gt;setData($o);
-    return $result;              
+    $o <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">stdClass</span>;              
+    $o<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bar&#39;</span>;
+    $result<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setData</span>($o);
+    <span style="color:#66d9ef">return</span> $result;              
 }
 </code></pre></div><h3 id="raw-result">RAW result</h3>
 <p>Result ini membuat return yang benar-benar <em>raw</em>,
 jadi sangat fleksibel untuk membuat response yang tidak biasa.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">public function __construct(
-    //...
-    Magento\Framework\Controller\Result $rawResultFactory ,
-    //...        
-)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(
+    <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Magento\Framework\Controller\Result</span> $rawResultFactory ,
+    <span style="color:#75715e">//...        
+</span><span style="color:#75715e"></span>)
 {
-    $this-&gt;rawResultFactory = $rawResultFactory;
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">rawResultFactory</span> <span style="color:#f92672">=</span> $rawResultFactory;
 }
 
-public function execute(
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">execute</span>(
 )
 {
-    //...
-    $result = $this-&gt;rawResultFactory-&gt;create();
-    $result-&gt;setHeader(&#39;Content-Type&#39;, &#39;text/xml&#39;);
-    $result-&gt;setContents(&#39;&lt;<span style="color:#f92672">root</span>&gt;&lt;<span style="color:#f92672">science</span>&gt;&lt;/<span style="color:#f92672">science</span>&gt;&lt;/<span style="color:#f92672">root</span>&gt;);
-    return $result;
+    <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>    $result <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">rawResultFactory</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">create</span>();
+    $result<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setHeader</span>(<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;text/xml&#39;</span>);
+    $result<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setContents</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">root</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">science</span><span style="color:#f92672">&gt;&lt;/</span><span style="color:#a6e22e">science</span><span style="color:#f92672">&gt;&lt;/</span><span style="color:#a6e22e">root</span><span style="color:#f92672">&gt;</span>);
+    <span style="color:#66d9ef">return</span> $result;
 }
 </code></pre></div><h3 id="layout-result">Layout result</h3>
 <p>Layout result sebenarnya raw result, yang berpadu dengan page result.
@@ -217,37 +217,37 @@ Dan class yang digunakan adalah sama seperti raw result.</p>
 </code></pre><p>Selayaknya page result, perlu dibuat layout xml dan template phtml juga selain controller tersebut.</p>
 <h3 id="redirect-result">Redirect result</h3>
 <p>Result ini akan mengalihkan ke URL yang ditentukan.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">public function __construct(
-    //...
-    Magento\Framework\Controller\Result\RedirectFactory $resultRedirectFactory
-    //...        
-)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(
+    <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Magento\Framework\Controller\Result\RedirectFactory</span> $resultRedirectFactory
+    <span style="color:#75715e">//...        
+</span><span style="color:#75715e"></span>)
 {
-    $this-&gt;resultRedirectFactory = $resultRedirectFactory;
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">resultRedirectFactory</span> <span style="color:#f92672">=</span> $resultRedirectFactory;
 }
 
-public function execute()
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">execute</span>()
 {
-    $result = $this-&gt;resultRedirectFactory-&gt;create();
-    $result-&gt;setPath(&#39;*/*/index&#39;);
-    return $result;
+    $result <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">resultRedirectFactory</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">create</span>();
+    $result<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setPath</span>(<span style="color:#e6db74">&#39;*/*/index&#39;</span>);
+    <span style="color:#66d9ef">return</span> $result;
 }
 </code></pre></div><h3 id="forward-result">Forward result</h3>
 <p>Result ini akan meneruskan ke URL yang telah ditentukan.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">public function __construct(
-    //...
-    Magento\Framework\Controller\Result\ForwardFactory $resultForwardFactory
-    //...        
-)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(
+    <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Magento\Framework\Controller\Result\ForwardFactory</span> $resultForwardFactory
+    <span style="color:#75715e">//...        
+</span><span style="color:#75715e"></span>)
 {
-    $this-&gt;resultForwardFactory = $resultForwardFactory;
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">resultForwardFactory</span> <span style="color:#f92672">=</span> $resultForwardFactory;
 }
 
-public function execute()
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">execute</span>()
 {
-    $result = $this-&gt;resultForwardFactory-&gt;create();
-    $result-&gt;forward(&#39;noroute&#39;);    
-    return $result;
+    $result <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">resultForwardFactory</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">create</span>();
+    $result<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">forward</span>(<span style="color:#e6db74">&#39;noroute&#39;</span>);    
+    <span style="color:#66d9ef">return</span> $result;
 }
 </code></pre></div><p>Inspirasi dari <a href="https://alanstorm.com/magento-2-controller-result-objects/">Alan Storm</a>.</p>
 <section class="footnotes" role="doc-endnotes">

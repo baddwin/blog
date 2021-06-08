@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Wed, 07 Aug 2019 12:32:36 +0700</lastBuildDate>
-    
-	<atom:link href="https://code.badwi.my.id/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 07 Aug 2019 12:32:36 +0700</lastBuildDate><atom:link href="https://code.badwi.my.id/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Routing di Magento (Lanjutan)</title>
       <link>https://code.badwi.my.id/2019/08/routing-di-magento-lanjutan/</link>
@@ -56,7 +52,7 @@ Routing jenis ini bisa dibuat dengan layout xml, atau dengan aturan&lt;/p&gt;</d
       <pubDate>Tue, 16 Jul 2019 21:15:52 +0700</pubDate>
       
       <guid>https://code.badwi.my.id/2019/07/setup-magento-local-development-with-nginx/</guid>
-      <description>&lt;h2 id=&#34;prasyarat-&#34;&gt;Prasyarat&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;prasyarat&#34;&gt;Prasyarat&lt;/h2&gt;
 &lt;p&gt;Tulisan ini memperlihatkan langkah-langkah dalam men-setup
 Magento 2.3.2 dengan nginx di Fedora 30 ke atas.
 Maka prasyarat yang harus dipenuhi antara lain:&lt;/p&gt;
@@ -68,7 +64,7 @@ Maka prasyarat yang harus dipenuhi antara lain:&lt;/p&gt;
 &lt;li&gt;tarball Magento 2.3.2&lt;/li&gt;
 &lt;li&gt;composer&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;install-_software_-di-fedora-&#34;&gt;Install &lt;em&gt;software&lt;/em&gt; di Fedora&lt;/h3&gt;
+&lt;h3 id=&#34;install-_software_-di-fedora&#34;&gt;Install &lt;em&gt;software&lt;/em&gt; di Fedora&lt;/h3&gt;
 &lt;p&gt;PHP 7.2 tidak tersedia di repo utama Fedora mulai versi 28.
 Maka, untuk Fedora 30, perlu menambahkan repo dari Remi
 Ikuti panduan dari web Remi di&lt;/p&gt;</description>

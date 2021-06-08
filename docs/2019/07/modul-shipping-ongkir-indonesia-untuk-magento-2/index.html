@@ -91,41 +91,41 @@ ongkir barang berdasarkan kurir yang dipilih.</p>
 Kodenya tidak bisa saya <em>share</em> secara <del>gratis</del> publik.
 Tapi cuplikan kodenya sudah saya <em>share</em> di Github<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
 <p>Cuplikan:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">/**
-     * @param RateRequest $request
-     * @return \Magento\Shipping\Model\Rate\Result|bool
-     */
-    public function collectRates(RateRequest $request)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @param RateRequest $request
+</span><span style="color:#e6db74">     * @return \Magento\Shipping\Model\Rate\Result|bool
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">collectRates</span>(<span style="color:#a6e22e">RateRequest</span> $request)
     {
-        if (!$this-&gt;getConfigFlag(&#39;active&#39;)) {
-            return false;
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getConfigFlag</span>(<span style="color:#e6db74">&#39;active&#39;</span>)) {
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
         }
-        /** @var \Magento\Shipping\Model\Rate\Result $result */
-        $result = $this-&gt;_rateResultFactory-&gt;create();
-        $method = $this-&gt;generateMethods(&#39;REG&#39;, 10000, &#39;JNE&#39;);
-        $result-&gt;append($method);
-        return $result;
+        <span style="color:#e6db74">/** @var \Magento\Shipping\Model\Rate\Result $result */</span>
+        $result <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">_rateResultFactory</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">create</span>();
+        $method <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">generateMethods</span>(<span style="color:#e6db74">&#39;REG&#39;</span>, <span style="color:#ae81ff">10000</span>, <span style="color:#e6db74">&#39;JNE&#39;</span>);
+        $result<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">append</span>($method);
+        <span style="color:#66d9ef">return</span> $result;
     }
-    /**
-     * @return array
-     */
-    public function getAllowedMethods()
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @return array
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getAllowedMethods</span>()
     {
-        return [$this-&gt;_code =&gt; $this-&gt;getConfigData(&#39;name&#39;)];
+        <span style="color:#66d9ef">return</span> [$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">_code</span> <span style="color:#f92672">=&gt;</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getConfigData</span>(<span style="color:#e6db74">&#39;name&#39;</span>)];
     }
-    /**
-     * @return \Magento\Quote\Model\Quote\Address\RateResult\Method
-     */
-    public function generateMethods($service, $price, $courier)
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @return \Magento\Quote\Model\Quote\Address\RateResult\Method
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">generateMethods</span>($service, $price, $courier)
     {
-        $method = $this-&gt;_rateMethodFactory-&gt;create();
-        $method-&gt;setCarrier($this-&gt;_code);
-        $method-&gt;setCarrierTitle($courier);
-        $method-&gt;setMethod($this-&gt;_code);
-        $method-&gt;setMethodTitle($service);
-        $method-&gt;setPrice($price);
-        $method-&gt;setCost($price);
-        return $method;
+        $method <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">_rateMethodFactory</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">create</span>();
+        $method<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setCarrier</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">_code</span>);
+        $method<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setCarrierTitle</span>($courier);
+        $method<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setMethod</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">_code</span>);
+        $method<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setMethodTitle</span>($service);
+        $method<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setPrice</span>($price);
+        $method<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setCost</span>($price);
+        <span style="color:#66d9ef">return</span> $method;
     }
 }
 </code></pre></div><p>Kode modul tersebut merupakan hasil <em>generate</em> dari

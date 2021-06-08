@@ -82,7 +82,7 @@
 
     
     <div class="content">
-      <h2 id="prasyarat-">Prasyarat</h2>
+      <h2 id="prasyarat">Prasyarat</h2>
 <p>Tulisan ini memperlihatkan langkah-langkah dalam men-setup
 Magento 2.3.2 dengan nginx di Fedora 30 ke atas.
 Maka prasyarat yang harus dipenuhi antara lain:</p>
@@ -94,7 +94,7 @@ Maka prasyarat yang harus dipenuhi antara lain:</p>
 <li>tarball Magento 2.3.2</li>
 <li>composer</li>
 </ol>
-<h3 id="install-_software_-di-fedora-">Install <em>software</em> di Fedora</h3>
+<h3 id="install-_software_-di-fedora">Install <em>software</em> di Fedora</h3>
 <p>PHP 7.2 tidak tersedia di repo utama Fedora mulai versi 28.
 Maka, untuk Fedora 30, perlu menambahkan repo dari Remi
 Ikuti panduan dari web Remi di</p>
@@ -106,7 +106,7 @@ php72-php-bcmath php72-php-json php72-php-iconv php72-php-soap php72-php-zip php
 </code></pre><p>Unduh juga composer dari websitenya <a href="https://getcomposer.org/download/">https://getcomposer.org/download/</a>.
 Tambahkan binary composer ke path Fedora, boleh path user wise, atau system.</p>
 <pre><code>export /path/to/composer/bin:$PATH
-</code></pre><h3 id="setup-nginx-">Setup nginx</h3>
+</code></pre><h3 id="setup-nginx">Setup nginx</h3>
 <p>Magento sudah menyertakan konfigurasi untuk nginx virtualhost, letaknya di file <code>nginx.conf.sample</code>.
 Jadi, file tersebut bisa di-include ke conf custom nginx, misalnya di <code>/etc/nginx/conf.d/magento.conf</code>. Isinya seperti ini:</p>
 <pre><code>upstream fastcgi_backend {
@@ -122,7 +122,7 @@ include /app/sites/magento/nginx.conf.sample;
 }
 </code></pre><p>Tambahkan entri domain custom (<em>magento.test</em> dalam cuplikan kode di atas) ke file <code>/etc/hosts</code>.
 Tes dengan <code>sudo nginx -t</code>, jika ok, restart systemd nginx.</p>
-<h3 id="permission-">Permission</h3>
+<h3 id="permission">Permission</h3>
 <p>Default user worker nginx adalah &lsquo;nginx&rsquo;, dan PHP-FPM adalah &lsquo;apache&rsquo;.
 Demi konsistensi, bikin saja user baru &lsquo;www-data&rsquo;.
 Di <code>/etc/nginx/nginx.conf</code> ubah user menjadi &lsquo;www-data&rsquo;.
@@ -135,7 +135,7 @@ permission SELinux.</p>
 <pre><code>semanage permissive -a httpd_t
 chcon -R -t httpd_sys_content_t /sites/app/magento
 chcon -R -t httpd_sys_rw_content_t /sites/app/magento
-</code></pre><h3 id="unduh-tarball-magento-232-">Unduh tarball Magento 2.3.2</h3>
+</code></pre><h3 id="unduh-tarball-magento-232">Unduh tarball Magento 2.3.2</h3>
 <p>Unduh tarball Magento terbaru dari laman resminya di <a href="https://magento.com/tech-resources/download">https://magento.com/tech-resources/download</a>.
 Sebelum versi ini, Magento tidak menyediakan tarball di laman unduhan resmi mereka.</p>
 <p>Ekstrak tarball dan rename foldernya menyesuaikan konfigurasi nginx tadi.
@@ -146,7 +146,7 @@ find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws 
 chown -R :www-data .
 </code></pre><p>Juga perlu menghapus cache instalasi sebelum instalasi.</p>
 <pre><code>php72 bin/magento setup:uninstall
-</code></pre><h2 id="instalasi-magento-">Instalasi Magento</h2>
+</code></pre><h2 id="instalasi-magento">Instalasi Magento</h2>
 <p>Setelah setup server lokal selesai, dilanjutkan dengan
 instalasi Magento. Akses base-url yang sudah ditentukan pada konfigurasi nginx.</p>
 <p><img src="/img/2019/07/magento-install-1.png" alt="magento check requirements to install"></p>
