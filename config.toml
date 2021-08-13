@@ -40,9 +40,9 @@ url = "https://github.com/baddwin"
 fa_icon = "fa-github"
 
 [[params.social]]
-name = "twitter"
-url = "https://twitter.com/baddwin"
-fa_icon = "fa-twitter"
+name = "linkedin"
+url = "https://bit.ly/baddwin"
+fa_icon = "fa-linkedin"
 
 [[params.social]]
 name = "lastfm"

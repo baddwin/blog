@@ -43,9 +43,9 @@
             </span>
           </a>
           
-          <a class="level-item" href="https://twitter.com/baddwin" target="_blank">
+          <a class="level-item" href="https://bit.ly/baddwin" target="_blank">
             <span class="icon">
-              <i class="fa fa-twitter"></i>
+              <i class="fa fa-linkedin"></i>
             </span>
           </a>
           
@@ -80,17 +80,22 @@
 
     
     <div class="content">
-      <p>Selama mempelajari<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Magento, saya sudah membuat modul/<em>extension</em>
+      <p>Project pertama saya dengan Magento adalah membuat modul/<em>extension</em>
 ongkir (ongkos kirim) Indonesia untuk Magento 2. Modul ini mengambil data
 dari <a href="http://rajaongkir.com">RajaOngkir</a> yang menyediakan API cek ongkir dan <em>tracking</em>
 jasa kurir dan ekspedisi yang ada di Indonesia,
-termasuk JNE, J&amp;T, Tiki, Pos, SiCepat, dll.
+termasuk JNE, J&amp;T, Tiki, Pos, SiCepat, dll.</p>
+<p>Waktu itu belum ada <em>free extension</em> (gratis) Magento untuk ongkir Indonesia.
+Oleh karena itulah saya di-<em>hire</em> untuk mengerjakannya.
+Atas dasar itu pula saya mencoba membuat module yang <em>free</em> dan <em>open source</em>.
 Dengan modul ongkir ini, website Magento kita dapat menghitung
-ongkir barang berdasarkan kurir yang dipilih.</p>
-<p>Modul ini mirip dengan kode awal project yang saya kerjakan di tempat kerja saya &ndash;dulu.
-Kodenya tidak bisa saya <em>share</em> secara <del>gratis</del> publik.
-Tapi cuplikan kodenya sudah saya <em>share</em> di Github<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
-<p>Cuplikan:</p>
+ongkir barang berdasarkan kurir yang ada di Indonesia.</p>
+<p>Modul ini mirip dengan kode project pertama dulu, yaitu menggunakan API RajaOngkir.
+Modul ini merupakan <em>rewrite</em> yang berbeda total, karena tentunya ada NDA<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> dengah perusahaan.
+Tetapi ini bukan modul yang saya kerjakan di project tersebut.
+Untuk saat ini kodenya tidak bisa saya <em>share</em> secara <del>gratis</del> publik.
+Kode yang saya <em>share</em> di Github<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> adalah fungsi minimum sebuah modul metode pengiriman di Magento 2.</p>
+<p>Cuplikan kode:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">/**
 </span><span style="color:#e6db74">     * @param RateRequest $request
 </span><span style="color:#e6db74">     * @return \Magento\Shipping\Model\Rate\Result|bool
@@ -133,16 +138,16 @@ Tapi cuplikan kodenya sudah saya <em>share</em> di Github<sup id="fnref:2"><a hr
 <p>Contoh <em>live</em> di website:</p>
 <p><img src="/img/2019/07/ongkir.png" alt="screenshot ongkir"></p>
 <p>Untuk mendapatkan kode yang lebih fungsional dan
-disesuaikan dengan project <em>e-commerce</em> yang Anda bikin,
-silakan hubungi saya. (link akun medsos ada di atas blog) :)</p>
+disesuaikan dengan project <em>e-commerce</em> Anda,
+silakan hubungi saya melalui link akun medsos ada di atas blog. :)</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>selama bekerja <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Non-disclosure Agreement <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p><a href="https://github.com/baddwin/magento2-ongkir">https://github.com/baddwin/magento2-ongkir</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://github.com/FalahDev/magento2-ongkir">https://github.com/FalahDev/magento2-ongkir</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
