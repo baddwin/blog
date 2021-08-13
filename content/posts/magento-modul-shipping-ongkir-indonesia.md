@@ -76,5 +76,9 @@ Untuk mendapatkan kode yang lebih fungsional dan
 disesuaikan dengan project _e-commerce_ Anda,
 silakan hubungi saya melalui link akun medsos ada di atas blog. :)
 
+Atau jika Anda merupakan perwakilan dari perusahaan, saya lebih menyarankan
+untuk menggunakan API dari Shipper[^3] yang lebih lengkap dan reliabel.
+
 [^1]: Non-disclosure Agreement
 [^2]: https://github.com/FalahDev/magento2-ongkir
+[^3]: https://shipper.id
