@@ -4,7 +4,37 @@
   
   <url>
     <loc>https://code.badwi.my.id/</loc>
-    <lastmod>2019-08-07T12:32:36+07:00</lastmod>
+    <lastmod>2021-08-13T23:48:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://code.badwi.my.id/tags/laravel/</loc>
+    <lastmod>2021-08-13T23:48:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://code.badwi.my.id/2021/08/mencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind/</loc>
+    <lastmod>2021-08-13T23:48:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://code.badwi.my.id/tags/php/</loc>
+    <lastmod>2021-08-13T23:48:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://code.badwi.my.id/posts/</loc>
+    <lastmod>2021-08-13T23:48:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://code.badwi.my.id/tags/</loc>
+    <lastmod>2021-08-13T23:48:54+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://code.badwi.my.id/tags/web/</loc>
+    <lastmod>2021-08-13T23:48:54+07:00</lastmod>
   </url>
   
   <url>
@@ -13,22 +43,7 @@
   </url>
   
   <url>
-    <loc>https://code.badwi.my.id/tags/php/</loc>
-    <lastmod>2019-08-07T12:32:36+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://code.badwi.my.id/posts/</loc>
-    <lastmod>2019-08-07T12:32:36+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://code.badwi.my.id/2019/08/routing-di-magento-lanjutan/</loc>
-    <lastmod>2019-08-07T12:32:36+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://code.badwi.my.id/tags/</loc>
     <lastmod>2019-08-07T12:32:36+07:00</lastmod>
   </url>
   
@@ -78,11 +93,6 @@
   </url>
   
   <url>
-    <loc>https://code.badwi.my.id/tags/web/</loc>
-    <lastmod>2019-07-10T00:44:41+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://code.badwi.my.id/tags/dunia/</loc>
     <lastmod>2019-07-01T23:42:22+07:00</lastmod>
   </url>
@@ -90,11 +100,6 @@
   <url>
     <loc>https://code.badwi.my.id/2019/07/magento-mengalihkan-duniaku/</loc>
     <lastmod>2019-07-01T23:42:22+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://code.badwi.my.id/tags/laravel/</loc>
-    <lastmod>2016-10-17T12:39:06+07:00</lastmod>
   </url>
   
   <url>

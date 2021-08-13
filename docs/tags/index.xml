@@ -7,22 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Wed, 07 Aug 2019 12:32:36 +0700</lastBuildDate><atom:link href="https://code.badwi.my.id/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Aug 2021 23:48:54 +0700</lastBuildDate><atom:link href="https://code.badwi.my.id/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>magento</title>
-      <link>https://code.badwi.my.id/tags/magento/</link>
-      <pubDate>Wed, 07 Aug 2019 12:32:36 +0700</pubDate>
+      <title>laravel</title>
+      <link>https://code.badwi.my.id/tags/laravel/</link>
+      <pubDate>Fri, 13 Aug 2021 23:48:54 +0700</pubDate>
       
-      <guid>https://code.badwi.my.id/tags/magento/</guid>
+      <guid>https://code.badwi.my.id/tags/laravel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>php</title>
       <link>https://code.badwi.my.id/tags/php/</link>
-      <pubDate>Wed, 07 Aug 2019 12:32:36 +0700</pubDate>
+      <pubDate>Fri, 13 Aug 2021 23:48:54 +0700</pubDate>
       
       <guid>https://code.badwi.my.id/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://code.badwi.my.id/tags/web/</link>
+      <pubDate>Fri, 13 Aug 2021 23:48:54 +0700</pubDate>
+      
+      <guid>https://code.badwi.my.id/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>magento</title>
+      <link>https://code.badwi.my.id/tags/magento/</link>
+      <pubDate>Wed, 07 Aug 2019 12:32:36 +0700</pubDate>
+      
+      <guid>https://code.badwi.my.id/tags/magento/</guid>
       <description></description>
     </item>
     
@@ -72,29 +90,11 @@
     </item>
     
     <item>
-      <title>web</title>
-      <link>https://code.badwi.my.id/tags/web/</link>
-      <pubDate>Wed, 10 Jul 2019 00:44:41 +0700</pubDate>
-      
-      <guid>https://code.badwi.my.id/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>dunia</title>
       <link>https://code.badwi.my.id/tags/dunia/</link>
       <pubDate>Mon, 01 Jul 2019 23:42:22 +0700</pubDate>
       
       <guid>https://code.badwi.my.id/tags/dunia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>laravel</title>
-      <link>https://code.badwi.my.id/tags/laravel/</link>
-      <pubDate>Mon, 17 Oct 2016 12:39:06 +0700</pubDate>
-      
-      <guid>https://code.badwi.my.id/tags/laravel/</guid>
       <description></description>
     </item>
     

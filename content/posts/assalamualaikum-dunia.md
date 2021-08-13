@@ -20,4 +20,4 @@ hampir tidak ada tulisan baru yang saya terbitkan.
 Hingga akhirnya hari ini, saya merapikan beberapa blog yang saya punya.
 Termasuk blog kode ini, yang saya maksudkan untuk berbagi *snippet*
 kode, sekarang saya perbarui. Kini blog ini dibuat menggunakan
-*static site generator* **Hugo** dari yang semua *Jekyll*.
+*static site generator* **Hugo** dari yang semula *Jekyll*.

@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Wed, 07 Aug 2019 12:32:36 +0700</lastBuildDate><atom:link href="https://code.badwi.my.id/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Aug 2021 23:48:54 +0700</lastBuildDate><atom:link href="https://code.badwi.my.id/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mencoba Laravel 8 Breeze dengan Inertia, Vue, dan Tailwind</title>
+      <link>https://code.badwi.my.id/2021/08/mencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind/</link>
+      <pubDate>Fri, 13 Aug 2021 23:48:54 +0700</pubDate>
+      
+      <guid>https://code.badwi.my.id/2021/08/mencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind/</guid>
+      <description>Beberapa waktu terakhir saya lebih fokus dengan Magento. Padahal sebelum itu saya berangkat dari framework Laravel. Cukup aneh jika blog yang saya khususkan untuk kode ini hanya berisi satu pos tentang Laravel. Itu pun tidak terlalu berfaedah.
+Baru-baru ini saya mengoprek Laravel 8 dengan Inertia.js dan Vue.js serta Tailwind CSS. Semuanya dibundel oleh starter kit Breeze1. Dalam kurun waktu 2-3 tahun belakangan ternyata Laravel merilis banyak tools dengan istilah-istilah baru. Saya merasa sangat ketinggalan karena tidak terlalu mengikuti perkembangannya.</description>
+    </item>
+    
     <item>
       <title>Routing di Magento (Lanjutan)</title>
       <link>https://code.badwi.my.id/2019/08/routing-di-magento-lanjutan/</link>
