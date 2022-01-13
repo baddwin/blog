@@ -22,6 +22,9 @@ author = "Aryo Sr."
 keywords = []
 sharingicons = true
 displayauthor = true
+gtm_id = "GTM-T8H2TXC"
+gtm_ga = true
+gtm_datalayer = "basic"
 
 [params.highlight]
 style = "github"
