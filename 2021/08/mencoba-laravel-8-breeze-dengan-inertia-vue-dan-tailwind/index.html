@@ -1,0 +1,165 @@
+<!doctype html><html lang=id>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta content name=keywords>
+<meta content="Aryo Sr." name=author>
+<meta property="og:title" content="Mencoba Laravel 8 Breeze dengan Inertia, Vue, dan Tailwind - Aryo Sr. Blog">
+<meta property="og:url" content="https://aryosr.me/blog/2021/08/mencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind/">
+<meta property="og:description" content="Blog untuk kode">
+<meta property="og:type" content="website">
+<title>Mencoba Laravel 8 Breeze dengan Inertia, Vue, dan Tailwind | Aryo Sr. Blog</title>
+<script type=text/x-mathjax-config>
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel=stylesheet href=https://aryosr.me/blog//css/style.css>
+<link rel="shortcut icon" href=https://aryosr.me/blog//favicon.ico>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin=anonymous>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css>
+</head>
+<body>
+<section class=section>
+<div class=container>
+<nav class=nav>
+<div class=nav-left>
+<a class=nav-item href=https://aryosr.me/blog/><h1 class="title is-4">Aryo Sr. Blog</h1></a>
+</div>
+<div class=nav-right>
+<nav class="nav-item level is-mobile">
+<a class=level-item href=https://github.com/baddwin target=_blank>
+<span class=icon>
+<i class="fa fa-github"></i>
+</span>
+</a>
+<a class=level-item href=https://bit.ly/baddwin target=_blank>
+<span class=icon>
+<i class="fa fa-linkedin"></i>
+</span>
+</a>
+<a class=level-item href=https://www.last.fm/user/baddwin target=_blank>
+<span class=icon>
+<i class="fa fa-lastfm"></i>
+</span>
+</a>
+</nav>
+</div>
+</nav>
+</div>
+</section>
+<section class=section>
+<div class=container>
+<h1 class=title>Mencoba Laravel 8 Breeze dengan Inertia, Vue, dan Tailwind</h1>
+<h2 class="subtitle is-5">August 13, 2021 by Aryo Sr.</h2>
+<div class=tags>
+<a class="button is-link" href=/blog/tags/laravel>laravel</a>
+<a class="button is-link" href=/blog/tags/php>php</a>
+<a class="button is-link" href=/blog/tags/web>web</a>
+</div>
+<div class=content>
+<p>Beberapa waktu terakhir saya lebih fokus dengan Magento.
+Padahal sebelum itu saya berangkat dari <em>framework</em> Laravel.
+Cukup aneh jika blog yang saya khususkan untuk kode ini hanya berisi satu
+pos tentang Laravel. Itu pun tidak terlalu berfaedah.</p>
+<p>Baru-baru ini saya mengoprek Laravel 8 dengan Inertia.js dan Vue.js serta Tailwind CSS.
+Semuanya dibundel oleh starter kit Breeze<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.
+Dalam kurun waktu 2-3 tahun belakangan ternyata Laravel merilis banyak <em>tools</em>
+dengan istilah-istilah baru.
+Saya merasa sangat ketinggalan karena tidak terlalu mengikuti perkembangannya.</p>
+<p>Mengenai Breeze, di laman resminya dijelaskan,</p>
+<blockquote>
+<p>Laravel Breeze also offers an Inertia.js frontend implementation powered by Vue or React.</p>
+</blockquote>
+<p>Selain Vue, Breeze menawarkan solusi menggunakan React. Untuk instalasi pada Laravel,
+cukup menjalankan komando:</p>
+<pre><code>php artisan breeze:install vue
+</code></pre>
+<p>Perintah itu akan menginstall dan membuat <em>boilerplate frontend</em> Inertia dan Vue.
+Sesuaikan jika lebih memilih React.</p>
+<p>Project yang saya oprek ini merupakan sebuah <em>order management system</em> (OMS) sederhana.
+Dengar OMS, saya otomatis mengasosiasikannya dengan Magento.
+Oleh karena itu, secara arsitektur oprekan ini juga sangat terinspirasi oleh Magento.
+Yang paling kentara adalah tabel <em>cart</em> atau di Magento istilahnya <em>quote</em> yang digunakan
+sebagai <em>cache</em> sebelum transaksi disimpan yang akhirnya masuk ke tabel orderan.</p>
+<p>Di sini saya beri nama <code>TransactionBag</code> untuk model <em>cart</em>.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#f92672>&lt;?</span><span style=color:#a6e22e>php</span>
+
+<span style=color:#66d9ef>namespace</span> <span style=color:#a6e22e>App\Models</span>;
+
+<span style=color:#66d9ef>use</span> <span style=color:#a6e22e>Illuminate\Database\Eloquent\Factories\HasFactory</span>;
+<span style=color:#66d9ef>use</span> <span style=color:#a6e22e>Illuminate\Database\Eloquent\Model</span>;
+
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>TransactionBag</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>Model</span>
+{
+    <span style=color:#66d9ef>use</span> <span style=color:#a6e22e>HasFactory</span>;
+
+    <span style=color:#66d9ef>protected</span> $fillable <span style=color:#f92672>=</span> [
+        <span style=color:#e6db74>&#39;user_id&#39;</span>,
+        <span style=color:#e6db74>&#39;total_payment&#39;</span>,
+        <span style=color:#e6db74>&#39;created_at&#39;</span>,
+        <span style=color:#e6db74>&#39;updated_at&#39;</span>,
+    ];
+
+    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>items</span>()
+    {
+        <span style=color:#66d9ef>return</span> $this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>belongsToMany</span>(<span style=color:#a6e22e>TransactionItem</span><span style=color:#f92672>::</span><span style=color:#a6e22e>class</span>, <span style=color:#e6db74>&#39;transaction_bag_items&#39;</span>, <span style=color:#e6db74>&#39;bag_id&#39;</span>, <span style=color:#e6db74>&#39;item_id&#39;</span>)
+            <span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>withPivot</span>(<span style=color:#e6db74>&#39;qty&#39;</span>, <span style=color:#e6db74>&#39;total_price&#39;</span>);
+    }
+
+    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>user</span>()
+    {
+        <span style=color:#66d9ef>return</span> $this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>belongsTo</span>(<span style=color:#a6e22e>User</span><span style=color:#f92672>::</span><span style=color:#a6e22e>class</span>);
+    }
+}
+</code></pre></div><p><img src=/blog/img/2021/08/screen_000953.png alt="screenshot dashboard admin"></p>
+<p><img src=/blog/img/2021/08/screen_001025.png alt="screenshot dashboard admin"></p>
+<p>Kode project lengkap sudah saya unggah ke Github<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>.</p>
+<p><em>P.S. sebenarnya ini hasil pengerjaan tes teknikal sebuah job yang saya lamar. :)</em></p>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p><a href=https://laravel.com/docs/8.x/starter-kits#laravel-breeze>Laravel Breeze</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2 role=doc-endnote>
+<p><a href=https://github.com/baddwin/laravue>https://github.com/baddwin/laravue</a>&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+<div class=nav-left>
+<a class=nav-item href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2faryosr.me%2fblog%2f2021%2f08%2fmencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind%2f" title="Share on Facebook" target=_blank><span class="fa fa-facebook fa-2x" aria-hidden=true></span></a>
+<a class=nav-item href="https://plus.google.com/share?url=https%3a%2f%2faryosr.me%2fblog%2f2021%2f08%2fmencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind%2f" title="Share on Google+" target=_blank><span class="fa fa-google-plus fa-2x" aria-hidden=true></span></a>
+<a class=nav-item href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2faryosr.me%2fblog%2f2021%2f08%2fmencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind%2f" title="Share on LinkedIn" target=_blank><span class="fa fa-linkedin fa-2x" aria-hidden=true></span></a>
+<a class=nav-item href="https://twitter.com/home?status=Mencoba%20Laravel%208%20Breeze%20dengan%20Inertia%2c%20Vue%2c%20dan%20Tailwind - https%3a%2f%2faryosr.me%2fblog%2f2021%2f08%2fmencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind%2f" title="Tweet this" target=_blank><span class="fa fa-twitter fa-2x"></span></a>
+<a class=nav-item href="http://www.reddit.com/submit?url=https%3a%2f%2faryosr.me%2fblog%2f2021%2f08%2fmencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind%2f&title=Mencoba%20Laravel%208%20Breeze%20dengan%20Inertia%2c%20Vue%2c%20dan%20Tailwind" title="Share on Reddit" target=_blank><span class="fa fa-reddit-alien fa-2x" aria-hidden=true></span></a>
+</div>
+</div>
+</section>
+<section class=section>
+<div class=container>
+<aside><div id=disqus_thread></div></aside>
+<script type=text/javascript>var disqus_shortname='codebadwi';(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.src='//'+disqus_shortname+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript rel=nofollow>comments powered by Disqus.</a></noscript>
+</div>
+</section>
+<section class=section>
+<div class="container has-text-centered">
+<p>&copy; 2017 | <a href=https://github.com/mgjohansen/hucore.git target=_blank>Hucore theme</a> & <a href=http://gohugo.io target=_blank>Hugo</a> ♥</p>
+</div>
+</section>
+<script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin=anonymous></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/dockerfile.min.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/php.min.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-36990012-6','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</body>

@@ -1,0 +1,163 @@
+<!doctype html><html lang=id>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta content name=keywords>
+<meta content="Aryo Sr." name=author>
+<meta property="og:title" content="Coding pertama: Angular.Js penyortir tabel - Aryo Sr. Blog">
+<meta property="og:url" content="https://aryosr.me/blog/2015/07/coding-pertama-angular.js-penyortir-tabel/">
+<meta property="og:description" content="Blog untuk kode">
+<meta property="og:type" content="website">
+<title>Coding pertama: Angular.Js penyortir tabel | Aryo Sr. Blog</title>
+<script type=text/x-mathjax-config>
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel=stylesheet href=https://aryosr.me/blog//css/style.css>
+<link rel="shortcut icon" href=https://aryosr.me/blog//favicon.ico>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin=anonymous>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css>
+</head>
+<body>
+<section class=section>
+<div class=container>
+<nav class=nav>
+<div class=nav-left>
+<a class=nav-item href=https://aryosr.me/blog/><h1 class="title is-4">Aryo Sr. Blog</h1></a>
+</div>
+<div class=nav-right>
+<nav class="nav-item level is-mobile">
+<a class=level-item href=https://github.com/baddwin target=_blank>
+<span class=icon>
+<i class="fa fa-github"></i>
+</span>
+</a>
+<a class=level-item href=https://bit.ly/baddwin target=_blank>
+<span class=icon>
+<i class="fa fa-linkedin"></i>
+</span>
+</a>
+<a class=level-item href=https://www.last.fm/user/baddwin target=_blank>
+<span class=icon>
+<i class="fa fa-lastfm"></i>
+</span>
+</a>
+</nav>
+</div>
+</nav>
+</div>
+</section>
+<section class=section>
+<div class=container>
+<h1 class=title>Coding pertama: Angular.Js penyortir tabel</h1>
+<h2 class="subtitle is-5">July 23, 2015 by Aryo Sr.</h2>
+<div class=tags>
+<a class="button is-link" href=/blog/tags/angularjs>angularjs</a>
+<a class="button is-link" href=/blog/tags/javascript>javascript</a>
+</div>
+<div class=content>
+<p>Saya mau share hasil koding pertama belajar AngularJs. Berikut <em>snippet</em> kodenya.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#75715e>&lt;!DOCTYPE html&gt;</span>
+&lt;<span style=color:#f92672>html</span>&gt;
+&lt;<span style=color:#f92672>head</span>&gt;
+&lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>charset</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;utf-8&#34;</span>&gt;
+&lt;<span style=color:#f92672>title</span>&gt;Hafal Quran Android App&lt;/<span style=color:#f92672>title</span>&gt;
+&lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;viewport&#34;</span> <span style=color:#a6e22e>content</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;width=device-width, initial-scale=1&#34;</span>&gt;
+
+&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text/javascript&#34;</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;script/angular.min.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+&lt;/<span style=color:#f92672>head</span>&gt;
+&lt;<span style=color:#f92672>body</span> <span style=color:#a6e22e>ng-app</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;statistikApp&#34;</span>&gt;
+&lt;<span style=color:#f92672>section</span> <span style=color:#a6e22e>ng-controller</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;urutkanTabel&#34;</span>&gt;
+    &lt;<span style=color:#f92672>h2</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;table&#34;</span>&gt;Statistik Hafal Quran&lt;/<span style=color:#f92672>h2</span>&gt;
+    &lt;<span style=color:#f92672>h3</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;table&#34;</span>&gt;&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://play.google.com/store/apps/details?id=id.web.amzone.hafalquran&#34;</span> <span style=color:#a6e22e>target</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;_blank&#34;</span>&gt;Android App&lt;/<span style=color:#f92672>a</span>&gt;&lt;/<span style=color:#f92672>h3</span>&gt;
+    &lt;<span style=color:#f92672>p</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text-align:center;&#34;</span>&gt;<span style=color:#75715e>&lt;?php echo $Tanggal;?&gt;</span>&lt;/<span style=color:#f92672>p</span>&gt;
+    &lt;<span style=color:#f92672>table</span>&gt;
+    &lt;<span style=color:#f92672>thead</span>&gt;
+        &lt;<span style=color:#f92672>tr</span>&gt;
+            &lt;<span style=color:#f92672>th</span>&gt;No.&lt;/<span style=color:#f92672>th</span>&gt;
+            &lt;<span style=color:#f92672>th</span>&gt;&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span> <span style=color:#a6e22e>ng-click</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;reverse=!reverse;order(&#39;a&#39;, reverse)&#34;</span>&gt;Kode&lt;/<span style=color:#f92672>a</span>&gt;&lt;/<span style=color:#f92672>th</span>&gt;
+            &lt;<span style=color:#f92672>th</span>&gt;&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span> <span style=color:#a6e22e>ng-click</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;reverse=false;order(&#39;b&#39;, false)&#34;</span>&gt;First&lt;/<span style=color:#f92672>a</span>&gt; (&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span> <span style=color:#a6e22e>ng-click</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;order(&#39;-b&#39;,false)&#34;</span>&gt;^&lt;/<span style=color:#f92672>a</span>&gt;)&lt;/<span style=color:#f92672>th</span>&gt;
+            &lt;<span style=color:#f92672>th</span>&gt;&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span> <span style=color:#a6e22e>ng-click</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;reverse=false;order(&#39;c&#39;, false)&#34;</span>&gt;Last&lt;/<span style=color:#f92672>a</span>&gt; (&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span> <span style=color:#a6e22e>ng-click</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;order(&#39;-c&#39;,false)&#34;</span>&gt;^&lt;/<span style=color:#f92672>a</span>&gt;)&lt;/<span style=color:#f92672>th</span>&gt;
+            &lt;<span style=color:#f92672>th</span>&gt;&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span> <span style=color:#a6e22e>ng-click</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;reverse=!reverse;order(&#39;d&#39;, reverse)&#34;</span>&gt;Level&lt;/<span style=color:#f92672>a</span>&gt;&lt;/<span style=color:#f92672>th</span>&gt;
+            &lt;<span style=color:#f92672>th</span>&gt;&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span> <span style=color:#a6e22e>ng-click</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;reverse=!reverse;order(&#39;e&#39;, reverse)&#34;</span>&gt;Play&lt;/<span style=color:#f92672>a</span>&gt;&lt;/<span style=color:#f92672>th</span>&gt;
+            &lt;<span style=color:#f92672>th</span>&gt;&lt;<span style=color:#f92672>a</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span> <span style=color:#a6e22e>ng-click</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;reverse=!reverse;order(&#39;f&#39;, reverse)&#34;</span>&gt;Device&lt;/<span style=color:#f92672>a</span>&gt;&lt;/<span style=color:#f92672>th</span>&gt;
+        &lt;/<span style=color:#f92672>tr</span>&gt;
+    &lt;/<span style=color:#f92672>thead</span>&gt;
+    &lt;<span style=color:#f92672>tbody</span>&gt;
+
+        &lt;<span style=color:#f92672>tr</span> <span style=color:#a6e22e>ng-repeat</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;stat in stats | orderBy:last:reverse&#34;</span>&gt;
+            &lt;<span style=color:#f92672>td</span>&gt;{{$index+1}}&lt;/<span style=color:#f92672>td</span>&gt;
+            &lt;<span style=color:#f92672>td</span>&gt;{{stat.a}}&lt;/<span style=color:#f92672>td</span>&gt;
+            &lt;<span style=color:#f92672>td</span>&gt;{{stat.b}}&lt;/<span style=color:#f92672>td</span>&gt;
+            &lt;<span style=color:#f92672>td</span>&gt;{{stat.c}}&lt;/<span style=color:#f92672>td</span>&gt;
+            &lt;<span style=color:#f92672>td</span>&gt;{{stat.d}}&lt;/<span style=color:#f92672>td</span>&gt;
+            &lt;<span style=color:#f92672>td</span>&gt;{{stat.e}}&lt;/<span style=color:#f92672>td</span>&gt;
+            &lt;<span style=color:#f92672>td</span>&gt;{{stat.f}}&lt;/<span style=color:#f92672>td</span>&gt;
+        &lt;/<span style=color:#f92672>tr</span>&gt;
+
+    &lt;/<span style=color:#f92672>tbody</span>&gt;
+    &lt;/<span style=color:#f92672>table</span>&gt;
+
+&lt;/<span style=color:#f92672>section</span>&gt;
+
+&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text/javascript&#34;</span>&gt;
+<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>app</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>angular</span>.<span style=color:#a6e22e>module</span>(<span style=color:#e6db74>&#39;statistikApp&#39;</span>, []);
+<span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>controller</span>(<span style=color:#e6db74>&#39;urutkanTabel&#39;</span>, [<span style=color:#e6db74>&#39;$scope&#39;</span>, <span style=color:#e6db74>&#39;$filter&#39;</span>, <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>$scope</span>, <span style=color:#a6e22e>$filter</span>) {
+  <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>orderBy</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>$filter</span>(<span style=color:#e6db74>&#39;orderBy&#39;</span>);
+  <span style=color:#a6e22e>$scope</span>.<span style=color:#a6e22e>stats</span> <span style=color:#f92672>=</span> <span style=color:#f92672>&lt;?</span><span style=color:#a6e22e>php</span> <span style=color:#a6e22e>print</span> <span style=color:#a6e22e>json_encode</span>(<span style=color:#a6e22e>$stats</span>);<span style=color:#f92672>?&gt;</span>;
+  <span style=color:#a6e22e>$scope</span>.<span style=color:#a6e22e>order</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>predicate</span>, <span style=color:#a6e22e>reverse</span>) {
+    <span style=color:#a6e22e>$scope</span>.<span style=color:#a6e22e>stats</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>orderBy</span>(<span style=color:#a6e22e>$scope</span>.<span style=color:#a6e22e>stats</span>, <span style=color:#a6e22e>predicate</span>, <span style=color:#a6e22e>reverse</span>);
+  };
+  <span style=color:#a6e22e>$scope</span>.<span style=color:#a6e22e>order</span>(<span style=color:#e6db74>&#39;-c&#39;</span>,<span style=color:#66d9ef>false</span>);
+}]);
+&lt;/<span style=color:#f92672>script</span>&gt;
+
+&lt;/<span style=color:#f92672>body</span>&gt;
+&lt;/<span style=color:#f92672>html</span>&gt;
+</code></pre></div><p>Demo bisa dilihat di link berikut: <a href=http://baddwin.github.io/demo-koding/angularjs-sortir-tabel.html>http://baddwin.github.io/demo-koding/angularjs-sortir-tabel.html</a></p>
+<p>Ide dari beberapa sumber berikut:</p>
+<ol>
+<li><a href=http://www.mograblog.com/2013/06/angularjs-smart-table.html>http://www.mograblog.com/2013/06/angularjs-smart-table.html</a></li>
+<li><a href=http://jsfiddle.net/patxy/D2FsZ/light/>http://jsfiddle.net/patxy/D2FsZ/light/</a></li>
+<li><a href=https://gist.github.com/simonbingham/3858121>https://gist.github.com/simonbingham/3858121</a></li>
+<li><a href=http://stackoverflow.com/questions/18789973/sortable-table-columns-with-angularjs>http://stackoverflow.com/questions/18789973/sortable-table-columns-with-angularjs</a></li>
+<li><a href=http://www.w3schools.com/angular/angular_tables.asp>http://www.w3schools.com/angular/angular_tables.asp</a></li>
+<li><a href=https://docs.angularjs.org/api/ng/filter/orderBy>https://docs.angularjs.org/api/ng/filter/orderBy</a></li>
+</ol>
+</div>
+<div class=nav-left>
+<a class=nav-item href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2faryosr.me%2fblog%2f2015%2f07%2fcoding-pertama-angular.js-penyortir-tabel%2f" title="Share on Facebook" target=_blank><span class="fa fa-facebook fa-2x" aria-hidden=true></span></a>
+<a class=nav-item href="https://plus.google.com/share?url=https%3a%2f%2faryosr.me%2fblog%2f2015%2f07%2fcoding-pertama-angular.js-penyortir-tabel%2f" title="Share on Google+" target=_blank><span class="fa fa-google-plus fa-2x" aria-hidden=true></span></a>
+<a class=nav-item href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2faryosr.me%2fblog%2f2015%2f07%2fcoding-pertama-angular.js-penyortir-tabel%2f" title="Share on LinkedIn" target=_blank><span class="fa fa-linkedin fa-2x" aria-hidden=true></span></a>
+<a class=nav-item href="https://twitter.com/home?status=Coding%20pertama%3a%20Angular.Js%20penyortir%20tabel - https%3a%2f%2faryosr.me%2fblog%2f2015%2f07%2fcoding-pertama-angular.js-penyortir-tabel%2f" title="Tweet this" target=_blank><span class="fa fa-twitter fa-2x"></span></a>
+<a class=nav-item href="http://www.reddit.com/submit?url=https%3a%2f%2faryosr.me%2fblog%2f2015%2f07%2fcoding-pertama-angular.js-penyortir-tabel%2f&title=Coding%20pertama%3a%20Angular.Js%20penyortir%20tabel" title="Share on Reddit" target=_blank><span class="fa fa-reddit-alien fa-2x" aria-hidden=true></span></a>
+</div>
+</div>
+</section>
+<section class=section>
+<div class=container>
+<aside><div id=disqus_thread></div></aside>
+<script type=text/javascript>var disqus_shortname='codebadwi';(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.src='//'+disqus_shortname+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript rel=nofollow>comments powered by Disqus.</a></noscript>
+</div>
+</section>
+<section class=section>
+<div class="container has-text-centered">
+<p>&copy; 2017 | <a href=https://github.com/mgjohansen/hucore.git target=_blank>Hucore theme</a> & <a href=http://gohugo.io target=_blank>Hugo</a> ♥</p>
+</div>
+</section>
+<script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin=anonymous></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/dockerfile.min.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/php.min.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-36990012-6','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</body>

@@ -1,0 +1,141 @@
+<!doctype html><html lang=id>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta content name=keywords>
+<meta content="Aryo Sr." name=author>
+<meta property="og:title" content="Area di Magento - Aryo Sr. Blog">
+<meta property="og:url" content="https://aryosr.me/blog/2019/08/area-di-magento/">
+<meta property="og:description" content="Blog untuk kode">
+<meta property="og:type" content="website">
+<title>Area di Magento | Aryo Sr. Blog</title>
+<script type=text/x-mathjax-config>
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel=stylesheet href=https://aryosr.me/blog//css/style.css>
+<link rel="shortcut icon" href=https://aryosr.me/blog//favicon.ico>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin=anonymous>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css>
+</head>
+<body>
+<section class=section>
+<div class=container>
+<nav class=nav>
+<div class=nav-left>
+<a class=nav-item href=https://aryosr.me/blog/><h1 class="title is-4">Aryo Sr. Blog</h1></a>
+</div>
+<div class=nav-right>
+<nav class="nav-item level is-mobile">
+<a class=level-item href=https://github.com/baddwin target=_blank>
+<span class=icon>
+<i class="fa fa-github"></i>
+</span>
+</a>
+<a class=level-item href=https://bit.ly/baddwin target=_blank>
+<span class=icon>
+<i class="fa fa-linkedin"></i>
+</span>
+</a>
+<a class=level-item href=https://www.last.fm/user/baddwin target=_blank>
+<span class=icon>
+<i class="fa fa-lastfm"></i>
+</span>
+</a>
+</nav>
+</div>
+</nav>
+</div>
+</section>
+<section class=section>
+<div class=container>
+<h1 class=title>Area di Magento</h1>
+<h2 class="subtitle is-5">August 2, 2019 by Aryo Sr.</h2>
+<div class=tags>
+<a class="button is-link" href=/blog/tags/magento>magento</a>
+<a class="button is-link" href=/blog/tags/php>php</a>
+</div>
+<div class=content>
+<p>Area di Magento merupakan sebuah komponen logis yang mengelola kode,
+termasuk struktur sistem file, demi pemrosesan <em>request</em> yang optimum<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.
+Pengelompokan area ini bermanfaat dalam menjaga kerapian struktur kode.</p>
+<p>Area paling umum di Magento adalah <code>adminhtml</code> dan <code>frontend</code>.
+<em>adminhtml</em> merupakan</p>
+<p>area kode yang mengontrol proses yang terjadi pada admin.
+Sedangkan <em>frontend</em> adalah area <em>store front</em> untuk <em>consumer facing</em>, seperti view product, proses checkout, registrasi user, dll.</p>
+<p>Nama-nama area yang disediakan Magento antara lain:</p>
+<ol>
+<li><em>adminhtml</em>: area untuk halaman admin</li>
+<li><em>frontend</em>: halaman depan consumer facing</li>
+<li><em>base</em>: fallback area jika tidak ada kode di adminhtml atau frontend</li>
+<li><em>crontab</em>: khusus untuk cron job proses</li>
+<li><em>webapi_rest</em>: menangani proses yang berhubungan dengan request REST API</li>
+<li><em>webapi_soap</em>: menangani proses yang berhubungan dengan request SOAP API</li>
+</ol>
+<p>Contoh use case area ini adalah dalam routing.
+Untuk routing frontend, sudah dibahas pada <a href=https://aryosr.me/blog/2019/08/routing-di-magento/>tulisan sebelumnya</a>.
+Sedangkan untuk routing adminhtml, misalnya akan membuat page di admin
+dengan url <code>/admin/blog/post/new</code>.
+Maka routes.xml berisi:</p>
+<pre tabindex=0><code>&lt;?xml version=&quot;1.0&quot; ?&gt;
+&lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:App/etc/routes.xsd&quot;&gt;
+    &lt;router id=&quot;adminhtml&quot;&gt;
+        &lt;route id=&quot;blog&quot; frontName=&quot;blog&quot;&gt;
+            &lt;module name=&quot;Vendor_NamaModul&quot;/&gt;
+        &lt;/route&gt;
+    &lt;/router&gt;
+&lt;/config&gt;
+</code></pre><p>Di mana path <code>blog</code> ditentukan di tag route dengan key <em>frontName</em>.
+Perbedaannya dengan route frontend adalah, di area adminhtml selalu didahului dengan path <code>/admin</code>.</p>
+<p>Untuk controllernya, letak file controller di dalam folder <code>Adminhtml</code>.
+Selebihnya mengikuti format struktur yang telah ditentukan seperti pada standard route. Maka struktur controller seperti ini:</p>
+<pre tabindex=0><code>├── Adminhtml                                                                   
+│   └── Blog                                                                                                                        
+│       └── Post                                                            
+│           └── New.php                                                        
+</code></pre><p>Referensi resmi dari <a href=https://devdocs.magento.com/guides/v2.3/architecture/archi_perspectives/components/modules/mod_and_areas.html>halaman dokumentasi Magento</a>.</p>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p>kata guru bahasa Indonesia dulu, akhiran <em>-mum</em> lebih baku daripada <em>-mal</em>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+<div class=nav-left>
+<a class=nav-item href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2faryosr.me%2fblog%2f2019%2f08%2farea-di-magento%2f" title="Share on Facebook" target=_blank><span class="fa fa-facebook fa-2x" aria-hidden=true></span></a>
+<a class=nav-item href="https://plus.google.com/share?url=https%3a%2f%2faryosr.me%2fblog%2f2019%2f08%2farea-di-magento%2f" title="Share on Google+" target=_blank><span class="fa fa-google-plus fa-2x" aria-hidden=true></span></a>
+<a class=nav-item href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2faryosr.me%2fblog%2f2019%2f08%2farea-di-magento%2f" title="Share on LinkedIn" target=_blank><span class="fa fa-linkedin fa-2x" aria-hidden=true></span></a>
+<a class=nav-item href="https://twitter.com/home?status=Area%20di%20Magento - https%3a%2f%2faryosr.me%2fblog%2f2019%2f08%2farea-di-magento%2f" title="Tweet this" target=_blank><span class="fa fa-twitter fa-2x"></span></a>
+<a class=nav-item href="http://www.reddit.com/submit?url=https%3a%2f%2faryosr.me%2fblog%2f2019%2f08%2farea-di-magento%2f&title=Area%20di%20Magento" title="Share on Reddit" target=_blank><span class="fa fa-reddit-alien fa-2x" aria-hidden=true></span></a>
+</div>
+</div>
+</section>
+<section class=section>
+<div class=container>
+<aside><div id=disqus_thread></div></aside>
+<script type=text/javascript>var disqus_shortname='codebadwi';(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.src='//'+disqus_shortname+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript rel=nofollow>comments powered by Disqus.</a></noscript>
+</div>
+</section>
+<section class=section>
+<div class="container has-text-centered">
+<p>&copy; 2017 | <a href=https://github.com/mgjohansen/hucore.git target=_blank>Hucore theme</a> & <a href=http://gohugo.io target=_blank>Hugo</a> ♥</p>
+</div>
+</section>
+<script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin=anonymous></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/dockerfile.min.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/php.min.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-36990012-6','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</body>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>fedora on Aryo Sr. Blog</title><link>https://aryosr.me/blog/tags/fedora/</link><description>Recent content in fedora on Aryo Sr. Blog</description><generator>Hugo -- gohugo.io</generator><language>id</language><copyright>&amp;copy; 2017 | &lt;a href="https://github.com/mgjohansen/hucore.git" target="_blank">Hucore theme&lt;/a> &amp; &lt;a href="http://gohugo.io" target="_blank">Hugo&lt;/a> ♥</copyright><lastBuildDate>Tue, 16 Jul 2019 21:15:52 +0700</lastBuildDate><atom:link href="https://aryosr.me/blog/tags/fedora/index.xml" rel="self" type="application/rss+xml"/><item><title>Setup Magento Local Development with nginx</title><link>https://aryosr.me/blog/2019/07/setup-magento-local-development-with-nginx/</link><pubDate>Tue, 16 Jul 2019 21:15:52 +0700</pubDate><guid>https://aryosr.me/blog/2019/07/setup-magento-local-development-with-nginx/</guid><description>&lt;h2 id="prasyarat">Prasyarat&lt;/h2>
+&lt;p>Tulisan ini memperlihatkan langkah-langkah dalam men-setup
+Magento 2.3.2 dengan nginx di Fedora 30 ke atas.
+Maka prasyarat yang harus dipenuhi antara lain:&lt;/p>
+&lt;ol>
+&lt;li>OS Fedora 30 atau lebih baru&lt;/li>
+&lt;li>nginx&lt;/li>
+&lt;li>PHP 7.2&lt;/li>
+&lt;li>MySQL (MariaDB)&lt;/li>
+&lt;li>tarball Magento 2.3.2&lt;/li>
+&lt;li>composer&lt;/li>
+&lt;/ol>
+&lt;h3 id="install-_software_-di-fedora">Install &lt;em>software&lt;/em> di Fedora&lt;/h3>
+&lt;p>PHP 7.2 tidak tersedia di repo utama Fedora mulai versi 28.
+Maka, untuk Fedora 30, perlu menambahkan repo dari Remi
+Ikuti panduan dari web Remi di&lt;/p></description></item></channel></rss>

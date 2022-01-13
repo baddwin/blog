@@ -1,0 +1,134 @@
+<!doctype html><html lang=id>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta content name=keywords>
+<meta content="Aryo Sr." name=author>
+<meta property="og:title" content="Routing di Magento - Aryo Sr. Blog">
+<meta property="og:url" content="https://aryosr.me/blog/2019/08/routing-di-magento/">
+<meta property="og:description" content="Blog untuk kode">
+<meta property="og:type" content="website">
+<title>Routing di Magento | Aryo Sr. Blog</title>
+<script type=text/x-mathjax-config>
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel=stylesheet href=https://aryosr.me/blog//css/style.css>
+<link rel="shortcut icon" href=https://aryosr.me/blog//favicon.ico>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin=anonymous>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css>
+</head>
+<body>
+<section class=section>
+<div class=container>
+<nav class=nav>
+<div class=nav-left>
+<a class=nav-item href=https://aryosr.me/blog/><h1 class="title is-4">Aryo Sr. Blog</h1></a>
+</div>
+<div class=nav-right>
+<nav class="nav-item level is-mobile">
+<a class=level-item href=https://github.com/baddwin target=_blank>
+<span class=icon>
+<i class="fa fa-github"></i>
+</span>
+</a>
+<a class=level-item href=https://bit.ly/baddwin target=_blank>
+<span class=icon>
+<i class="fa fa-linkedin"></i>
+</span>
+</a>
+<a class=level-item href=https://www.last.fm/user/baddwin target=_blank>
+<span class=icon>
+<i class="fa fa-lastfm"></i>
+</span>
+</a>
+</nav>
+</div>
+</nav>
+</div>
+</section>
+<section class=section>
+<div class=container>
+<h1 class=title>Routing di Magento</h1>
+<h2 class="subtitle is-5">August 2, 2019 by Aryo Sr.</h2>
+<div class=tags>
+<a class="button is-link" href=/blog/tags/magento>magento</a>
+<a class="button is-link" href=/blog/tags/php>php</a>
+</div>
+<div class=content>
+<p>Routing di Magento ditentukan per-modul. Ada beberapa jenis <em>routing</em>,
+antara lain <em>urlrewrite, standard, cms, dan default</em>.
+Routing juga dibatasi oleh area (soal area akan dibahas pada tulisan berikutnya).
+Area yang disediakan oleh Magento secara default adalah <code>adminhtml</code> dan <code>frontend</code>.</p>
+<p>Tulisan ini akan membahas standard routing di area frontend.
+Routing jenis ini bisa dibuat dengan layout xml, atau dengan aturan</p>
+<p><code>&lt;baseUrl>/[&lt;storeCode>]/&lt;frontName>/&lt;controller>/&lt;action></code>.</p>
+<p>Hal pertama yang harus dibuat adalah file <code>etc/frontend/routes.xml</code>:</p>
+<pre tabindex=0><code>&lt;?xml version=&quot;1.0&quot; ?&gt;
+&lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:App/etc/routes.xsd&quot;&gt;
+    &lt;router id=&quot;%routerId%&quot;&gt;
+        &lt;route id=&quot;%routeId%&quot; frontName=&quot;%frontName%&quot;&gt;
+            &lt;module name=&quot;%moduleName%&quot;/&gt;
+        &lt;/route&gt;
+    &lt;/router&gt;
+&lt;/config&gt;
+</code></pre><p><code>%routerId%</code> diganti <code>standard</code> karena ini adalah standard routing.
+<code>%frontName%</code> disesuaikan dengan <code>&lt;frontName></code> pada aturan.
+Nilainya biasanya sama dengan <code>%routeId%</code>.
+<code>%moduleName%</code> disesuaikan dengan modul yang mendefinisikannya, dengan format <code>Vendor_NamaModul</code>.</p>
+<p>Kemudian buat controller sesuai aturan, yang ditaruh di folder Controller.
+Contohnya, url yang akan dibuat adalah <code>/blog/show/post</code>.
+Maka controller dibuat di <em>app/code/Vendor/NamaModul/Controller/Show/Post.php</em>.
+Perhatikan path <code>blog</code> tidak terdapat di URI file controller,
+karena ia adalah front name yang sudah disebut di routes.xml.</p>
+<p>File Post.php harus meng-<em>extend</em> class <em>\Magento\Framework\App\Action\Action</em>.
+Maka contoh controller sebagai berikut:</p>
+<pre tabindex=0><code>&lt;?php
+namespace Vendor\NamaModul\Controller\Show;
+
+class Post extends \Magento\Framework\App\Action\Action
+{
+    function execute() {
+        return $result;
+    }
+}
+</code></pre><p>Function <code>execute()</code> adalah function utama dari controller tersebut.
+<code>$result</code> adalah hasil return yang diharapkan, bisa berupa page, redirect, layout, raw atau JSON.
+Akan dibahas pada tulisan mendatang. <em>Stay tuned!</em></p>
+</div>
+<div class=nav-left>
+<a class=nav-item href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2faryosr.me%2fblog%2f2019%2f08%2frouting-di-magento%2f" title="Share on Facebook" target=_blank><span class="fa fa-facebook fa-2x" aria-hidden=true></span></a>
+<a class=nav-item href="https://plus.google.com/share?url=https%3a%2f%2faryosr.me%2fblog%2f2019%2f08%2frouting-di-magento%2f" title="Share on Google+" target=_blank><span class="fa fa-google-plus fa-2x" aria-hidden=true></span></a>
+<a class=nav-item href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2faryosr.me%2fblog%2f2019%2f08%2frouting-di-magento%2f" title="Share on LinkedIn" target=_blank><span class="fa fa-linkedin fa-2x" aria-hidden=true></span></a>
+<a class=nav-item href="https://twitter.com/home?status=Routing%20di%20Magento - https%3a%2f%2faryosr.me%2fblog%2f2019%2f08%2frouting-di-magento%2f" title="Tweet this" target=_blank><span class="fa fa-twitter fa-2x"></span></a>
+<a class=nav-item href="http://www.reddit.com/submit?url=https%3a%2f%2faryosr.me%2fblog%2f2019%2f08%2frouting-di-magento%2f&title=Routing%20di%20Magento" title="Share on Reddit" target=_blank><span class="fa fa-reddit-alien fa-2x" aria-hidden=true></span></a>
+</div>
+</div>
+</section>
+<section class=section>
+<div class=container>
+<aside><div id=disqus_thread></div></aside>
+<script type=text/javascript>var disqus_shortname='codebadwi';(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.src='//'+disqus_shortname+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript rel=nofollow>comments powered by Disqus.</a></noscript>
+</div>
+</section>
+<section class=section>
+<div class="container has-text-centered">
+<p>&copy; 2017 | <a href=https://github.com/mgjohansen/hucore.git target=_blank>Hucore theme</a> & <a href=http://gohugo.io target=_blank>Hugo</a> ♥</p>
+</div>
+</section>
+<script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin=anonymous></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/dockerfile.min.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/php.min.js></script>
+<script type=text/javascript src=//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-36990012-6','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</body>

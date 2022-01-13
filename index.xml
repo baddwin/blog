@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aryo Sr. Blog</title><link>https://aryosr.me/blog/</link><description>Recent content on Aryo Sr. Blog</description><generator>Hugo -- gohugo.io</generator><language>id</language><copyright>&amp;copy; 2017 | &lt;a href="https://github.com/mgjohansen/hucore.git" target="_blank">Hucore theme&lt;/a> &amp; &lt;a href="http://gohugo.io" target="_blank">Hugo&lt;/a> ♥</copyright><lastBuildDate>Fri, 13 Aug 2021 23:48:54 +0700</lastBuildDate><atom:link href="https://aryosr.me/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Mencoba Laravel 8 Breeze dengan Inertia, Vue, dan Tailwind</title><link>https://aryosr.me/blog/2021/08/mencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind/</link><pubDate>Fri, 13 Aug 2021 23:48:54 +0700</pubDate><guid>https://aryosr.me/blog/2021/08/mencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind/</guid><description>Beberapa waktu terakhir saya lebih fokus dengan Magento. Padahal sebelum itu saya berangkat dari framework Laravel. Cukup aneh jika blog yang saya khususkan untuk kode ini hanya berisi satu pos tentang Laravel. Itu pun tidak terlalu berfaedah.
+Baru-baru ini saya mengoprek Laravel 8 dengan Inertia.js dan Vue.js serta Tailwind CSS. Semuanya dibundel oleh starter kit Breeze1. Dalam kurun waktu 2-3 tahun belakangan ternyata Laravel merilis banyak tools dengan istilah-istilah baru. Saya merasa sangat ketinggalan karena tidak terlalu mengikuti perkembangannya.</description></item><item><title>Routing di Magento (Lanjutan)</title><link>https://aryosr.me/blog/2019/08/routing-di-magento-lanjutan/</link><pubDate>Wed, 07 Aug 2019 12:32:36 +0700</pubDate><guid>https://aryosr.me/blog/2019/08/routing-di-magento-lanjutan/</guid><description>&lt;p>Seperti janji saya di &lt;a href="https://aryosr.me/blog/2019/08/routing-di-magento/">tulisan tentang routing&lt;/a> sebelumnya, kali ini adalah lanjutannya.
+Routing di Magento di-&lt;em>handle&lt;/em> oleh satu &lt;em>controller&lt;/em> untuk tiap &lt;em>route&lt;/em>, di method &lt;code>execute&lt;/code>.
+&lt;em>Return&lt;/em> dari method itu antara lain: &lt;em>page, json, raw, layout, redirect dan forward&lt;/em>.&lt;/p></description></item><item><title>Area di Magento</title><link>https://aryosr.me/blog/2019/08/area-di-magento/</link><pubDate>Fri, 02 Aug 2019 13:35:23 +0700</pubDate><guid>https://aryosr.me/blog/2019/08/area-di-magento/</guid><description>&lt;p>Area di Magento merupakan sebuah komponen logis yang mengelola kode,
+termasuk struktur sistem file, demi pemrosesan &lt;em>request&lt;/em> yang optimum&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>.
+Pengelompokan area ini bermanfaat dalam menjaga kerapian struktur kode.&lt;/p>
+&lt;p>Area paling umum di Magento adalah &lt;code>adminhtml&lt;/code> dan &lt;code>frontend&lt;/code>.
+&lt;em>adminhtml&lt;/em> merupakan&lt;/p></description></item><item><title>Routing di Magento</title><link>https://aryosr.me/blog/2019/08/routing-di-magento/</link><pubDate>Fri, 02 Aug 2019 00:03:13 +0700</pubDate><guid>https://aryosr.me/blog/2019/08/routing-di-magento/</guid><description>&lt;p>Routing di Magento ditentukan per-modul. Ada beberapa jenis &lt;em>routing&lt;/em>,
+antara lain &lt;em>urlrewrite, standard, cms, dan default&lt;/em>.
+Routing juga dibatasi oleh area (soal area akan dibahas pada tulisan berikutnya).
+Area yang disediakan oleh Magento secara default adalah &lt;code>adminhtml&lt;/code> dan &lt;code>frontend&lt;/code>.&lt;/p>
+&lt;p>Tulisan ini akan membahas standard routing di area frontend.
+Routing jenis ini bisa dibuat dengan layout xml, atau dengan aturan&lt;/p></description></item><item><title>Setup Magento Local Development with nginx</title><link>https://aryosr.me/blog/2019/07/setup-magento-local-development-with-nginx/</link><pubDate>Tue, 16 Jul 2019 21:15:52 +0700</pubDate><guid>https://aryosr.me/blog/2019/07/setup-magento-local-development-with-nginx/</guid><description>&lt;h2 id="prasyarat">Prasyarat&lt;/h2>
+&lt;p>Tulisan ini memperlihatkan langkah-langkah dalam men-setup
+Magento 2.3.2 dengan nginx di Fedora 30 ke atas.
+Maka prasyarat yang harus dipenuhi antara lain:&lt;/p>
+&lt;ol>
+&lt;li>OS Fedora 30 atau lebih baru&lt;/li>
+&lt;li>nginx&lt;/li>
+&lt;li>PHP 7.2&lt;/li>
+&lt;li>MySQL (MariaDB)&lt;/li>
+&lt;li>tarball Magento 2.3.2&lt;/li>
+&lt;li>composer&lt;/li>
+&lt;/ol>
+&lt;h3 id="install-_software_-di-fedora">Install &lt;em>software&lt;/em> di Fedora&lt;/h3>
+&lt;p>PHP 7.2 tidak tersedia di repo utama Fedora mulai versi 28.
+Maka, untuk Fedora 30, perlu menambahkan repo dari Remi
+Ikuti panduan dari web Remi di&lt;/p></description></item><item><title>Modul Shipping Ongkir Indonesia untuk Magento 2</title><link>https://aryosr.me/blog/2019/07/modul-shipping-ongkir-indonesia-untuk-magento-2/</link><pubDate>Wed, 10 Jul 2019 00:44:41 +0700</pubDate><guid>https://aryosr.me/blog/2019/07/modul-shipping-ongkir-indonesia-untuk-magento-2/</guid><description>&lt;p>Project pertama saya dengan Magento adalah membuat modul/&lt;em>extension&lt;/em>
+ongkir (ongkos kirim) Indonesia untuk Magento 2. Modul ini mengambil data
+dari &lt;a href="http://rajaongkir.com">RajaOngkir&lt;/a> yang menyediakan API cek ongkir dan &lt;em>tracking&lt;/em>
+jasa kurir dan ekspedisi yang ada di Indonesia,
+termasuk JNE, J&amp;amp;T, Tiki, Pos, SiCepat, dll.&lt;/p>
+&lt;p>Waktu itu belum ada &lt;em>free extension&lt;/em> (gratis) Magento untuk ongkir Indonesia.
+Oleh karena itulah saya di-&lt;em>hire&lt;/em> untuk mengerjakannya.
+Atas dasar itu pula saya mencoba membuat module yang &lt;em>free&lt;/em> dan &lt;em>open source&lt;/em>.
+Dengan modul ongkir ini, website Magento kita dapat menghitung
+ongkir barang berdasarkan kurir yang ada di Indonesia.&lt;/p>
+&lt;p>Modul ini mirip dengan kode project pertama dulu, yaitu menggunakan API RajaOngkir.
+Modul ini merupakan &lt;em>rewrite&lt;/em> yang berbeda total, karena tentunya ada NDA&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> dengah perusahaan.
+Tetapi ini bukan modul yang saya kerjakan di project tersebut.
+Untuk saat ini kodenya tidak bisa saya &lt;em>share&lt;/em> secara &lt;del>gratis&lt;/del> publik.
+Kode yang saya &lt;em>share&lt;/em> di Github&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> adalah fungsi minimum sebuah modul metode pengiriman di Magento 2.&lt;/p>
+&lt;p>Cuplikan kode:&lt;/p></description></item><item><title>Magento Mengalihkan Duniaku</title><link>https://aryosr.me/blog/2019/07/magento-mengalihkan-duniaku/</link><pubDate>Mon, 01 Jul 2019 23:42:22 +0700</pubDate><guid>https://aryosr.me/blog/2019/07/magento-mengalihkan-duniaku/</guid><description>&lt;p>Magento, kali pertama mendengarnya, saya kira dia adalah CMS PHP semacam
+Wordpress, Drupal, dkk. Tapi, eh, ternyata tidak semudah itu, Ferguso.
+Kompleksitasnya cukup &lt;em>mumetable&lt;/em> bagi programmer males kayak saya.
+&lt;em>wkwkwk&amp;hellip;&lt;/em>&lt;/p></description></item><item><title>Permission Folder Laravel</title><link>https://aryosr.me/blog/2016/10/permission-folder-laravel/</link><pubDate>Mon, 17 Oct 2016 12:39:06 +0700</pubDate><guid>https://aryosr.me/blog/2016/10/permission-folder-laravel/</guid><description>&lt;p>Posting ini hanya catatan kecil jenis permission direktori project Laravel.&lt;/p></description></item><item><title>Angular.JS: Routing</title><link>https://aryosr.me/blog/2015/10/angular.js-routing/</link><pubDate>Sat, 10 Oct 2015 14:38:00 +0700</pubDate><guid>https://aryosr.me/blog/2015/10/angular.js-routing/</guid><description>&lt;p>Kembali membahas AngularJs, kali ini maju satu langkah, mari mempelajari routing. Pada dasarnya Angular menangani event perubahan hash pada URL dan mengarahkannya pada &lt;code>ng-view&lt;/code>. ngView ini membutuhkan template berupa file html terpisah yang akan dimuat oleh Angular.&lt;/p>
+&lt;p>Berikut adalah potongan kode Javascript.&lt;/p></description></item><item><title>Chart.js: menggambar diagram dengan JavaSript</title><link>https://aryosr.me/blog/2015/07/chart.js-menggambar-diagram-dengan-javasript/</link><pubDate>Fri, 24 Jul 2015 13:54:32 +0700</pubDate><guid>https://aryosr.me/blog/2015/07/chart.js-menggambar-diagram-dengan-javasript/</guid><description>&lt;p>Kali ini saya share hasil eksplorasi atas &lt;a href="http://www.chartjs.org/" title="">Chart.js&lt;/a>, skrip JavaScript untuk memvisualisasikan data dalam berbagai macam bentuk diagram. Di sini saya menggunakan diagram garis.&lt;/p></description></item><item><title>Coding pertama: Angular.Js penyortir tabel</title><link>https://aryosr.me/blog/2015/07/coding-pertama-angular.js-penyortir-tabel/</link><pubDate>Thu, 23 Jul 2015 19:51:13 +0700</pubDate><guid>https://aryosr.me/blog/2015/07/coding-pertama-angular.js-penyortir-tabel/</guid><description>&lt;p>Saya mau share hasil koding pertama belajar AngularJs. Berikut &lt;em>snippet&lt;/em> kodenya.&lt;/p></description></item><item><title>Assalamu'alaikum Dunia</title><link>https://aryosr.me/blog/2015/07/assalamualaikum-dunia/</link><pubDate>Sat, 04 Jul 2015 00:00:00 +0000</pubDate><guid>https://aryosr.me/blog/2015/07/assalamualaikum-dunia/</guid><description>Satu lagi telah terbit blog baru. Kali ini Github Pages + Jekyll Now lah yang memberdayakan blog ini. Semoga ke depannya bisa bermanfaat untuk kita semua.
+Edit Juli 2017:
+Setelah 2 tahun berjalan, blog ini mangkrak dan tak terurus dengan dalih kesibukan kerja yang menguras waktu. Selama rentang waktu tersebut hampir tidak ada tulisan baru yang saya terbitkan.
+Hingga akhirnya hari ini, saya merapikan beberapa blog yang saya punya. Termasuk blog kode ini, yang saya maksudkan untuk berbagi snippet kode, sekarang saya perbarui.</description></item></channel></rss>

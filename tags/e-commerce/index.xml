@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>e-commerce on Aryo Sr. Blog</title><link>https://aryosr.me/blog/tags/e-commerce/</link><description>Recent content in e-commerce on Aryo Sr. Blog</description><generator>Hugo -- gohugo.io</generator><language>id</language><copyright>&amp;copy; 2017 | &lt;a href="https://github.com/mgjohansen/hucore.git" target="_blank">Hucore theme&lt;/a> &amp; &lt;a href="http://gohugo.io" target="_blank">Hugo&lt;/a> ♥</copyright><lastBuildDate>Wed, 10 Jul 2019 00:44:41 +0700</lastBuildDate><atom:link href="https://aryosr.me/blog/tags/e-commerce/index.xml" rel="self" type="application/rss+xml"/><item><title>Modul Shipping Ongkir Indonesia untuk Magento 2</title><link>https://aryosr.me/blog/2019/07/modul-shipping-ongkir-indonesia-untuk-magento-2/</link><pubDate>Wed, 10 Jul 2019 00:44:41 +0700</pubDate><guid>https://aryosr.me/blog/2019/07/modul-shipping-ongkir-indonesia-untuk-magento-2/</guid><description>&lt;p>Project pertama saya dengan Magento adalah membuat modul/&lt;em>extension&lt;/em>
+ongkir (ongkos kirim) Indonesia untuk Magento 2. Modul ini mengambil data
+dari &lt;a href="http://rajaongkir.com">RajaOngkir&lt;/a> yang menyediakan API cek ongkir dan &lt;em>tracking&lt;/em>
+jasa kurir dan ekspedisi yang ada di Indonesia,
+termasuk JNE, J&amp;amp;T, Tiki, Pos, SiCepat, dll.&lt;/p>
+&lt;p>Waktu itu belum ada &lt;em>free extension&lt;/em> (gratis) Magento untuk ongkir Indonesia.
+Oleh karena itulah saya di-&lt;em>hire&lt;/em> untuk mengerjakannya.
+Atas dasar itu pula saya mencoba membuat module yang &lt;em>free&lt;/em> dan &lt;em>open source&lt;/em>.
+Dengan modul ongkir ini, website Magento kita dapat menghitung
+ongkir barang berdasarkan kurir yang ada di Indonesia.&lt;/p>
+&lt;p>Modul ini mirip dengan kode project pertama dulu, yaitu menggunakan API RajaOngkir.
+Modul ini merupakan &lt;em>rewrite&lt;/em> yang berbeda total, karena tentunya ada NDA&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> dengah perusahaan.
+Tetapi ini bukan modul yang saya kerjakan di project tersebut.
+Untuk saat ini kodenya tidak bisa saya &lt;em>share&lt;/em> secara &lt;del>gratis&lt;/del> publik.
+Kode yang saya &lt;em>share&lt;/em> di Github&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> adalah fungsi minimum sebuah modul metode pengiriman di Magento 2.&lt;/p>
+&lt;p>Cuplikan kode:&lt;/p></description></item></channel></rss>
