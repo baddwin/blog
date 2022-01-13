@@ -104,18 +104,18 @@ php72 bin/magento setup:uninstall
 Setelah setup server lokal selesai, dilanjutkan dengan
 instalasi Magento. Akses base-url yang sudah ditentukan pada konfigurasi nginx.
 
-![magento check requirements to install](/img/2019/07/magento-install-1.png)
+![magento check requirements to install](/blog/img/2019/07/magento-install-1.png)
 
-![magento database config](/img/2019/07/magento-install-2.png)
+![magento database config](/blog/img/2019/07/magento-install-2.png)
 
-![magento web config](/img/2019/07/magento-install-3.png)
+![magento web config](/blog/img/2019/07/magento-install-3.png)
 
-![magento customization](/img/2019/07/magento-install-4.png)
+![magento customization](/blog/img/2019/07/magento-install-4.png)
 
-![magento admin account](/img/2019/07/magento-install-5.png)
+![magento admin account](/blog/img/2019/07/magento-install-5.png)
 
-![magento installation progress](/img/2019/07/magento-install-6.png)
+![magento installation progress](/blog/img/2019/07/magento-install-6.png)
 
-![magento success install](/img/2019/07/magento-install-7.png)
+![magento success install](/blog/img/2019/07/magento-install-7.png)
 
-![magento login admin](/img/2019/07/magento-install-8.png)
+![magento login admin](/blog/img/2019/07/magento-install-8.png)

@@ -1,6 +1,6 @@
-baseurl = "https://code.badwi.my.id/"
+baseurl = "https://aryosr.me/blog/"
 languageCode = "id"
-title = "Ba-dwi Code"
+title = "Aryo Sr. Blog"
 
 publishDir = "docs"
 
@@ -18,7 +18,7 @@ posts = "/:year/:month/:title/"
 
 [params]
 description = "Blog untuk kode"
-author = "Badwi"
+author = "Aryo Sr."
 keywords = []
 sharingicons = true
 displayauthor = true

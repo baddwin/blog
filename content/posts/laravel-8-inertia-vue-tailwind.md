@@ -69,9 +69,9 @@ class TransactionBag extends Model
 }
 ```
 
-![screenshot dashboard admin](/img/2021/08/screen_000953.png)
+![screenshot dashboard admin](/blog/img/2021/08/screen_000953.png)
 
-![screenshot dashboard admin](/img/2021/08/screen_001025.png)
+![screenshot dashboard admin](/blog/img/2021/08/screen_001025.png)
 
 Kode project lengkap sudah saya unggah ke Github[^2].
 

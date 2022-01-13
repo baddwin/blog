@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>php on Ba-dwi Code</title>
-    <link>https://code.badwi.my.id/tags/php/</link>
-    <description>Recent content in php on Ba-dwi Code</description>
+    <title>php on Aryo Sr. Blog</title>
+    <link>https://aryosr.me/blog/tags/php/</link>
+    <description>Recent content in php on Aryo Sr. Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Fri, 13 Aug 2021 23:48:54 +0700</lastBuildDate><atom:link href="https://code.badwi.my.id/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Aug 2021 23:48:54 +0700</lastBuildDate><atom:link href="https://aryosr.me/blog/tags/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mencoba Laravel 8 Breeze dengan Inertia, Vue, dan Tailwind</title>
-      <link>https://code.badwi.my.id/2021/08/mencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind/</link>
+      <link>https://aryosr.me/blog/2021/08/mencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind/</link>
       <pubDate>Fri, 13 Aug 2021 23:48:54 +0700</pubDate>
       
-      <guid>https://code.badwi.my.id/2021/08/mencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind/</guid>
+      <guid>https://aryosr.me/blog/2021/08/mencoba-laravel-8-breeze-dengan-inertia-vue-dan-tailwind/</guid>
       <description>Beberapa waktu terakhir saya lebih fokus dengan Magento. Padahal sebelum itu saya berangkat dari framework Laravel. Cukup aneh jika blog yang saya khususkan untuk kode ini hanya berisi satu pos tentang Laravel. Itu pun tidak terlalu berfaedah.
 Baru-baru ini saya mengoprek Laravel 8 dengan Inertia.js dan Vue.js serta Tailwind CSS. Semuanya dibundel oleh starter kit Breeze1. Dalam kurun waktu 2-3 tahun belakangan ternyata Laravel merilis banyak tools dengan istilah-istilah baru. Saya merasa sangat ketinggalan karena tidak terlalu mengikuti perkembangannya.</description>
     </item>
     
     <item>
       <title>Routing di Magento (Lanjutan)</title>
-      <link>https://code.badwi.my.id/2019/08/routing-di-magento-lanjutan/</link>
+      <link>https://aryosr.me/blog/2019/08/routing-di-magento-lanjutan/</link>
       <pubDate>Wed, 07 Aug 2019 12:32:36 +0700</pubDate>
       
-      <guid>https://code.badwi.my.id/2019/08/routing-di-magento-lanjutan/</guid>
-      <description>&lt;p&gt;Seperti janji saya di &lt;a href=&#34;https://code.badwi.my.id/2019/08/routing-di-magento/&#34;&gt;tulisan tentang routing&lt;/a&gt; sebelumnya, kali ini adalah lanjutannya.
+      <guid>https://aryosr.me/blog/2019/08/routing-di-magento-lanjutan/</guid>
+      <description>&lt;p&gt;Seperti janji saya di &lt;a href=&#34;https://aryosr.me/blog/2019/08/routing-di-magento/&#34;&gt;tulisan tentang routing&lt;/a&gt; sebelumnya, kali ini adalah lanjutannya.
 Routing di Magento di-&lt;em&gt;handle&lt;/em&gt; oleh satu &lt;em&gt;controller&lt;/em&gt; untuk tiap &lt;em&gt;route&lt;/em&gt;, di method &lt;code&gt;execute&lt;/code&gt;.
 &lt;em&gt;Return&lt;/em&gt; dari method itu antara lain: &lt;em&gt;page, json, raw, layout, redirect dan forward&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Area di Magento</title>
-      <link>https://code.badwi.my.id/2019/08/area-di-magento/</link>
+      <link>https://aryosr.me/blog/2019/08/area-di-magento/</link>
       <pubDate>Fri, 02 Aug 2019 13:35:23 +0700</pubDate>
       
-      <guid>https://code.badwi.my.id/2019/08/area-di-magento/</guid>
+      <guid>https://aryosr.me/blog/2019/08/area-di-magento/</guid>
       <description>&lt;p&gt;Area di Magento merupakan sebuah komponen logis yang mengelola kode,
 termasuk struktur sistem file, demi pemrosesan &lt;em&gt;request&lt;/em&gt; yang optimum&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.
 Pengelompokan area ini bermanfaat dalam menjaga kerapian struktur kode.&lt;/p&gt;
@@ -44,10 +44,10 @@ Pengelompokan area ini bermanfaat dalam menjaga kerapian struktur kode.&lt;/p&gt
     
     <item>
       <title>Routing di Magento</title>
-      <link>https://code.badwi.my.id/2019/08/routing-di-magento/</link>
+      <link>https://aryosr.me/blog/2019/08/routing-di-magento/</link>
       <pubDate>Fri, 02 Aug 2019 00:03:13 +0700</pubDate>
       
-      <guid>https://code.badwi.my.id/2019/08/routing-di-magento/</guid>
+      <guid>https://aryosr.me/blog/2019/08/routing-di-magento/</guid>
       <description>&lt;p&gt;Routing di Magento ditentukan per-modul. Ada beberapa jenis &lt;em&gt;routing&lt;/em&gt;,
 antara lain &lt;em&gt;urlrewrite, standard, cms, dan default&lt;/em&gt;.
 Routing juga dibatasi oleh area (soal area akan dibahas pada tulisan berikutnya).
@@ -58,10 +58,10 @@ Routing jenis ini bisa dibuat dengan layout xml, atau dengan aturan&lt;/p&gt;</d
     
     <item>
       <title>Setup Magento Local Development with nginx</title>
-      <link>https://code.badwi.my.id/2019/07/setup-magento-local-development-with-nginx/</link>
+      <link>https://aryosr.me/blog/2019/07/setup-magento-local-development-with-nginx/</link>
       <pubDate>Tue, 16 Jul 2019 21:15:52 +0700</pubDate>
       
-      <guid>https://code.badwi.my.id/2019/07/setup-magento-local-development-with-nginx/</guid>
+      <guid>https://aryosr.me/blog/2019/07/setup-magento-local-development-with-nginx/</guid>
       <description>&lt;h2 id=&#34;prasyarat&#34;&gt;Prasyarat&lt;/h2&gt;
 &lt;p&gt;Tulisan ini memperlihatkan langkah-langkah dalam men-setup
 Magento 2.3.2 dengan nginx di Fedora 30 ke atas.
@@ -82,10 +82,10 @@ Ikuti panduan dari web Remi di&lt;/p&gt;</description>
     
     <item>
       <title>Magento Mengalihkan Duniaku</title>
-      <link>https://code.badwi.my.id/2019/07/magento-mengalihkan-duniaku/</link>
+      <link>https://aryosr.me/blog/2019/07/magento-mengalihkan-duniaku/</link>
       <pubDate>Mon, 01 Jul 2019 23:42:22 +0700</pubDate>
       
-      <guid>https://code.badwi.my.id/2019/07/magento-mengalihkan-duniaku/</guid>
+      <guid>https://aryosr.me/blog/2019/07/magento-mengalihkan-duniaku/</guid>
       <description>&lt;p&gt;Magento, kali pertama mendengarnya, saya kira dia adalah CMS PHP semacam
 Wordpress, Drupal, dkk. Tapi, eh, ternyata tidak semudah itu, Ferguso.
 Kompleksitasnya cukup &lt;em&gt;mumetable&lt;/em&gt; bagi programmer males kayak saya.
@@ -94,10 +94,10 @@ Kompleksitasnya cukup &lt;em&gt;mumetable&lt;/em&gt; bagi programmer males kayak
     
     <item>
       <title>Permission Folder Laravel</title>
-      <link>https://code.badwi.my.id/2016/10/permission-folder-laravel/</link>
+      <link>https://aryosr.me/blog/2016/10/permission-folder-laravel/</link>
       <pubDate>Mon, 17 Oct 2016 12:39:06 +0700</pubDate>
       
-      <guid>https://code.badwi.my.id/2016/10/permission-folder-laravel/</guid>
+      <guid>https://aryosr.me/blog/2016/10/permission-folder-laravel/</guid>
       <description>&lt;p&gt;Posting ini hanya catatan kecil jenis permission direktori project Laravel.&lt;/p&gt;</description>
     </item>
     

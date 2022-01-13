@@ -70,7 +70,7 @@ Kode modul tersebut merupakan hasil _generate_ dari
 
 Contoh _live_ di website:
 
-![screenshot ongkir](/img/2019/07/ongkir.png)
+![screenshot ongkir](/blog/img/2019/07/ongkir.png)
 
 Untuk mendapatkan kode yang lebih fungsional dan
 disesuaikan dengan project _e-commerce_ Anda,
